@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💊 Obat Sistem Gastrointestinal — dr. Devi · Blok Rational Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --p:#C2417A;--p-deep:#7A1F4B;--p-mid:#D4608F;--p-light:#F0A9C6;--p-pale:#FCE9F1;
+  --rose:#D4788A;--rose-deep:#A84D60;--rose-pale:#FDE8EC;
+  --mint:#5FB894;--mint-deep:#2F7F63;--mint-pale:#E3F5EC;
+  --peach:#E8A87C;--peach-deep:#B8693A;--peach-pale:#FDF0E6;
+  --sky:#6FA8CF;--sky-deep:#2F6F96;--sky-pale:#E4F1FA;
+  --bg:#FEF6FA;--card:#fff;--text:#3A1428;--muted:#7A5368;--border:#F3D3E2;--shadow:rgba(194,65,122,.14);--alt:#FFF9FC;
+  --th1:#7A1F4B;--th2:#C2417A;
+  --g1:#5E1438;--g2:#9B2C63;--g3:#CF5C93;--g4:#EDA3C4;--g-em:#FFE0EE;
+}
+[data-theme="dark"]{
+  --p:#F08DB9;--p-deep:#F9BED8;--p-mid:#E06C9F;--p-light:#7A2E55;--p-pale:#3A1828;
+  --rose:#E58C9E;--rose-deep:#F2A9B7;--rose-pale:#3A1F27;
+  --mint:#6BCBA2;--mint-deep:#8FE0BE;--mint-pale:#173226;
+  --peach:#EDB287;--peach-deep:#F2C29E;--peach-pale:#3A2A1A;
+  --sky:#7CB6DC;--sky-deep:#9CCDEB;--sky-pale:#162B3A;
+  --bg:#180B12;--card:#25121C;--text:#F8E6EF;--muted:#C9A3B6;--border:#47223A;--shadow:rgba(0,0,0,.4);--alt:#1E0F17;
+  --th1:#8A2B5C;--th2:#B03F7C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.75;transition:background .25s,color .25s}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--g1) 0%,var(--g2) 40%,var(--g3) 72%,var(--g4) 100%);padding:60px 52px 52px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;right:-80px;width:480px;height:480px;border-radius:50%;background:rgba(255,255,255,.07)}
+.hero::after{content:'';position:absolute;bottom:-100px;left:6%;width:320px;height:320px;border-radius:50%;background:rgba(232,168,124,.12)}
+.hero-eyebrow{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.92);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:20px;position:relative;z-index:1}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,52px);font-weight:900;color:#fff;line-height:1.12;margin-bottom:14px;position:relative;z-index:1}
+.hero h1 em{font-style:italic;color:var(--g-em)}
+.hero-sub{color:rgba(255,255,255,.8);font-size:14.5px;font-weight:300;max-width:620px;line-height:1.7;position:relative;z-index:1}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;position:relative;z-index:1}
+.pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);color:#fff;padding:6px 16px;border-radius:30px;font-size:12px;font-weight:500}
+
+/* NAV */
+.sticky-nav{position:sticky;top:0;z-index:200;background:linear-gradient(90deg,var(--g1),var(--g2));display:flex;align-items:stretch;box-shadow:0 3px 20px rgba(94,20,56,.45)}
+.nav-scroll{display:flex;overflow-x:auto;scrollbar-width:none;flex:1}
+.nav-scroll::-webkit-scrollbar{display:none}
+.nav-btn{background:none;border:none;color:rgba(214,245,238,.7);font-family:inherit;font-size:12px;font-weight:500;letter-spacing:.4px;padding:13px 17px;white-space:nowrap;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
+.nav-btn:hover,.nav-btn.active{color:#fff;border-bottom-color:var(--peach)}
+.nav-tools{display:flex;align-items:center;gap:6px;padding:0 10px;border-left:1px solid rgba(255,255,255,.15)}
+.tool-btn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:20px;padding:5px 12px;font-family:inherit;font-size:12px;cursor:pointer;white-space:nowrap;transition:background .2s}
+.tool-btn:hover{background:rgba(255,255,255,.25)}
+
+/* LAYOUT */
+.container{max-width:960px;margin:0 auto;padding:40px 24px 90px}
+.section{display:none;animation:fadeUp .3s ease}
+.section.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.section-heading{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--p-deep);margin-bottom:6px;line-height:1.2}
+.section-desc{color:var(--muted);font-size:13.5px;padding-bottom:16px;border-bottom:2px solid var(--border);margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+.chips a{font-size:11.5px;font-weight:600;color:var(--p-deep);background:var(--p-pale);border:1px solid var(--border);padding:4px 12px;border-radius:20px;cursor:pointer;transition:all .15s}
+.chips a:hover{background:var(--p);color:#fff;border-color:var(--p)}
+.chips-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);width:100%}
+
+/* CARDS */
+.card{background:var(--card);border-radius:18px;padding:24px 28px;margin-bottom:20px;border:1px solid var(--border);box-shadow:0 2px 14px var(--shadow);scroll-margin-top:70px}
+.card-title{font-family:'Lora',serif;font-size:17px;font-weight:600;color:var(--p-deep);margin-bottom:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card p{font-size:14px;margin-bottom:8px}
+.card p:last-child{margin-bottom:0}
+.sub{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+
+/* TAGS */
+.tg{display:inline-block;font-family:'DM Sans',sans-serif;font-size:9.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:3px 9px;border-radius:12px;vertical-align:middle;white-space:nowrap}
+.tg.hy{background:#E8A87C;color:#4A2810}
+.tg.mm{background:#D4788A;color:#fff}
+.tg.ct{background:#C0392B;color:#fff}
+.tg.fa{background:#2F6F96;color:#fff}
+.tg.dr{background:linear-gradient(90deg,#8E44AD,#C070E8);color:#fff}
+.tg.add{background:transparent;border:1px dashed var(--muted);color:var(--muted)}
+
+/* ALERTS */
+.alert{padding:13px 17px;border-radius:11px;margin:13px 0;font-size:13.5px;display:flex;gap:10px;line-height:1.65}
+.alert>div{flex:1}
+.alert-teal{background:var(--p-pale);border-left:4px solid var(--p);color:var(--p-deep)}
+.alert-rose{background:var(--rose-pale);border-left:4px solid var(--rose);color:var(--rose-deep)}
+.alert-mint{background:var(--mint-pale);border-left:4px solid var(--mint);color:var(--mint-deep)}
+.alert-peach{background:var(--peach-pale);border-left:4px solid var(--peach);color:var(--peach-deep)}
+.alert-sky{background:var(--sky-pale);border-left:4px solid var(--sky);color:var(--sky-deep)}
+.alert-icon{flex-shrink:0;font-size:15px;margin-top:1px}
+
+/* DR NOTE */
+.dr-note{background:linear-gradient(135deg,var(--p-pale),var(--peach-pale));border:1.5px solid var(--p-light);border-radius:13px;padding:14px 18px;margin:14px 0;font-size:13.5px;line-height:1.7}
+.dr-note::before{content:'🎤 dr. Devi menekankan: ';font-weight:700;color:var(--p-deep)}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border);margin:10px 0 16px}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:520px}
+th{background:linear-gradient(90deg,var(--th1),var(--th2));color:#fff;padding:10px 13px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.3px}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;font-size:13px}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:var(--alt)}
+tr:hover td{background:var(--p-pale)}
+
+/* GRIDS */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:760px){.grid-3,.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.mini-card{background:var(--alt);border:1px solid var(--border);border-radius:13px;padding:14px 16px}
+.mini-card h4{font-family:'Lora',serif;font-size:14px;color:var(--p-deep);margin-bottom:6px}
+.mini-card p,.mini-card li{font-size:12.8px;color:var(--muted);line-height:1.6}
+.mini-card ul{padding-left:16px}
+.mini-card .arrow{display:block;margin-top:6px;font-weight:700;color:var(--rose-deep);font-size:12.5px}
+
+.styled-list{list-style:none;padding:0}
+.styled-list li{padding:7px 0 7px 24px;border-bottom:1px solid var(--border);font-size:13.5px;position:relative;line-height:1.65}
+.styled-list li::before{content:'◆';position:absolute;left:0;color:var(--p-light);font-size:9px;top:11px}
+.styled-list li:last-child{border-bottom:none}
+
+/* CLINICAL REASONING */
+.cr-box{background:linear-gradient(135deg,var(--p-pale),var(--sky-pale));border:1.5px solid var(--p-light);border-radius:14px;padding:18px 22px;margin:14px 0}
+.cr-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--p-deep);margin-bottom:10px}
+.cr-steps{counter-reset:cr;list-style:none;padding:0}
+.cr-steps li{counter-increment:cr;padding:7px 0 7px 36px;position:relative;font-size:13.5px;border-bottom:1px solid rgba(194,65,122,.2);line-height:1.65}
+.cr-steps li:last-child{border-bottom:none}
+.cr-steps li::before{content:counter(cr);position:absolute;left:0;top:8px;width:24px;height:24px;background:var(--p-mid);color:#fff;border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:700}
+
+/* FLOW */
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:12px 0}
+.flow .fb{background:var(--p-pale);border:1.5px solid var(--p-light);border-radius:11px;padding:10px 14px;font-size:13px;text-align:center}
+.flow .fb small{display:block;color:var(--muted);font-size:11.5px}
+.flow .fa{text-align:center;color:var(--p);font-size:16px;line-height:1.2;padding:2px 0}
+.flow .fb.warn{background:var(--rose-pale);border-color:var(--rose)}
+.flow .fb.ok{background:var(--mint-pale);border-color:var(--mint)}
+
+/* MNEMONIC */
+.mnemonic{background:linear-gradient(135deg,var(--p-pale),var(--peach-pale));border:2px solid var(--p-light);border-radius:15px;padding:18px 22px;margin:14px 0}
+.mnemonic-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--p-deep);margin-bottom:6px}
+.mnemonic-text{font-family:'Playfair Display',serif;font-size:19px;color:var(--text);font-weight:700}
+.mnemonic-sub{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.6}
+
+/* HIGHLIGHTS */
+.hl-t,.hl-r,.hl-m,.hl-p{padding:1px 7px;border-radius:5px;font-weight:600;font-size:13px}
+.hl-t{background:var(--p-pale);color:var(--p-deep)}
+.hl-r{background:var(--rose-pale);color:var(--rose-deep)}
+.hl-m{background:var(--mint-pale);color:var(--mint-deep)}
+.hl-p{background:var(--peach-pale);color:var(--peach-deep)}
+mark{background:#FFE08A;color:#3a2a00;padding:0 2px;border-radius:3px}
+
+/* COLLAPSE */
+.collapse-btn{background:none;border:none;width:100%;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0;font-family:inherit;color:var(--p-deep);font-weight:600;font-size:14px}
+.collapse-btn .chev{transition:transform .25s;font-size:11px;color:var(--muted)}
+.collapse-btn.open .chev{transform:rotate(180deg)}
+.collapse-body{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
+.collapse-body.open{display:block;animation:fadeUp .25s ease}
+
+/* COMPARE */
+.compare-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.compare-col{border-radius:13px;padding:16px 18px;border:2px solid}
+.compare-col.left{background:var(--p-pale);border-color:var(--p-light)}
+.compare-col.right{background:var(--rose-pale);border-color:var(--rose)}
+.compare-col h4{font-family:'Lora',serif;font-size:15px;margin-bottom:8px}
+.compare-col.left h4{color:var(--p-deep)}
+.compare-col.right h4{color:var(--rose-deep)}
+.compare-col li{font-size:13px;margin-left:16px;margin-bottom:3px}
+@media(max-width:600px){.compare-wrap{grid-template-columns:1fr}}
+
+/* SOROTAN / BANK TAG */
+.cohort-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:6px;margin:1px;color:#fff}
+.cohort-arthron{background:#B8566A}
+.cohort-aorta{background:#3E9C7C}
+.cohort-axon{background:#7A68B8}
+.cohort-ub{background:#C07A3A}
+
+/* GLOSSARY */
+.gl-filter{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:11px;background:var(--card);color:var(--text);font-family:inherit;font-size:14px;margin-bottom:14px}
+.gl{padding:11px 0;border-bottom:1px solid var(--border)}
+.gl:last-child{border-bottom:none}
+.gl b{color:var(--p-deep)}
+.gl span{font-size:13.5px;color:var(--text)}
+
+/* QUIZ */
+.quiz-progress{display:flex;gap:6px;margin-bottom:26px;flex-wrap:wrap}
+.pdot{width:11px;height:11px;border-radius:50%;background:var(--border);transition:background .3s}
+.pdot.ok{background:var(--mint)}
+.pdot.no{background:var(--rose)}
+.quiz-q{background:var(--card);border:1.5px solid var(--border);border-radius:18px;padding:30px 26px 24px;margin-bottom:26px;position:relative}
+.q-num{position:absolute;top:-12px;left:22px;background:linear-gradient(90deg,var(--th1),var(--rose-deep));color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 16px;border-radius:10px}
+.q-lvl{position:absolute;top:-12px;right:22px;background:var(--peach);color:#4A2810;font-size:11px;font-weight:800;padding:4px 12px;border-radius:10px}
+.q-vignette{background:linear-gradient(135deg,var(--p-pale),var(--peach-pale));border-left:4px solid var(--p-light);border-radius:0 11px 11px 0;padding:14px 17px;font-size:13.5px;line-height:1.7;margin-bottom:16px}
+.q-question{font-weight:600;font-size:14px;margin-bottom:14px}
+.q-opts{display:flex;flex-direction:column;gap:8px}
+.q-opt{background:var(--alt);border:1.5px solid var(--border);border-radius:11px;padding:11px 15px;font-size:13.5px;cursor:pointer;text-align:left;font-family:inherit;display:flex;gap:10px;align-items:flex-start;transition:all .18s;color:var(--text)}
+.q-opt:hover:not(:disabled){border-color:var(--p);background:var(--p-pale)}
+.q-opt .ol{font-weight:700;font-size:12px;min-width:22px;height:22px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.q-opt.correct{background:var(--mint-pale)!important;border-color:var(--mint)!important;color:var(--mint-deep)}
+.q-opt.correct .ol{background:var(--mint);color:#fff}
+.q-opt.wrong{background:var(--rose-pale)!important;border-color:var(--rose)!important;color:var(--rose-deep)}
+.q-opt.wrong .ol{background:var(--rose);color:#fff}
+.q-opt:disabled{cursor:default}
+.q-exp{display:none;margin-top:16px}
+.q-exp.show{display:block;animation:fadeUp .3s ease}
+.rz{border-radius:10px;padding:10px 14px;margin-bottom:8px;font-size:13px;line-height:1.65;border-left:3px solid}
+.rz.ok{background:var(--mint-pale);border-color:var(--mint);color:var(--mint-deep)}
+.rz.no{background:var(--alt);border-color:var(--border);color:var(--text)}
+.rz b{display:block;margin-bottom:2px}
+.rz-concept{background:var(--p-pale);border:1.5px solid var(--p-light);border-radius:11px;padding:12px 16px;font-size:13px;margin-top:10px;color:var(--p-deep)}
+.score-card{background:linear-gradient(135deg,var(--g1),var(--g3),var(--g4));color:#fff;border-radius:22px;padding:44px;text-align:center;display:none;margin-top:28px}
+.score-card.show{display:block;animation:fadeUp .4s ease}
+.score-big{font-family:'Playfair Display',serif;font-size:76px;font-weight:900;color:#E1F3F1;line-height:1;margin:10px 0}
+.btn{background:var(--p);color:#fff;border:none;border-radius:30px;padding:10px 24px;font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;transition:transform .2s,opacity .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:var(--p-pale);color:var(--p-deep);border:1px solid var(--border)}
+.btn.rose{background:var(--rose-deep);color:#fff}
+[data-theme="dark"] .btn.rose{color:#3A1F27}
+.btn-restart{margin-top:22px;background:#fff;color:var(--g1)}
+
+/* FLASHCARD */
+.fc-wrap{max-width:560px;margin:0 auto}
+.fc-meta{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.fc-scene{perspective:1100px;height:290px;margin-bottom:16px}
+.fc{position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d;cursor:pointer}
+.fc.flip{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border:2px solid var(--p-light);overflow:auto}
+.fc-front{background:var(--card);font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--p-deep)}
+.fc-back{background:linear-gradient(135deg,var(--p-pale),var(--mint-pale));transform:rotateY(180deg);font-size:14.5px;line-height:1.7}
+.fc-hint{font-size:11px;color:var(--muted);margin-top:14px;font-family:'DM Sans',sans-serif;font-weight:400}
+.fc-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+
+/* FLOATS */
+.fab-stack{position:fixed;bottom:22px;right:22px;z-index:9000;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.fab{border:none;border-radius:50px;padding:11px 18px;font-family:inherit;font-size:12.5px;font-weight:700;cursor:pointer;color:#fff;display:flex;align-items:center;gap:8px;box-shadow:0 6px 22px rgba(0,0,0,.28);transition:transform .2s}
+.fab:hover{transform:translateY(-3px)}
+.fab.dr{background:linear-gradient(135deg,#4A1060,#C070E8)}
+.fab.jump{background:linear-gradient(135deg,var(--g1),var(--g3))}
+.pulse{width:9px;height:9px;border-radius:50%;background:#FFB0C0;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.7}}
+.jump-panel{display:none;position:fixed;bottom:130px;right:22px;z-index:9001;background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:12px;width:250px;max-height:60vh;overflow-y:auto;box-shadow:0 10px 36px rgba(0,0,0,.3)}
+.jump-panel.open{display:block;animation:fadeUp .2s ease}
+.jump-panel button{display:block;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:13px;padding:8px 10px;border-radius:8px;cursor:pointer;color:var(--text)}
+.jump-panel button:hover{background:var(--p-pale)}
+.jump-panel button.cur{background:var(--p-pale);color:var(--p-deep);font-weight:700}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,20,20,.82);z-index:99999;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.modal-overlay.open{display:flex;animation:fadeUp .3s ease}
+.modal-box{background:linear-gradient(160deg,#1A0A2E,#2E1050);border:2px solid #C070E8;border-radius:24px;max-width:700px;width:100%;max-height:86vh;overflow-y:auto;padding:30px;position:relative;box-shadow:0 20px 60px rgba(180,60,220,.4)}
+.modal-close{position:absolute;top:14px;right:16px;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:18px;width:34px;height:34px;border-radius:50%;cursor:pointer}
+.modal-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#E8D0FF;margin-bottom:6px}
+.modal-sub{color:rgba(255,255,255,.55);font-size:12.5px;margin-bottom:22px}
+.modal-item{background:rgba(255,255,255,.05);border:1px solid rgba(192,112,232,.25);border-radius:12px;padding:16px 16px 12px;margin-bottom:14px;position:relative}
+.modal-item-num{position:absolute;top:-9px;left:14px;background:linear-gradient(90deg,#C070E8,#9B40C8);color:#fff;font-size:10px;font-weight:800;padding:2px 10px;border-radius:10px;letter-spacing:.1em}
+.modal-item-q{color:#E8C8FF;font-weight:600;font-size:13.5px;margin-bottom:5px}
+.modal-item-a{color:rgba(255,255,255,.82);font-size:13px;line-height:1.65}
+.modal-item-a b{color:#A0FFD8}
+
+/* SEARCH */
+.search-overlay{display:none;position:fixed;inset:0;background:rgba(10,20,20,.7);z-index:99998;padding:70px 16px 16px;backdrop-filter:blur(3px)}
+.search-overlay.open{display:block}
+.search-box{max-width:680px;margin:0 auto;background:var(--card);border-radius:18px;border:1.5px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}
+.search-box input{width:100%;border:none;border-bottom:1.5px solid var(--border);padding:16px 20px;font-family:inherit;font-size:15px;background:var(--card);color:var(--text);outline:none}
+.search-res{max-height:60vh;overflow-y:auto}
+.sr{padding:12px 20px;border-bottom:1px solid var(--border);cursor:pointer}
+.sr:hover{background:var(--p-pale)}
+.sr .sr-t{font-weight:700;font-size:13.5px;color:var(--p-deep)}
+.sr .sr-s{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.sr .sr-x{font-size:12.5px;color:var(--text);margin-top:2px}
+.sr-empty{padding:22px;text-align:center;color:var(--muted);font-size:13.5px}
+
+@media(max-width:600px){
+  .hero{padding:36px 20px 32px}.container{padding:26px 14px 90px}.card{padding:18px 18px}
+  .nav-tools .tool-btn span{display:none}
+  .fc-scene{height:320px}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-eyebrow">💊 Blok Rational Therapy · dr. Devi · Farmakologi</div><h1>Obat Sistem <em>Gastrointestinal</em><br>Target Dulu, Obat Kemudian</h1><p class="hero-sub">Dari slide dan transkrip kuliah dr. Devi Usdiana Rosyidah, M.Sc. Logika inti: tentukan target (asam, mukosa, motilitas), baru pilih golongan.</p><div class="hero-pills"><span class="pill">🧪 Antasida & sitoprotektif</span><span class="pill">💊 AH2 & PPI</span><span class="pill">🤢 Antiemetik</span><span class="pill">🚽 Diare & laksatif</span><span class="pill">🧠 9 Soal + 20 Flashcard</span></div></div>
+<div class="sticky-nav" id="mainNav"><div class="nav-scroll"><button class="nav-btn active" data-sec="overview" onclick="show('overview')">🏠 Overview</button><button class="nav-btn" data-sec="antasida" onclick="show('antasida')">🧪 Antasida & Proteksi</button><button class="nav-btn" data-sec="asam" onclick="show('asam')">💊 AH2 & PPI</button><button class="nav-btn" data-sec="emetik" onclick="show('emetik')">🤢 Antiemetik</button><button class="nav-btn" data-sec="usus" onclick="show('usus')">🚽 Diare & Laksatif</button><button class="nav-btn" data-sec="glosarium" onclick="show('glosarium')">📖 Glosarium</button><button class="nav-btn" data-sec="ringkas" onclick="show('ringkas')">⚡ Ringkasan</button><button class="nav-btn" data-sec="quiz" onclick="show('quiz')">🧠 Quiz</button><button class="nav-btn" data-sec="flash" onclick="show('flash')">🃏 Flashcard</button></div><div class="nav-tools"><button class="tool-btn" onclick="openSearch()">🔍 <span>Cari</span></button><button class="tool-btn" id="themeBtn" onclick="toggleTheme()">🌙 <span>Gelap</span></button></div></div>
+<div class="container"><div id="sec-overview" class="section active"><h2 class="section-heading">Asam, Mukosa, atau Motilitas: Mana yang Mau Diubah?</h2><p class="section-desc">Peta berpikir sebelum menghafal nama obat: tentukan dulu targetnya, baru pilih golongan.</p><div class="card" id="c-tujuan" data-t="Tujuan belajar"><div class="card-title">🎯 Tujuan Belajar </div><ul class="styled-list"><li>Membedakan target obat: <b>netralkan</b> asam, <b>kurangi</b> sekresi, <b>hentikan</b> sekresi, <b>lindungi</b> mukosa, atau <b>eradikasi</b> H. pylori.</li><li>Menjelaskan mekanisme, aturan minum, efek samping, dan interaksi antasida, AH2, PPI, sitoprotektif.</li><li>Memilih antiemetik, antispasmodik, antidiare, dan laksatif sesuai mekanisme (prokinetik vs antimotilitas).</li><li>Mengenali jebakan: hidroksida vs karbonat, -prazol vs -konazol, H1 vs H2, metoklopramid vs domperidon.</li></ul><div class="alert alert-sky"><span class="alert-icon">ℹ️</span><div><b>Legenda penanda:</b> <span class="tg hy">High yield</span> <span class="tg mm">Must memorize</span> <span class="tg ct">Common trap</span> <span class="tg fa">Sering keluar</span> <span class="tg dr">Sorotan dosen</span> <span class="tg add">Tambahan</span><br>Penanda <i>Tambahan</i> = di luar slide/transkrip; cek ulang sebelum dijadikan pegangan.</div></div></div><div class="card" id="c-peta" data-t="Peta berpikir obat GI"><div class="card-title">🗺️ Alur Memilih Obat Lambung <span class="tg hy">High yield</span> </div><div class="flow"><div class="fb"><b>Diagnosis & keluhan utama</b><small>dispepsia, GERD, ulkus, mual-muntah, diare, konstipasi</small></div><div class="fa">▼</div><div class="fb"><b>Tentukan target</b><small>asam tinggi? epitel sudah luka? motilitas terlalu cepat/lambat? infeksi?</small></div><div class="fa">▼</div><div class="fb"><b>Pilih golongan</b><small>antasida · AH2 · PPI · sitoprotektif · antiemetik · antidiare · laksatif</small></div><div class="fa">▼</div><div class="fb ok"><b>Edukasi waktu minum & jarak dengan obat lain</b><small>antasida dan sukralfat menyerap/mengganggu obat lain</small></div></div><div class="dr-note">Obat asam lambung punya tiga pilihan: <b>netralkan saja</b> (antasida), <b>kurangi sekresi</b> (AH2), atau <b>hentikan sekresi</b> (PPI). Bila epitel sudah luka → <b>sitoprotektif</b>. <b>H. pylori itu diagnosis dan pilihan terakhir</b>, bukan tebakan pertama; dicoba setelah obat lain tidak respon.</div><div class="sub">Empat target utama</div><div class="grid-4"><div class="mini-card"><h4>Netralkan</h4><p>Antasida (basa lemah)</p><span class="arrow">→ cepat, singkat</span></div><div class="mini-card"><h4>Kurangi sekresi</h4><p>AH2 menghambat reseptor H2</p><span class="arrow">→ nokturnal</span></div><div class="mini-card"><h4>Hentikan sekresi</h4><p>PPI menghambat pompa H⁺/K⁺</p><span class="arrow">→ paling kuat</span></div><div class="mini-card"><h4>Lindungi mukosa</h4><p>Sukralfat, misoprostol, bismut</p><span class="arrow">→ epitel luka</span></div></div></div><div class="card" id="c-pola" data-t="Pola penyakit dan obat tersering"><div class="card-title">📈 Pola Penyakit & Obat Tersering <span class="tg fa">Sering keluar</span> </div><p style="font-size:13px;color:var(--muted)">Dari grafik slide: infeksi dan keluhan lambung mendominasi, sehingga antibiotik, antasida, antiemetik paling sering diresepkan. Angka dibaca dari grafik (perkiraan).</p><div class="table-wrap"><table><tr><th>Yang ditampilkan</th><th>Urutan teratas</th></tr><tr><td><b>Pola penyakit GIT</b></td><td>Gastroenteritis akut ≈34% · gastritis akut ≈14,7% · apendisitis akut ≈12% · pankreatitis ≈8%</td></tr><tr><td><b>Obat tersering</b></td><td>Antibiotik ≈25,4% · antasida ≈16,5% · antiemetik ≈13%</td></tr></table></div><div class="dr-note">Dosen mempertanyakan mengapa antibiotik nomor satu: apakah beban infeksi Indonesia memang tinggi, atau <b>higiene buruk</b> membuat infeksi sekunder mudah? Antibiotik tetap harus punya indikasi.</div></div><div class="card" id="c-golongan" data-t="Matriks golongan obat GI"><div class="card-title">🧩 Matriks Golongan Obat GI <span class="tg mm">Must memorize</span> </div><div class="table-wrap"><table><tr><th>Golongan</th><th>Contoh</th><th>Kunci</th></tr><tr><td><b>Antasida</b></td><td>Al(OH)₃ + Mg(OH)₂ ± simetikon</td><td>Menetralkan asam; menyerap obat lain</td></tr><tr><td><b>AH2</b></td><td>Simetidin, ranitidin, famotidin, nizatidin</td><td>Blok reseptor H2; efek malam</td></tr><tr><td><b>PPI</b></td><td>Omeprazol, lansoprazol, esomeprazol, pantoprazol, rabeprazol</td><td>Hambat HCl hingga 90%/24 jam</td></tr><tr><td><b>Sitoprotektif</b></td><td>Sukralfat, misoprostol, bismut, rebamipid</td><td>Lapisi/regenerasi epitel</td></tr><tr><td><b>Antiemetik</b></td><td>Metoklopramid, domperidon, ondansetron, dimenhidrinat</td><td>Pilih sesuai pemicu muntah</td></tr><tr><td><b>Antispasmodik</b></td><td>Hiosin butilbromid, atropin</td><td>Kolik organ berotot polos</td></tr><tr><td><b>Antidiare</b></td><td>Attapulgit, kaolin-pektin, loperamid, zink, oralit</td><td>Cairan dulu</td></tr><tr><td><b>Laksatif</b></td><td>Bisakodil, laktulosa, gliserin, parafin cair</td><td>Lembekkan/rangsang</td></tr><tr><td><b>Lain-lain</b></td><td>Asam ursodeoksikolat</td><td>Batu empedu</td></tr></table></div></div></div><div id="sec-antasida" class="section"><h2 class="section-heading">🧪 Antasida & Pelindung Mukosa</h2><p class="section-desc">Netralkan asam atau lapisi luka: cara kerja sederhana, tetapi jebakan interaksinya banyak.</p><div class="card" id="c-antasida" data-t="Antasida lokal vs sistemik"><div class="card-title">🧪 Antasida: Lokal vs Sistemik <span class="tg hy">High yield</span> <span class="tg mm">Must memorize</span> </div><p style="font-size:13px;color:var(--muted)">Pola membaca nama: <b>belakang -hidroksida → lokal</b> (tidak diserap); <b>belakang -karbonat/bikarbonat → sistemik</b> (diserap, efek ke seluruh tubuh).</p><div class="table-wrap"><table><tr><th></th><th>Lokal (non-sistemik)</th><th>Sistemik</th></tr><tr><td><b>Contoh</b></td><td>Al(OH)₃, Mg(OH)₂, Mg trisilikat</td><td>NaHCO₃, CaCO₃</td></tr><tr><td><b>Nasib</b></td><td>Hampir tidak diserap; bersifat demulsen & adsorben</td><td>Diserap; netralisasi → NaCl + H₂O + CO₂</td></tr><tr><td><b>Efek khas</b></td><td>Al: <span class="hl-r">konstipasi</span>; Mg: <span class="hl-r">katartik/diare</span></td><td>Sendawa & distensi (CO₂), alkalosis metabolik, retensi Na</td></tr><tr><td><b>Sediaan</b></td><td>Al(OH)₃ 200 mg + Mg(OH)₂ 200 mg, tab kunyah / suspensi</td><td>NaHCO₃ 500–1000 mg; dosis 1–4 g</td></tr></table></div><div class="dr-note">Al dan Mg dikombinasikan karena <b>efeknya berlawanan</b> (Al mengeraskan, Mg melembekkan feses). Tetapi pada sebagian orang tetap muncul diare atau sulit BAB. Tablet kunyah mempercepat penyerapan; <b>suspensi lebih cepat</b> dan kapasitas netralisasi lebih besar.</div></div><div class="card" id="c-antasida-es" data-t="Efek samping dan aturan minum antasida"><div class="card-title">⏱️ Aturan Minum, Efek Samping & Interaksi <span class="tg mm">Must memorize</span> </div><ul class="styled-list"><li><b>Waktu:</b> 1 dan 3 jam setelah makan + sebelum tidur; gejala berat atau refluks tak terkontrol: tiap 30–60 menit.</li><li><b>Perut kosong:</b> lambung mengosongkan antasida ±30 menit (efek &lt;1 jam). Dengan makanan, pH ≈5 selama ±1 jam dan efek diperpanjang 2–3 jam.</li><li><b>Ginjal terganggu:</b> Al menumpuk → <span class="hl-r">metabolic bone disease & ensefalopati</span>; Mg → <span class="hl-r">hipermagnesemia</span>.</li><li><b>Sistemik jangka panjang:</b> sindrom susu-alkali (NaHCO₃/CaCO₃ + susu: sakit kepala, mual, K⁺↑, alkalosis, batu ginjal), batu ginjal, osteomalasia, Na tinggi (penyakit kardiovaskular), CaCO₃ → <i>acid rebound</i> (hipergastrinemia).</li><li><b>Interaksi:</b> antasida <b>mengadsorbsi/mengurangi absorpsi</b> INH, penisilin, tetrasiklin, nitrofurantoin, asam nalidiksat, sulfonamid, fenilbutazon → <span class="hl-p">beri jarak 2–3 jam</span>.</li><li><b>Simetikon:</b> mengurangi volume gas dan pembusaan (menurunkan refluks esofagus); sediaan sering digabung dengan antasida.</li></ul><div class="dr-note">Perut kosong = <b>sebelum makan</b> atau 3–4 jam setelah makan. Bukan berarti harus makan setelah minum obat. Antasida sering <b>self-medication</b>; hati-hati bila dipakai sistemik jangka panjang.</div></div><div class="card" id="c-proteksi" data-t="Sitoprotektif"><div class="card-title">🛡️ Pelindung Mukosa (Sitoprotektif) <span class="tg hy">High yield</span> <span class="tg mm">Must memorize</span> </div><div class="table-wrap"><table><tr><th>Obat</th><th>Mekanisme</th><th>Aturan & dosis (slide)</th><th>Catatan penting</th></tr><tr><td><b>Sukralfat</b> (tab 500 mg)</td><td>Sukrosa oktasulfat + Al(OH)₃ → gel lengket di dasar ulkus (aktif pH &lt;4) hingga ±6 jam; ↑PG & EGF; ikat garam empedu</td><td>Perut kosong, 1 jam sebelum makan. 1 g 4×/hari (ulkus duodenum aktif); 1 g 2×/hari pemeliharaan; anak 40–80 mg/kg/hari tiap 6 jam</td><td><span class="hl-r">Jangan antasida 30 menit sesudahnya</span>; konstipasi; Al ↑ pada gagal ginjal; hambat absorpsi obat lain → beri 2 jam setelah obat lain; profilaksis ulkus stres</td></tr><tr><td><b>Misoprostol</b></td><td>Analog PGE₁; ikat EP3 sel parietal → ↓cAMP & asam; ↑mukus, bikarbonat, aliran darah</td><td>Pencegahan ulkus akibat NSAID (200 µg 4×/hari, slide regimen)</td><td>Diare, kram, kontraksi uterus → <span class="hl-r">kontraindikasi hamil</span>; menorrhagia; memperberat IBD; dipakai juga untuk induksi persalinan; jarang dipakai karena ES</td></tr><tr><td><b>Bismut</b></td><td>Rangsang mukus & bikarbonat, efek antibakteri</td><td>Kombinasi antibiotik untuk eradikasi H. pylori</td><td>Mencegah ulkus kambuh</td></tr><tr><td><b>Rebamipid</b></td><td>Regenerasi PG mukosa, menangkap ROS</td><td>150 mg 2×/hari atau 100 mg 3×/hari</td><td>Lebih mahal (dosen)</td></tr><tr><td><b>Karbenoksolon</b></td><td>Derivat asam glisirizat (licorice); hambat 11β-HSD tipe I → kortisol aktifkan reseptor mineralokortikoid</td><td>Terapi ulkus di Eropa</td><td><span class="hl-r">Hipokalemia & hipertensi</span></td></tr></table></div><div class="dr-note">NSAID mengganggu pembentukan <b>mukus (sitoprotektif)</b> sehingga mukosa mudah luka. Sitoprotektif dipilih bila epitel memang sudah rusak, bukan sekadar asam tinggi.</div></div><div class="card" id="c-trap-gi" data-t="Jebakan antasida dan sitoprotektif"><div class="card-title">🪤 Jebakan <span class="tg ct">Common trap</span> </div><ul class="styled-list"><li><b>Antasida vs sukralfat:</b> sukralfat butuh asam untuk aktif; antasida setelahnya <span class="hl-r">menggagalkan</span> efeknya.</li><li><b>Hidroksida vs karbonat:</b> yang di belakang -karbonat bersifat sistemik (CO₂, alkalosis, batu ginjal).</li><li><b>Misoprostol:</b> analog prostaglandin untuk lambung, tetapi <b>kontraindikasi hamil</b> (kontraksi uterus).</li><li><b>Kanan-kiri:</b> Al → konstipasi; Mg → diare. Obat yang sama bisa tidak konsisten antar pasien.</li></ul></div></div><div id="sec-asam" class="section"><h2 class="section-heading">💊 AH2 & PPI</h2><p class="section-desc">Dua cara menekan asam: blok reseptor H2 (sedang) atau blok pompa proton (paling kuat).</p><div class="card" id="c-ah2" data-t="AH2 blocker"><div class="card-title">🔶 AH2 (Antagonis Reseptor Histamin-2) <span class="tg hy">High yield</span> <span class="tg mm">Must memorize</span> </div><p style="font-size:13px;color:var(--muted)">Hati-hati: <b>antihistamin-2 ≠ antihistamin-1</b>. H1 untuk alergi (CTM, cetirizin); H2 untuk asam lambung; reseptor, tempat, dan efeknya berbeda.</p><div class="table-wrap"><table><tr><th>Obat</th><th>Potensi relatif</th><th>Durasi kerja IV</th><th>Dosis GERD (slide)</th></tr><tr><td><b>Simetidin</b></td><td>1</td><td>4–5 jam</td><td>400/800 mg 2×/hari</td></tr><tr><td><b>Ranitidin</b> (tab 150 mg, inj 25 mg/mL)</td><td>4–10</td><td>6–8 jam</td><td>150/300 mg 2×/hari</td></tr><tr><td><b>Nizatidin</b></td><td>4–10</td><td>n/a</td><td>150/300 mg 2×/hari</td></tr><tr><td><b>Famotidin</b></td><td>20–50</td><td>10–12 jam</td><td>20/40 mg 2×/hari</td></tr></table></div><ul class="styled-list"><li><b>MK:</b> kompetisi reversibel dengan histamin di reseptor H2 sel parietal → ↓sekresi asam <i>basal</i> dan nokturnal; asam akibat makanan, gastrin, vagus ikut turun.</li><li><b>Frekuensi:</b> mengikuti durasi kerja. Efek nokturnal → 1×/hari sebelum tidur; sebagian agen menjaga pH &gt;3 selama ±10 jam/hari → 2×/hari.</li><li><b>ES:</b> diare, sakit kepala, mengantuk, nyeri otot, halusinasi/delirium; <span class="hl-r">ginekomastia (simetidin: blok reseptor androgen)</span>, galaktorea; jangka panjang: sitopenia.</li></ul><div class="dr-note">Dosen menyebut frekuensi mengikuti durasi kerja (6–8 jam). Pasien laki-laki yang tiba-tiba ginekomastia: pikirkan <b>simetidin</b>. ⚠️ Perincian 'ranitidin/simetidin/famotidin tiap berapa kali' di transkrip berantakan; ikuti tabel dosis di atas.</div></div><div class="card" id="c-ppi" data-t="PPI"><div class="card-title">🔷 PPI (Proton Pump Inhibitor) <span class="tg hy">High yield</span> <span class="tg mm">Must memorize</span> </div><ul class="styled-list"><li><b>MK:</b> menghambat H⁺/K⁺-ATPase sel parietal secara selektif; dosis tunggal menekan HCl hingga <b>90% selama 24 jam</b>. <b>Prodrug</b> yang aktif di lingkungan asam, basa lemah.</li><li><b>Sediaan:</b> tidak stabil dalam asam → <b>kapsul/tablet salut enterik</b> (granul; dosen: 'kalau digoyang berbunyi, itu PPI').</li><li><b>FK:</b> absorpsi cepat, ikatan protein tinggi, metabolisme hati, T½ 1–2 jam tetapi <b>durasi panjang</b>; steady state 2–5 hari; 1–2×/hari.</li><li><b>Indikasi:</b> ulkus gaster/duodenum, GERD, esofagitis, sindrom Zollinger-Ellison, bagian terapi H. pylori; injeksi (esomeprazol 40 mg, lansoprazol 30 mg, omeprazol 40 mg) untuk IGD/rawat inap dengan perdarahan saluran cerna.</li></ul><div class="table-wrap"><table><tr><th>Obat</th><th>Dosis GERD/ulkus per hari (slide)</th><th>Catatan</th></tr><tr><td><b>Omeprazol</b> (kaps 20 mg)</td><td>20 mg (ulkus duodenum bisa 40 mg)</td><td>Paling sering ditemui; interaksi klopidogrel</td></tr><tr><td><b>Esomeprazol</b></td><td>20–40 mg</td><td>Isomer omeprazol; interaksi klopidogrel</td></tr><tr><td><b>Lansoprazol</b> (kaps 30 mg)</td><td>15 mg (nonerosif) / 30 mg (erosif)</td><td>Sering ditemui</td></tr><tr><td><b>Pantoprazol</b></td><td>40 mg</td><td>Interaksi obat paling sedikit (tabel interaksi)</td></tr><tr><td><b>Rabeprazol</b></td><td>20 mg</td><td>—</td></tr></table></div><div class="alert alert-peach"><span class="alert-icon">⏰</span><div><b>Waktu minum:</b> 1 jam sebelum makan (slide sediaan omeprazol/lansoprazol); slide FK menyebut 30 menit sebelum makan. ⚠️ Pegang prinsip <b>sebelum makan</b>; angka menit bervariasi antar slide.</div></div><div class="dr-note">PPI itu <b>obat perut yang efek sampingnya tetap ada</b>: mual, nyeri perut, konstipasi, sakit kepala. Jangka panjang merusak flora normal lambung dan dapat memicu infeksi saluran napas. Tentukan apakah pasien <b>masih perlu</b>, jangan diteruskan otomatis.</div></div><div class="card" id="c-ppi-es" data-t="PPI jangka panjang dan interaksi"><div class="card-title">⚠️ PPI Jangka Panjang & Interaksi <span class="tg hy">High yield</span> </div><div class="table-wrap"><table><tr><th>Masalah klinis</th><th>Mekanisme</th><th>Implikasi</th></tr><tr><td>Klopidogrel kurang efektif</td><td>Omeprazol/esomeprazol menghambat CYP2C19</td><td>↓aktivitas antiplatelet</td></tr><tr><td>Defisiensi B12</td><td>pH naik → absorpsi menurun</td><td>Anemia, neuropati</td></tr><tr><td>Hipomagnesemia, ↓kalsium</td><td>Absorpsi Mg & Ca turun</td><td>Kram, aritmia; osteoporosis, fraktur</td></tr><tr><td>Infeksi (C. difficile, pneumonia)</td><td>Perlindungan asam lambung berkurang</td><td>Diare, infeksi paru</td></tr><tr><td>Ketokonazol/levotiroksin/besi</td><td>pH naik → absorpsi berubah</td><td>Gagal terapi / TSH berfluktuasi / anemia besi</td></tr><tr><td>Hipergastrinemia & rebound</td><td>Sekresi asam melonjak setelah stop mendadak</td><td>Turunkan bertahap (taper)</td></tr></table></div><p style="font-size:13px;color:var(--muted)">Efek samping jangka pendek: sakit kepala, ruam, pusing, mual, nyeri perut, kembung, konstipasi, diare.</p></div><div class="card" id="c-regimen" data-t="Regimen GERD, ulkus, H. pylori"><div class="card-title">🩺 Pilihan Terapi: GERD, Ulkus, H. pylori <span class="tg mm">Must memorize</span> </div><div class="sub">GERD bertingkat (slide)</div><div class="table-wrap"><table><tr><th>Derajat</th><th>Gejala</th><th>Terapi</th></tr><tr><td><b>I</b></td><td>Heartburn jarang, &lt;2–3 episode/minggu, tanpa gejala tambahan</td><td>Modifikasi gaya hidup + antasida dan/atau AH2 bila perlu</td></tr><tr><td><b>II</b></td><td>Gejala sering (&gt;2–3 episode/minggu) ± esofagitis</td><td><b>PPI</b> lebih efektif dari AH2</td></tr><tr><td><b>III</b></td><td>Kronik, kambuh setelah terapi, komplikasi (striktur, Barrett)</td><td>PPI 1–2×/hari</td></tr></table></div><div class="sub">Terapi H. pylori (slide, 10–14 hari)</div><div class="table-wrap"><table><tr><th>Regimen</th><th>Komposisi</th></tr><tr><td><b>Triple</b></td><td>PPI + klaritromisin 500 mg + amoksisilin 1 g, 2×/hari (metronidazol 500 mg 2×/hari dapat menggantikan amoksisilin)</td></tr><tr><td><b>Quadruple</b></td><td>PPI + metronidazol 250 mg + bismut subsalisilat 525 mg + tetrasiklin 500 mg, 4×/hari</td></tr><tr><td><b>Alternatif</b></td><td>PPI + amoksisilin 1 g 2×/hari + levofloksasin 250/500 mg 2×/hari, 10 hari</td></tr></table></div><div class="dr-note">Pada grafik perbandingan, <b>PPI mempertahankan pH target lebih lama</b> daripada AH2 (target pH &gt;3 ulkus duodenum, &gt;4 GERD, &gt;5 eradikasi H. pylori). Tetapi PPI harus benar-benar dibutuhkan.</div></div></div><div id="sec-emetik" class="section"><h2 class="section-heading">🤢 Antiemetik, Antispasmodik & Antihemoroid</h2><p class="section-desc">Mual-muntah punya banyak pemicu, jadi pilih antiemetik menurut reseptor yang dituju.</p><div class="card" id="c-emetik" data-t="Klasifikasi antiemetik"><div class="card-title">🧠 Antiemetik Menurut Reseptor <span class="tg hy">High yield</span> <span class="tg mm">Must memorize</span> </div><div class="table-wrap"><table><tr><th>Kelas</th><th>Contoh & sediaan</th><th>Paling cocok untuk</th></tr><tr><td><b>Antagonis 5-HT₃</b></td><td>Ondansetron (tab 4/8 mg, inj 2 mg/mL), granisetron</td><td>Muntah akibat kemoterapi/radioterapi (CINV); lini kuat</td></tr><tr><td><b>Antagonis D₂ (prokinetik)</b></td><td>Metoklopramid (tab 5/10 mg, sirup 5 mg/5 mL, drops 2 mg/mL, inj 5 mg/mL); domperidon (tab 10 mg, sirup 5 mg/5 mL, drops 5 mg/mL)</td><td>Mual-muntah umum, dispepsia, gastroparesis</td></tr><tr><td><b>Antihistamin H₁</b></td><td>Dimenhidrinat (tab 50 mg), prometazin, difenhidramin</td><td>Mabuk perjalanan/vestibular; <span class="hl-p">sedasi</span></td></tr><tr><td><b>Antikolinergik</b></td><td>Hiosin (skopolamin)</td><td>Mabuk perjalanan</td></tr><tr><td><b>Antagonis NK₁</b></td><td>Aprepitan, fosaprepitan</td><td>Muntah tertunda akibat sitotoksik</td></tr><tr><td><b>Adjuvan</b></td><td>Deksametason, benzodiazepin</td><td>Kombinasi untuk muntah kemoterapi</td></tr></table></div><div class="dr-note">Dimenhidrinat membuat <b>ngantuk</b>; jangan untuk orang yang harus fokus (operator mesin, pengemudi) kecuali sedang libur. Deksametason <b>bukan</b> obat mual umum: hanya untuk mual terkait kanker; efek gangguan lambungnya lebih dominan. Ondansetron juga dipakai pada hiperemesis yang tidak respon obat lain ⚠️ (transkrip: perlu dicek).</div></div><div class="card" id="c-emetik-d2" data-t="Metoklopramid vs domperidon"><div class="card-title">⚔️ Metoklopramid vs Domperidon <span class="tg ct">Common trap</span> <span class="tg hy">High yield</span> </div><div class="compare-wrap"><div class="compare-col left"><h4>Metoklopramid</h4><ul><li>Antagonis D₂ + prokinetik</li><li>Menembus sawar darah otak</li><li><span class="hl-r">Efek ekstrapiramidal (kejang/distonia)</span> lebih sering, terutama anak</li></ul></div><div class="compare-col right"><h4>Domperidon</h4><ul><li>Antagonis D₂ + prokinetik</li><li><b>Tidak</b> menembus sawar darah otak → EPS lebih kecil</li><li>↑Prolaktin: galaktorea, ginekomastia, libido↓, gangguan menstruasi</li></ul></div></div><div class="dr-note">Keduanya 'satu keluarga', efek prokinetik sama. <b>Jangan beri prokinetik pada diare</b> karena peristaltik sudah kencang. Pada anak yang tiba-tiba kejang dan tanpa penyakit lain, tanyakan riwayat metoklopramid. Sirup vs drops: sirup per <b>5 mL</b>, drops per <b>1 mL</b> (konsentrasi jauh lebih tinggi).</div></div><div class="card" id="c-spasmo" data-t="Antispasmodik dan antihemoroid"><div class="card-title">🌀 Antispasmodik & Antihemoroid <span class="tg hy">High yield</span> </div><ul class="styled-list"><li><b>Antispasmodik:</b> atropin (tab 0,5 mg; inj 0,25 mg/mL) dan hiosin butilbromid (tab 10 mg; inj 20 mg/mL) mengurangi gerak otot polos organ dalam: kolik renal/bilier, dismenorea, nyeri perut karena spasme. <span class="hl-r">Hati-hati ileus</span> bila gerak usus ditekan terlalu kuat.</li><li><b>Antihemoroid:</b> supositoria kombinasi bismut subgalat, heksaklorofen, lidokain, seng oksida (slide). Hanya mengurangi nyeri/peradangan; <b>faktor risiko</b> harus dikoreksi.</li><li><b>Hemoroid</b> = pelebaran pembuluh darah dekat dubur. Faktor risiko: konstipasi, obesitas, kehamilan, duduk lama, mengangkat beban. Grade 1 (berdarah) → 2 (benjolan) → 3 (masuk manual) → 4 (tak bisa masuk); grade 3–4 → tindakan bedah <span class="tg dr">Sorotan dosen</span></li><li>SKDI 2026: hemoroid grade 1–2 dituntaskan dokter umum; grade 3 → tatalaksana awal dan rujuk <span class="tg add">Tambahan</span></li></ul></div></div><div id="sec-usus" class="section"><h2 class="section-heading">🚽 Diare, Laksatif & Asam Ursodeoksikolat</h2><p class="section-desc">Dua arah yang berlawanan: perlambat/serap cairan (diare) atau lembekkan/percepat feses (konstipasi).</p><div class="card" id="c-diare" data-t="Antidiare"><div class="card-title">💧 Antidiare: Cairan Dulu <span class="tg hy">High yield</span> <span class="tg mm">Must memorize</span> </div><div class="flow"><div class="fb"><b>Diare = BAB cair &gt;3×/hari</b><small>kurang dari itu, belum tentu diare</small></div><div class="fa">▼</div><div class="fb"><b>1. Ganti cairan & elektrolit</b><small>oralit; zink 10 hari pada anak</small></div><div class="fa">▼</div><div class="fb"><b>2. Obat hanya meredakan keluhan</b><small>attapulgit, kaolin-pektin, loperamid</small></div><div class="fa">▼</div><div class="fb ok"><b>3. Antibiotik hanya bila ada indikasi bakteri</b><small>demam tinggi, darah, lendir</small></div></div><div class="table-wrap"><table><tr><th>Obat</th><th>Sediaan</th><th>Mekanisme / catatan</th></tr><tr><td><b>Attapulgit</b></td><td>Tablet</td><td>Adsorben; 1200–1500 mg tiap BAB cair atau tiap 2 jam (maks 9000 mg/hari)</td></tr><tr><td><b>Kaolin-pektin</b></td><td>Kaolin 550 mg + pektin 20 mg</td><td>Adsorben; 30–120 mL tiap BAB cair</td></tr><tr><td><b>Loperamid</b></td><td>Tab salut selaput 2 mg</td><td>Antimotilitas; ↑tonus sfingter ani; antisekretori terhadap toksin kolera/E. coli; awal 4 mg lalu 2 mg tiap BAB cair; <span class="hl-r">tidak untuk anak</span>; overdosis → ileus paralitik</td></tr><tr><td><b>Zink</b></td><td>Tab dispersibel 20 mg, sirup 20 mg/5 mL, serbuk 10 mg</td><td>Diberikan bersama oralit selama <b>10 hari</b></td></tr><tr><td><b>Oralit</b></td><td>Garam oralit</td><td>Pengganti cairan & elektrolit: terapi utama</td></tr></table></div><div class="dr-note">Diare nonspesifik (iritatif makanan/minuman) boleh diberi adsorben. Diare karena <b>racun</b>: adsorben menolong. Diare bakteri dibuktikan dulu (demam tinggi, darah-lendir). Diare yang <b>tidak membaik</b> dengan apa pun (curiga IBS/IBD) → rujuk. Probiotik hanya memperbaiki flora, tidak langsung menyembuhkan.</div></div><div class="card" id="c-laks" data-t="Laksatif"><div class="card-title">🚽 Laksatif / Katartik <span class="tg hy">High yield</span> <span class="tg mm">Must memorize</span> </div><div class="table-wrap"><table><tr><th>Kelas</th><th>Contoh</th><th>Mekanisme & onset</th></tr><tr><td><b>Pembentuk massa</b></td><td>Metilselulosa, psilium, agar; diet serat</td><td>Menahan air di feses; 1–3 hari</td></tr><tr><td><b>Pelunak / emolien</b></td><td>Dokusat, parafin cair, minyak zaitun; gliserin supositoria</td><td>Melunakkan feses</td></tr><tr><td><b>Osmotik / garam</b></td><td>Laktulosa (sirup 3,335 g/5 mL), PEG, Mg sulfat, Na fosfat (hanya untuk kolonoskopi)</td><td>Menarik air ke lumen; PEG 17 g/dosis; laktulosa 15–30 mL</td></tr><tr><td><b>Stimulan</b></td><td>Bisakodil (tab 5 mg, supositoria 10 mg), senna, kaskara, minyak jarak</td><td>Bisakodil: ↑sekresi/↓absorpsi air (hidrasi) <b>+</b> prokinetik (HAPC); oral 6–8 jam; rektal lebih cepat</td></tr></table></div><div class="dr-note">Laksatif membuat feses lebih lembek agar mudah keluar. Bila <b>kebablasan jadi diare</b>; sebaliknya obat diare yang berlebihan menjadi konstipasi. Kombinasi parafin + gliserin + fenolftalein ada di sediaan; hindari dosis ganda.</div><div class="alert alert-teal"><span class="alert-icon">🪨</span><div><b>Asam ursodeoksikolat</b> (asam empedu): digunakan untuk <b>melarutkan batu empedu</b>.</div></div></div></div><div id="sec-glosarium" class="section"><h2 class="section-heading">📖 Glosarium Obat GI</h2><p class="section-desc">Istilah dari kuliah ini. Ketik untuk menyaring.</p><div class="card" id="c-gloss" data-t="Glosarium istilah"><input class="gl-filter" id="glFilter" placeholder="🔎 Saring istilah… (mis. PPI, antasida)" oninput="filterGl()"><div id="glList"></div></div></div><div id="sec-ringkas" class="section"><h2 class="section-heading">⚡ Ringkasan & Quick Review</h2><p class="section-desc">Baca ini 10 menit sebelum ujian.</p><div class="card" id="c-ringkas1" data-t="Ringkasan satu halaman"><div class="card-title">📌 Satu Halaman </div><ul class="styled-list"><li><b>Target dulu:</b> netralkan (antasida) → kurangi (AH2) → hentikan (PPI) → lindungi (sitoprotektif). H. pylori = pilihan terakhir.</li><li><b>Antasida:</b> hidroksida = lokal, karbonat = sistemik; Al konstipasi, Mg diare; jarak 2–3 jam dari obat lain.</li><li><b>AH2:</b> efek nokturnal; ES ginekomastia (simetidin); <b>PPI:</b> prodrug enterik, hambat HCl 90%/24 jam, sebelum makan, jangka panjang ada risiko.</li><li><b>Sukralfat</b> perut kosong, jangan antasida 30 menit; <b>misoprostol</b> kontraindikasi hamil.</li><li><b>Antiemetik:</b> metoklopramid EPS (anak!) > domperidon; ondansetron untuk CINV; dimenhidrinat ngantuk.</li><li><b>Diare:</b> cairan + zink dulu; loperamid tidak untuk anak; <b>laksatif</b> kebablasan → diare.</li></ul></div><div class="card" id="c-rumus" data-t="Angka dan dosis wajib hafal"><div class="card-title">🔢 Angka & Dosis <span class="tg mm">Must memorize</span> </div><div class="table-wrap"><table><tr><th>Item</th><th>Nilai (dari slide)</th></tr><tr><td>Al(OH)₃ + Mg(OH)₂</td><td>200 mg + 200 mg per tab kunyah/suspensi</td></tr><tr><td>Sukralfat</td><td>1 g 4×/hari (aktif) · 1 g 2×/hari (pemeliharaan) · anak 40–80 mg/kg/hari tiap 6 jam</td></tr><tr><td>Durasi IV AH2</td><td>Simetidin 4–5 jam · ranitidin 6–8 jam · famotidin 10–12 jam</td></tr><tr><td>PPI</td><td>Hambat HCl ≤90%/24 jam · T½ 1–2 jam · steady state 2–5 hari</td></tr><tr><td>Rebamipid</td><td>150 mg 2×/hari atau 100 mg 3×/hari</td></tr><tr><td>Loperamid</td><td>Awal 4 mg lalu 2 mg tiap BAB cair</td></tr><tr><td>Zink</td><td>10 hari bersama oralit</td></tr></table></div></div><div class="card" id="c-sumber" data-t="Sumber dan catatan kejujuran"><div class="card-title">📚 Sumber & Catatan Kejujuran </div><ul class="styled-list"><li>Sumber: slide <i>Obat gastrointestinal 2026</i> (dr. Devi Usdiana Rosyidah) + transkrip kuliah. Angka dibaca dari slide berupa gambar tabel; bila meragukan, cek Fornas 2023 atau buku rujukan di slide.</li><li>Transkrip adalah hasil speech-to-text: nama obat dan frekuensi bagian AH2/antiemetik berantakan; diberi ⚠️ atau <span class="tg add">Tambahan</span>.</li><li>⚠️ Waktu PPI: 30 menit (slide FK) vs 1 jam (slide sediaan); angka ranitidin/dosis perlu dicek ke Fornas.</li><li>Tag SKDI hemoroid berasal dari dokumen SKDI 2026, bukan slide kuliah.</li></ul></div></div><div id="sec-quiz" class="section"><h2 class="section-heading">🧠 Quiz: Vignette Klinis</h2><p class="section-desc"><span class="qn"></span> soal. Urutan pilihan diacak. Setelah menjawab, kamu mendapat pembahasan <b>tiap pilihan</b>.</p><div class="quiz-progress" id="quizProg"></div><div id="quizBox"></div><div class="score-card" id="scoreCard"><div style="font-size:40px;margin-bottom:8px">🩺</div><div class="score-big" id="scoreNum">0</div><div style="font-size:18px;opacity:.8">/ <span class="qn"></span></div><p id="scoreMsg" style="margin-top:8px;opacity:.9"></p><button class="btn btn-restart" onclick="resetQuiz()">🔁 Ulangi &amp; Acak Ulang</button></div></div><div id="sec-flash" class="section"><h2 class="section-heading">🃏 Flashcard: Active Recall</h2><p class="section-desc">Klik kartu untuk membalik. Tandai Hafal atau Ulang.</p><div class="fc-wrap"><div class="fc-meta"><span id="fcPos">1 / 1</span><span id="fcStat">Hafal: 0</span></div><div class="fc-scene"><div class="fc" id="fc" onclick="flipCard()"><div class="fc-face fc-front"><div id="fcQ"></div><div class="fc-hint">klik untuk melihat jawaban</div></div><div class="fc-face fc-back"><div id="fcA"></div></div></div></div><div class="fc-actions"><button class="btn ghost" onclick="fcMove(-1)">◀ Sebelumnya</button><button class="btn rose" onclick="fcMark(false)">↻ Ulang lagi</button><button class="btn" onclick="fcMark(true)">✓ Hafal</button><button class="btn ghost" onclick="fcMove(1)">Berikutnya ▶</button></div><div class="fc-actions" style="margin-top:10px"><button class="btn ghost" onclick="fcShuffle()">🔀 Acak</button><button class="btn ghost" id="fcOnly" onclick="fcToggleOnly()">Tampilkan hanya yang belum hafal: OFF</button><button class="btn ghost" onclick="fcReset()">♻ Reset</button></div></div></div></div>
+<div class="search-overlay" id="searchOv" onclick="if(event.target===this)closeSearch()"><div class="search-box"><input id="searchIn" placeholder="🔍 Cari di seluruh materi… (mis. PPI, antasida)" oninput="doSearch()"><div class="search-res" id="searchRes"><div class="sr-empty">Ketik minimal 2 huruf.</div></div></div></div>
+<div class="jump-panel" id="jumpPanel"></div>
+<div class="fab-stack"><button class="fab jump" onclick="toggleJump()">⚡ Quick Jump</button><button class="fab dr" onclick="openModal()"><span class="pulse"></span>🎤 Sorotan dr. Devi</button></div>
+<div class="modal-overlay" id="drModal" onclick="if(event.target===this)closeModal()"><div class="modal-box"><button class="modal-close" onclick="closeModal()">✕</button><div class="modal-title">🎤 Sorotan dr. Devi</div><div class="modal-sub">Hal yang ditekankan dosen secara lisan (dari transkrip kuliah).</div><div class="modal-item"><span class="modal-item-num">01</span><div class="modal-item-q">Tentukan targetnya dulu</div><div class="modal-item-a">Netralkan (antasida), kurangi (AH2), hentikan (PPI), lindungi (sitoprotektif). <b>H. pylori diagnosis & pilihan terakhir.</b></div></div><div class="modal-item"><span class="modal-item-num">02</span><div class="modal-item-q">NSAID dan mukus</div><div class="modal-item-a">NSAID mengganggu pembentukan mukus pelindung → ulkus. Pasien dengan NSAID jangka panjang perlu proteksi.</div></div><div class="modal-item"><span class="modal-item-num">03</span><div class="modal-item-q">Hidroksida lokal, karbonat sistemik</div><div class="modal-item-a">Al(OH)₃/Mg(OH)₂ lokal; NaHCO₃/CaCO₃ sistemik. Jarak <b>2–3 jam</b> dengan obat lain.</div></div><div class="modal-item"><span class="modal-item-num">04</span><div class="modal-item-q">Al vs Mg</div><div class="modal-item-a">Al → <b>konstipasi</b>, Mg → <b>katartik</b>; digabung agar seimbang.</div></div><div class="modal-item"><span class="modal-item-num">05</span><div class="modal-item-q">Perut kosong</div><div class="modal-item-a">Sebelum makan atau <b>3–4 jam setelah makan</b>; bukan 'harus makan setelah minum'.</div></div><div class="modal-item"><span class="modal-item-num">06</span><div class="modal-item-q">PPI = kapsul bergranul</div><div class="modal-item-a">Kalau digoyang berbunyi → PPI. Jangka panjang bisa merusak flora lambung dan memicu infeksi paru.</div></div><div class="modal-item"><span class="modal-item-num">07</span><div class="modal-item-q">Prokinetik & diare</div><div class="modal-item-a">Jangan prokinetik pada diare. Metoklopramid → <b>EPS/kejang</b> pada anak.</div></div><div class="modal-item"><span class="modal-item-num">08</span><div class="modal-item-q">Diare: cairan dulu</div><div class="modal-item-a">Antibiotik hanya bila demam tinggi + darah/lendir. Deksametason bukan untuk mual umum.</div></div><div class="modal-item"><span class="modal-item-num">09</span><div class="modal-item-q">Sirup vs drops</div><div class="modal-item-a">Domperidon sirup 5 mg/<b>5 mL</b>, drops 5 mg/<b>1 mL</b>. Cek sediaan saat menulis resep.</div></div><div class="modal-item"><span class="modal-item-num">10</span><div class="modal-item-q">Dimenhidrinat</div><div class="modal-item-a">Ngantuk; hindari pada orang yang harus fokus (mesin, kendaraan).</div></div><button class="btn" style="width:100%;margin-top:6px" onclick="closeModal();show('quiz')">🧠 Langsung ke Quiz →</button></div></div>
+<script>
+const QUIZ = [{"lvl": "C3", "topic": "SITOPROTEKTIF", "v": "Pria 58 tahun dengan osteoartritis lutut akan memakai NSAID jangka panjang dan berisiko tinggi tukak lambung. Dokter ingin obat pelindung berupa analog prostaglandin.", "q": "Obat yang paling sesuai adalah…", "o": [["Misoprostol", true, "Benar. Analog PGE₁; ikat EP3 sel parietal → ↓cAMP dan asam, ↑mukus-bikarbonat; dipakai mencegah ulkus NSAID."], ["Sukralfat", false, "Pelindung gel berbasis Al(OH)₃, bukan analog prostaglandin."], ["Rebamipid", false, "Sitoprotektif yang meregenerasi PG mukosa, bukan analog PGE₁ sintetis."], ["Ranitidin", false, "AH2: menekan asam, bukan analog prostaglandin."], ["Karbenoksolon", false, "Derivat asam glisirizat; tidak dipilih karena hipokalemia dan hipertensi."]], "k": "Misoprostol = analog PGE₁ untuk pencegahan ulkus NSAID; kontraindikasi hamil."}, {"lvl": "C3", "topic": "INTERAKSI ANTASIDA", "v": "Pria 40 tahun yang sedang minum isoniazid untuk TB paru mengeluh nyeri ulu hati. Ia meminum suspensi Al(OH)₃/Mg(OH)₂ bersamaan dengan obat TB.", "q": "Masalah utama yang perlu dikoreksi adalah…", "o": [["Antasida mengurangi absorpsi INH sehingga perlu jarak 2–3 jam", true, "Benar. Antasida bersifat adsorben dan mengurangi absorpsi INH, jadi beri jarak."], ["INH meningkatkan pH sehingga antasida tak diperlukan", false, "INH tidak menurunkan asam lambung; asam tetap perlu diatasi."], ["Antasida meningkatkan toksisitas INH di hati", false, "Mekanisme utama adalah ↓absorpsi, bukan toksisitas hati."], ["Mg(OH)₂ menyebabkan interaksi ganda dengan rifampisin", false, "Tidak ada interaksi khas sebesar itu di materi."], ["Suspensi lebih lambat diserap daripada tablet", false, "Suspensi justru bekerja lebih cepat dan kapasitasnya lebih besar."]], "k": "Antasida mengadsorbsi dan menurunkan absorpsi banyak obat (INH, tetrasiklin, penisilin, dll)."}, {"lvl": "C4", "topic": "GAGAL GINJAL", "v": "Wanita 62 tahun dengan penyakit ginjal kronik minum antasida Al/Mg setiap hari selama berbulan-bulan. Kini nyeri tulang dan kebingungan.", "q": "Komplikasi yang paling mungkin adalah…", "o": [["Toksisitas aluminium (tulang dan otak)", true, "Benar. Pada gagal ginjal Al tak terekskresi dan menumpuk."], ["Sindrom susu-alkali", false, "Butuh CaCO₃/NaHCO₃ dan susu; tidak ada pada vignette."], ["Alkalosis metabolik karena NaHCO₃", false, "Antasida yang dipakai Al/Mg, bukan bikarbonat."], ["Hipermagnesemia ringan tanpa gejala", false, "Mg bisa menumpuk, tetapi nyeri tulang dan kebingungan lebih khas Al."], ["Acid rebound karena gastrin tinggi", false, "Rebound berkaitan dengan CaCO₃ dan tidak menimbulkan nyeri tulang."]], "k": "Gagal ginjal + antasida Al → toksisitas Al (tulang, otak); Mg → hipermagnesemia."}, {"lvl": "C3", "topic": "GERD", "v": "Pria 35 tahun heartburn hampir tiap hari, kadang nyeri telan; endoskopi: esofagitis ringan. Gaya hidup sudah diubah tanpa hasil.", "q": "Terapi yang paling tepat adalah…", "o": [["PPI, misalnya omeprazol 20 mg 1 jam sebelum makan", true, "Benar. GERD sering ± esofagitis (derajat II): PPI lebih efektif dari AH2."], ["Antasida bila perlu saja", false, "Cocok untuk derajat I yang jarang."], ["AH2 nokturnal saja", false, "Kurang efektif dibanding PPI pada esofagitis."], ["Metoklopramid saja", false, "Prokinetik tambahan, bukan terapi utama esofagitis."], ["Antibiotik eradikasi H. pylori", false, "Tidak ada dasar infeksi H. pylori pada vignette."]], "k": "GERD derajat II ke atas: PPI. Derajat I: gaya hidup + antasida/AH2."}, {"lvl": "C4", "topic": "METOKLOPRAMID", "v": "Anak 4 tahun dengan gastroenteritis diberi sirup metoklopramid; beberapa jam kemudian mulut mencong, leher kaku, mata mendelik, tanpa demam.", "q": "Mekanisme kejadian ini dan alternatif lebih aman adalah…", "o": [["Blokade D₂ di otak (EPS); ganti domperidon (tak melewati BBB)", true, "Benar. Metoklopramid menembus BBB; domperidon tidak."], ["Blokade H₁ di otak; ganti dimenhidrinat", false, "Dimenhidrinat tidak menyebabkan EPS dan menimbulkan sedasi."], ["Blokade 5-HT₃; ganti ondansetron", false, "Gejala bukan dari 5-HT₃; 5-HT₃ bukan jawaban."], ["Reaksi alergi tipe I; beri adrenalin", false, "Tidak ada gatal, bengkak, atau sesak."], ["Hipoglikemia; beri dekstrosa", false, "Tidak ada riwayat dan tanda hipoglikemia."]], "k": "Metoklopramid → EPS (terutama anak); domperidon lebih jarang EPS karena tidak melewati BBB."}, {"lvl": "C3", "topic": "DIARE", "v": "Wanita 25 tahun diare cair 5× sejak kemarin, lemas, tanpa demam, tanpa darah/lendir.", "q": "Terapi yang paling diutamakan adalah…", "o": [["Oralit (cairan dan elektrolit)", true, "Benar. Diare: ganti cairan dulu; tanda bakteri tidak ada."], ["Ciprofloxacin", false, "Tidak ada demam tinggi/darah/lendir, tidak ada indikasi antibiotik."], ["Loperamid dosis tinggi", false, "Hanya meredakan keluhan; bukan prioritas."], ["Metoklopramid", false, "Prokinetik memperparah diare."], ["Hiosin butilbromid", false, "Antispasmodik bukan terapi utama diare."]], "k": "Diare: cairan dan elektrolit dulu; antibiotik hanya jika ada tanda infeksi bakteri."}, {"lvl": "C3", "topic": "SUKRALFAT", "v": "Pria 50 tahun ulkus duodenum aktif diberi sukralfat 4×1 g dan, karena nyeri, ingin tambahan antasida 10 menit sesudah sukralfat.", "q": "Saran yang benar adalah…", "o": [["Hindari antasida 30 menit setelah sukralfat (butuh asam)", true, "Benar. Sukralfat polimerisasi pada pH &lt;4; antasida menaikkan pH."], ["Boleh bersamaan karena sinergis", false, "Antasida justru menggagalkan sukralfat."], ["Minum sukralfat setelah makan agar lebih lama", false, "Sukralfat diminum perut kosong 1 jam sebelum makan."], ["Ganti dengan misoprostol karena sukralfat tidak efektif", false, "Tidak ada dasar mengganti."], ["Tambah NaHCO₃ untuk alkalinisasi", false, "Menaikkan pH menurunkan aktivasi sukralfat."]], "k": "Sukralfat aktif di pH asam; antasida (30 menit) dihindari. Diminum perut kosong."}, {"lvl": "C4", "topic": "PPI & KLOPIDOGREL", "v": "Pria 65 tahun pasca pemasangan stent koroner memakai klopidogrel; kini GERD dan diberi omeprazol.", "q": "Masalah yang perlu diperhatikan adalah…", "o": [["Omeprazol menghambat CYP2C19 sehingga aktivasi klopidogrel menurun", true, "Benar. Interaksi dari tabel PPI; pantoprazol dipilih bila perlu."], ["Omeprazol meningkatkan efek klopidogrel dan risiko perdarahan masif", false, "Interaksinya menurunkan, bukan meningkatkan efek."], ["Omeprazol menurunkan absorpsi klopidogrel melalui pH lambung", false, "Mekanisme utama adalah CYP2C19."], ["Tidak ada interaksi bermakna", false, "Ada interaksi bermakna."], ["Omeprazol menyebabkan hiperkalemia", false, "Bukan efek khas PPI."]], "k": "Omeprazol/esomeprazol ↓aktivasi klopidogrel (CYP2C19); pilih PPI lain bila perlu."}, {"lvl": "C2", "topic": "LAKSATIF", "v": "Pria 40 tahun BAB 2×/minggu, feses keras. Diberikan supositoria bisakodil 10 mg.", "q": "Mekanisme bisakodil adalah…", "o": [["Sekresi air naik, absorpsi turun, motilitas kolon naik", true, "Benar. Dua efek: hidrasi dan prokinetik (HAPC)."], ["Menarik air secara osmotik tanpa merangsang usus", false, "Itu laktulosa/PEG."], ["Membentuk massa feses seperti serat", false, "Itu psilium/metilselulosa."], ["Melunakkan feses lewat surfaktan", false, "Itu dokusat/parafin."], ["Agonis 5-HT₄ yang menurunkan sekresi", false, "Mekanisme berbeda."]], "k": "Bisakodil: stimulan → hidrasi (sekresi ↑, absorpsi air ↓) + prokinetik."}];
+const FLASH = [["Tiga cara mengurangi efek asam lambung?", "Netralkan (antasida), kurangi sekresi (AH2), hentikan sekresi (PPI)."], ["Beda antasida lokal vs sistemik dari namanya?", "-hidroksida = lokal (Al, Mg); -karbonat/bikarbonat = sistemik (CaCO₃, NaHCO₃)."], ["Efek Al(OH)₃ vs Mg(OH)₂ pada feses?", "Al → konstipasi; Mg → katartik/diare; keduanya digabung untuk menyeimbangkan."], ["Antasida + obat lain: apa yang dilakukan?", "Beri jarak 2–3 jam (adsorben, mengurangi absorpsi INH, tetrasiklin, penisilin, dll)."], ["Komplikasi Al pada gagal ginjal? Mg?", "Al: metabolic bone disease dan ensefalopati. Mg: hipermagnesemia."], ["Sukralfat diminum kapan? Pantangan?", "Perut kosong, 1 jam sebelum makan; hindari antasida 30 menit sesudahnya."], ["Misoprostol: golongan dan kontraindikasi?", "Analog PGE₁; kontraindikasi hamil (kontraksi uterus). Juga induksi persalinan."], ["Efek karbenoksolon yang berbahaya?", "Hipokalemia dan hipertensi (kortisol → reseptor mineralokortikoid)."], ["AH2 pada pasien laki-laki dengan ginekomastia?", "Simetidin (blok reseptor androgen)."], ["Mengapa AH2 sering 1×/hari sebelum tidur?", "Sekresi nokturnal tinggi; sebagian agen 2×/hari."], ["Mengapa PPI berbentuk kapsul/tablet salut enterik?", "Prodrug tidak stabil dalam asam; aktif di sel parietal."], ["Efek jangka panjang PPI?", "Defisiensi B12/Mg/Ca, fraktur, infeksi (C. difficile, pneumonia), rebound saat stop mendadak."], ["PPI yang berinteraksi dengan klopidogrel?", "Omeprazol dan esomeprazol (CYP2C19); pantoprazol dipilih bila perlu."], ["Urutan terapi H. pylori?", "Diagnosis/pilihan terakhir; triple (PPI + klaritromisin + amoksisilin) 10–14 hari."], ["Beda metoklopramid vs domperidon?", "Keduanya antagonis D₂ prokinetik; metoklopramid menembus BBB → EPS; domperidon tidak, tapi ↑prolaktin."], ["Kapan ondansetron? Dimenhidrinat?", "Ondansetron: muntah kemoterapi/radioterapi. Dimenhidrinat: mabuk perjalanan; menyebabkan ngantuk."], ["Prioritas terapi diare?", "Cairan dan elektrolit (oralit) + zink 10 hari; loperamid tidak untuk anak."], ["Mengapa prokinetik dilarang pada diare?", "Meningkatkan peristaltik; menambah lancar."], ["Mekanisme bisakodil?", "Hidrasi (sekresi ↑/absorpsi ↓) + prokinetik kolon."], ["Fungsi asam ursodeoksikolat?", "Terapi batu empedu."]];
+const GLOSS = [["Antasida", "Basa lemah yang menetralkan HCl lambung; lokal (hidroksida) atau sistemik (karbonat)."], ["Demulsen & adsorben", "Sifat antasida non-sistemik: melapisi mukosa dan menyerap zat lain (termasuk obat) → jarak minum 2–3 jam."], ["Sindrom susu-alkali", "NaHCO₃/CaCO₃ + susu → hipercalcemia, alkalosis, K⁺ ↑, batu ginjal."], ["Acid rebound", "Peningkatan sekresi asam setelah efek antasida (CaCO₃ → gastrin) berakhir."], ["AH2", "Antagonis reseptor histamin-2 sel parietal; simetidin, ranitidin, famotidin, nizatidin."], ["PPI", "Menghambat H⁺/K⁺-ATPase; prodrug yang diaktifkan asam; sediaan enterik."], ["Prodrug", "Obat yang menjadi aktif setelah diubah dalam tubuh (PPI aktif di lingkungan asam sel parietal)."], ["Sitoprotektif", "Melindungi/melapisi epitel lambung: sukralfat, misoprostol, bismut, rebamipid."], ["Misoprostol", "Analog PGE₁; mencegah ulkus NSAID; kontraindikasi hamil (kontraksi uterus)."], ["Sukralfat", "Sukrosa oktasulfat + Al(OH)₃; membentuk gel pelindung dasar ulkus; butuh pH asam; ±6 jam."], ["Prokinetik", "Meningkatkan peristaltik (metoklopramid, domperidon); kontraindikasi pada diare."], ["EPS (efek ekstrapiramidal)", "Gangguan gerak/distonia/kejang akibat blokade D₂ di otak, khas metoklopramid."], ["CTZ", "Chemoreceptor trigger zone di area postrema; target 5-HT₃, D₂, NK₁."], ["Antispasmodik", "Mengurangi kontraksi otot polos organ dalam (hiosin butilbromid, atropin)."], ["Ileus paralitik", "Usus berhenti bergerak; risiko dari antimotilitas/antikolinergik berlebihan (loperamid dosis berlebih)."], ["Oralit", "Larutan garam-glukosa pengganti cairan dan elektrolit pada diare."], ["Laksatif", "Obat pelancar BAB: pembentuk massa, pelunak, osmotik, stimulan."], ["HAPC", "High-amplitude propagated contractions, gelombang kontraksi kolon yang dirangsang bisakodil."]];
+/* ============ UTIL ============ */
+function $(id){return document.getElementById(id);}
+function secName(id){const b=document.querySelector('.nav-btn[data-sec="'+id+'"]');return b?b.textContent.trim():id;}
+function show(id,keep){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.sec===id));
+  $('sec-'+id).classList.add('active');
+  const act=document.querySelector('.nav-btn.active'); if(act) act.scrollIntoView({inline:'center',block:'nearest'});
+  if(!keep) window.scrollTo({top:0,behavior:'smooth'});
+  $('jumpPanel').classList.remove('open'); buildJump();
+}
+function toggle(btn){btn.classList.toggle('open');btn.nextElementSibling.classList.toggle('open');}
+function go(sec,el){show(sec,true);const t=$(el);if(t){setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'start'}),60);t.style.outline='3px solid var(--p-light)';setTimeout(()=>t.style.outline='',1800);}}
+function curSec(){const a=document.querySelector('.section.active');return a?a.id.replace('sec-',''):'';}
+
+/* theme */
+function toggleTheme(){
+  const d=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',d);
+  $('themeBtn').innerHTML=d==='dark'?'☀️ <span>Terang</span>':'🌙 <span>Gelap</span>';
+  try{localStorage.setItem('gi-theme',d);}catch(e){}
+}
+(function(){try{const t=localStorage.getItem('gi-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');$('themeBtn').innerHTML='☀️ <span>Terang</span>';}}catch(e){}})();
+
+/* chips (quick jump per section) */
+function buildChips(){
+  document.querySelectorAll('.section').forEach(sec=>{
+    const cards=[...sec.querySelectorAll('.card[id]')]; if(cards.length<2) return;
+    const d=document.createElement('div');d.className='chips';
+    d.innerHTML='<span class="chips-label">⚡ Lompat ke</span>';
+    cards.forEach(c=>{const a=document.createElement('a');a.textContent=c.dataset.t||c.id;a.onclick=()=>go(sec.id.replace('sec-',''),c.id);d.appendChild(a);});
+    const desc=sec.querySelector('.section-desc'); desc.insertAdjacentElement('afterend',d);
+  });
+}
+/* jump panel */
+function buildJump(){
+  const p=$('jumpPanel');p.innerHTML='';const cur=curSec();
+  document.querySelectorAll('.nav-btn').forEach(b=>{const x=document.createElement('button');x.textContent=b.textContent.trim();if(b.dataset.sec===cur)x.className='cur';x.onclick=()=>show(b.dataset.sec);p.appendChild(x);});
+}
+function toggleJump(){buildJump();$('jumpPanel').classList.toggle('open');}
+
+/* modal */
+function openModal(){const m=$('drModal');if(!m)return;m.classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){const m=$('drModal');if(m)m.classList.remove('open');document.body.style.overflow='';}
+
+/* glossary */
+function renderGl(list){if(!$('glList'))return;$('glList').innerHTML=list.map(g=>'<div class="gl" data-s="1"><b>'+g[0]+'</b><br><span>'+g[1]+'</span></div>').join('')||'<p style="color:var(--muted)">Tidak ada istilah cocok.</p>';}
+function filterGl(){const q=$('glFilter').value.toLowerCase();renderGl(GLOSS.filter(g=>(g[0]+' '+g[1]).toLowerCase().includes(q)));}
+
+/* search */
+function openSearch(){$('searchOv').classList.add('open');$('searchIn').value='';$('searchRes').innerHTML='<div class="sr-empty">Ketik minimal 2 huruf.</div>';setTimeout(()=>$('searchIn').focus(),50);}
+function closeSearch(){$('searchOv').classList.remove('open');}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function doSearch(){
+  const q=$('searchIn').value.trim().toLowerCase();const box=$('searchRes');
+  if(q.length<2){box.innerHTML='<div class="sr-empty">Ketik minimal 2 huruf.</div>';return;}
+  const out=[];
+  document.querySelectorAll('.card').forEach(c=>{
+    const txt=c.textContent.replace(/\s+/g,' ');const i=txt.toLowerCase().indexOf(q);if(i<0)return;
+    const sec=c.closest('.section').id.replace('sec-','');
+    const t=c.dataset.t||(c.querySelector('.card-title')?c.querySelector('.card-title').textContent:'')||'Kartu';
+    const s=Math.max(0,i-50),e=Math.min(txt.length,i+q.length+90);
+    const sn=esc(txt.slice(s,i))+'<mark>'+esc(txt.slice(i,i+q.length))+'</mark>'+esc(txt.slice(i+q.length,e));
+    out.push({sec,id:c.id,t,sn:(s>0?'…':'')+sn+(e<txt.length?'…':'')});
+  });
+  document.querySelectorAll('.gl').forEach(g=>{const txt=g.textContent;if(txt.toLowerCase().includes(q)){out.push({sec:'glosarium',id:'c-gloss',t:g.querySelector('b').textContent,sn:esc(txt.slice(0,140))});}});
+  box.innerHTML=out.length?'':'<div class="sr-empty">Tidak ditemukan.</div>';
+  out.slice(0,25).forEach(r=>{const d=document.createElement('div');d.className='sr';d.innerHTML='<div class="sr-s">'+secName(r.sec)+'</div><div class="sr-t">'+esc(r.t.replace(/\s+/g,' ').slice(0,80))+'</div><div class="sr-x">'+r.sn+'</div>';d.onclick=()=>{closeSearch();go(r.sec,r.id);};box.appendChild(d);});
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSearch();closeModal();const jp=$('jumpPanel');if(jp)jp.classList.remove('open');}if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openSearch();}});
+
+/* ============ QUIZ ============ */
+let answered={},score=0;
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function renderQuiz(){
+  document.querySelectorAll('.qn').forEach(x=>x.textContent=QUIZ.length);
+  answered={};score=0;$('scoreCard').classList.remove('show');
+  $('quizProg').innerHTML=QUIZ.map((_,i)=>'<div class="pdot" id="dot'+i+'"></div>').join('');
+  const L='ABCDE';
+  $('quizBox').innerHTML=QUIZ.map((q,qi)=>{
+    const opts=shuffle(q.o.map((o,i)=>({o,i})));
+    return '<div class="quiz-q" id="q'+qi+'"><div class="q-num">SOAL '+String(qi+1).padStart(2,'0')+' / '+q.topic+'</div><div class="q-lvl">'+q.lvl+'</div>'
+     +'<div class="q-vignette">'+q.v+'</div><p class="q-question">'+q.q+'</p><div class="q-opts">'
+     +opts.map((x,k)=>'<button class="q-opt" data-ok="'+(x.o[1]?1:0)+'" onclick="ans('+qi+',this)"><span class="ol">'+L[k]+'</span><span>'+x.o[0]+'</span></button>').join('')
+     +'</div><div class="q-exp" id="exp'+qi+'">'
+     +opts.map((x,k)=>'<div class="rz '+(x.o[1]?'ok':'no')+'"><b>'+(x.o[1]?'✅ ':'✖ ')+L[k]+(x.o[1]?' — Jawaban benar':' — Kurang tepat')+'</b>'+x.o[2]+'</div>').join('')
+     +'<div class="rz-concept">🧠 <b>Konsep inti:</b> '+q.k+'</div></div></div>';
+  }).join('');
+}
+function ans(qi,btn){
+  if(answered[qi])return;answered[qi]=true;
+  const card=$('q'+qi);const ok=btn.dataset.ok==='1';
+  card.querySelectorAll('.q-opt').forEach(b=>{b.disabled=true;if(b.dataset.ok==='1')b.classList.add('correct');});
+  if(ok){score++;$('dot'+qi).classList.add('ok');}else{btn.classList.add('wrong');$('dot'+qi).classList.add('no');}
+  $('exp'+qi).classList.add('show');
+  if(Object.keys(answered).length===QUIZ.length)setTimeout(showScore,700);
+}
+function showScore(){
+  const sc=$('scoreCard');sc.classList.add('show');$('scoreNum').textContent=score;
+  const m=['Yuk baca ulang tab materinya, kamu pasti bisa! 💪','Lumayan, fokus lagi ke pembahasan tiap pilihan. 📖','Bagus! Tinggal rapikan bagian yang masih salah. 🌟','Hampir sempurna! 🔥','PERFECT! 🩺✨'];
+  const r=score/QUIZ.length;$('scoreMsg').textContent=m[r<=.3?0:r<=.5?1:r<=.75?2:r<1?3:4];
+  sc.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetQuiz(){renderQuiz();window.scrollTo({top:0,behavior:'smooth'});}
+
+/* ============ FLASHCARD ============ */
+let fcOrder=[],fcI=0,fcKnown=new Set(),fcOnlyUnknown=false;
+function fcBuild(){fcOrder=FLASH.map((_,i)=>i);if(fcOnlyUnknown)fcOrder=fcOrder.filter(i=>!fcKnown.has(i));fcI=Math.min(fcI,Math.max(0,fcOrder.length-1));}
+function fcRender(){
+  $('fc').classList.remove('flip');
+  if(!fcOrder.length){$('fcQ').innerHTML='🎉 Semua kartu sudah hafal!';$('fcA').innerHTML='';$('fcPos').textContent='0 / 0';}
+  else{const c=FLASH[fcOrder[fcI]];$('fcQ').innerHTML=c[0];$('fcA').innerHTML=c[1];$('fcPos').textContent=(fcI+1)+' / '+fcOrder.length;}
+  $('fcStat').textContent='Hafal: '+fcKnown.size+' / '+FLASH.length;
+}
+function flipCard(){if(fcOrder.length)$('fc').classList.toggle('flip');}
+function fcMove(d){if(!fcOrder.length)return;fcI=(fcI+d+fcOrder.length)%fcOrder.length;fcRender();}
+function fcMark(k){if(!fcOrder.length)return;const id=fcOrder[fcI];if(k)fcKnown.add(id);else fcKnown.delete(id);if(fcOnlyUnknown&&k){fcBuild();fcRender();}else fcMove(1);}
+function fcShuffle(){shuffle(fcOrder);fcI=0;fcRender();}
+function fcToggleOnly(){fcOnlyUnknown=!fcOnlyUnknown;$('fcOnly').textContent='Tampilkan hanya yang belum hafal: '+(fcOnlyUnknown?'ON':'OFF');fcI=0;fcBuild();fcRender();}
+function fcReset(){fcKnown.clear();fcOnlyUnknown=false;$('fcOnly').textContent='Tampilkan hanya yang belum hafal: OFF';fcI=0;fcBuild();fcRender();}
+
+/* ============ INIT ============ */
+if($('glList'))renderGl(GLOSS);
+if($('quizBox'))renderQuiz();
+if($('fc')){fcBuild();fcRender();}
+buildChips();buildJump();
+</script>
+</body>
+</html>

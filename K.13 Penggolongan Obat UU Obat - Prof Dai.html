@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💊 Penggolongan Obat &amp; UU Obat — Prof. Da'i · Rational Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --p:#4A7FB5;--p-deep:#24456E;--p-mid:#6A9AC9;--p-light:#A9C8E8;--p-pale:#E6F0FA;
+  --rose:#D4788A;--rose-deep:#A84D60;--rose-pale:#FDE8EC;
+  --mint:#5FB894;--mint-deep:#2F7F63;--mint-pale:#E3F5EC;
+  --peach:#E8A87C;--peach-deep:#B8693A;--peach-pale:#FDF0E6;
+  --sky:#6FA8CF;--sky-deep:#2F6F96;--sky-pale:#E4F1FA;
+  --bg:#F4F8FD;--card:#fff;--text:#1B2B3E;--muted:#566B85;--border:#D3E2F2;--shadow:rgba(74,127,181,.14);--alt:#F8FBFE;
+  --th1:#24456E;--th2:#4A7FB5;
+  --g1:#2B4F7C;--g2:#4A7FB5;--g3:#7FAEDC;--g4:#C9DEF3;--g-em:#FFE9A0;
+--yel:#FBEBB0;--yel-d:#7A5C00;}
+[data-theme="dark"]{
+  --p:#8DB8E6;--p-deep:#BBD6F2;--p-mid:#6FA1D6;--p-light:#2E4F76;--p-pale:#172A40;
+  --rose:#E58C9E;--rose-deep:#F2A9B7;--rose-pale:#3A1F27;
+  --mint:#6BCBA2;--mint-deep:#8FE0BE;--mint-pale:#173226;
+  --peach:#EDB287;--peach-deep:#F2C29E;--peach-pale:#3A2A1A;
+  --sky:#7CB6DC;--sky-deep:#9CCDEB;--sky-pale:#162B3A;
+  --bg:#0D1520;--card:#142133;--text:#E4EDF8;--muted:#9DB3CC;--border:#263E5C;--shadow:rgba(0,0,0,.4);--alt:#111C2B;
+  --th1:#2B5282;--th2:#3F72AB;
+--yel:#4A3D12;--yel-d:#F5DE8A;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.75;transition:background .25s,color .25s}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--g1) 0%,var(--g2) 40%,var(--g3) 72%,var(--g4) 100%);padding:60px 52px 52px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;right:-80px;width:480px;height:480px;border-radius:50%;background:rgba(255,255,255,.07)}
+.hero::after{content:'';position:absolute;bottom:-100px;left:6%;width:320px;height:320px;border-radius:50%;background:rgba(232,168,124,.12)}
+.hero-eyebrow{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.92);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:20px;position:relative;z-index:1}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,52px);font-weight:900;color:#fff;line-height:1.12;margin-bottom:14px;position:relative;z-index:1}
+.hero h1 em{font-style:italic;color:var(--g-em)}
+.hero-sub{color:rgba(255,255,255,.8);font-size:14.5px;font-weight:300;max-width:620px;line-height:1.7;position:relative;z-index:1}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;position:relative;z-index:1}
+.pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);color:#fff;padding:6px 16px;border-radius:30px;font-size:12px;font-weight:500}
+
+/* NAV */
+.sticky-nav{position:sticky;top:0;z-index:200;background:linear-gradient(90deg,var(--g1),var(--g2));display:flex;align-items:stretch;box-shadow:0 3px 20px rgba(11,59,59,.45)}
+.nav-scroll{display:flex;overflow-x:auto;scrollbar-width:none;flex:1}
+.nav-scroll::-webkit-scrollbar{display:none}
+.nav-btn{background:none;border:none;color:rgba(214,245,238,.7);font-family:inherit;font-size:12px;font-weight:500;letter-spacing:.4px;padding:13px 17px;white-space:nowrap;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
+.nav-btn:hover,.nav-btn.active{color:#fff;border-bottom-color:var(--peach)}
+.nav-tools{display:flex;align-items:center;gap:6px;padding:0 10px;border-left:1px solid rgba(255,255,255,.15)}
+.tool-btn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:20px;padding:5px 12px;font-family:inherit;font-size:12px;cursor:pointer;white-space:nowrap;transition:background .2s}
+.tool-btn:hover{background:rgba(255,255,255,.25)}
+
+/* LAYOUT */
+.container{max-width:960px;margin:0 auto;padding:40px 24px 90px}
+.section{display:none;animation:fadeUp .3s ease}
+.section.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.section-heading{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--p-deep);margin-bottom:6px;line-height:1.2}
+.section-desc{color:var(--muted);font-size:13.5px;padding-bottom:16px;border-bottom:2px solid var(--border);margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+.chips a{font-size:11.5px;font-weight:600;color:var(--p-deep);background:var(--p-pale);border:1px solid var(--border);padding:4px 12px;border-radius:20px;cursor:pointer;transition:all .15s}
+.chips a:hover{background:var(--p);color:#fff;border-color:var(--p)}
+.chips-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);width:100%}
+
+/* CARDS */
+.card{background:var(--card);border-radius:18px;padding:24px 28px;margin-bottom:20px;border:1px solid var(--border);box-shadow:0 2px 14px var(--shadow);scroll-margin-top:70px}
+.card-title{font-family:'Lora',serif;font-size:17px;font-weight:600;color:var(--p-deep);margin-bottom:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card p{font-size:14px;margin-bottom:8px}
+.card p:last-child{margin-bottom:0}
+.sub{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+
+/* TAGS */
+.tg{display:inline-block;font-family:'DM Sans',sans-serif;font-size:9.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:3px 9px;border-radius:12px;vertical-align:middle;white-space:nowrap}
+.tg.hy{background:#E8A87C;color:#4A2810}
+.tg.mm{background:#D4788A;color:#fff}
+.tg.ct{background:#C0392B;color:#fff}
+.tg.fa{background:#2F6F96;color:#fff}
+.tg.dr{background:linear-gradient(90deg,#8E44AD,#C070E8);color:#fff}
+.tg.add{background:transparent;border:1px dashed var(--muted);color:var(--muted)}
+
+/* ALERTS */
+.alert{padding:13px 17px;border-radius:11px;margin:13px 0;font-size:13.5px;display:flex;gap:10px;line-height:1.65}
+.alert>div{flex:1}
+.alert-teal{background:var(--p-pale);border-left:4px solid var(--p);color:var(--p-deep)}
+.alert-rose{background:var(--rose-pale);border-left:4px solid var(--rose);color:var(--rose-deep)}
+.alert-mint{background:var(--mint-pale);border-left:4px solid var(--mint);color:var(--mint-deep)}
+.alert-peach{background:var(--peach-pale);border-left:4px solid var(--peach);color:var(--peach-deep)}
+.alert-sky{background:var(--sky-pale);border-left:4px solid var(--sky);color:var(--sky-deep)}
+.alert-icon{flex-shrink:0;font-size:15px;margin-top:1px}
+
+/* DR NOTE */
+.dr-note{background:linear-gradient(135deg,var(--p-pale),var(--peach-pale));border:1.5px solid var(--p-light);border-radius:13px;padding:14px 18px;margin:14px 0;font-size:13.5px;line-height:1.7}
+.dr-note::before{content:'🎤 Prof. Da\'i menekankan: ';font-weight:700;color:var(--p-deep)}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border);margin:10px 0 16px}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:520px}
+th{background:linear-gradient(90deg,var(--th1),var(--th2));color:#fff;padding:10px 13px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.3px}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;font-size:13px}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:var(--alt)}
+tr:hover td{background:var(--p-pale)}
+
+/* GRIDS */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:760px){.grid-3,.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.mini-card{background:var(--alt);border:1px solid var(--border);border-radius:13px;padding:14px 16px}
+.mini-card h4{font-family:'Lora',serif;font-size:14px;color:var(--p-deep);margin-bottom:6px}
+.mini-card p,.mini-card li{font-size:12.8px;color:var(--muted);line-height:1.6}
+.mini-card ul{padding-left:16px}
+.mini-card .arrow{display:block;margin-top:6px;font-weight:700;color:var(--rose-deep);font-size:12.5px}
+
+.styled-list{list-style:none;padding:0}
+.styled-list li{padding:7px 0 7px 24px;border-bottom:1px solid var(--border);font-size:13.5px;position:relative;line-height:1.65}
+.styled-list li::before{content:'◆';position:absolute;left:0;color:var(--p-light);font-size:9px;top:11px}
+.styled-list li:last-child{border-bottom:none}
+
+/* CLINICAL REASONING */
+.cr-box{background:linear-gradient(135deg,var(--p-pale),var(--sky-pale));border:1.5px solid var(--p-light);border-radius:14px;padding:18px 22px;margin:14px 0}
+.cr-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--p-deep);margin-bottom:10px}
+.cr-steps{counter-reset:cr;list-style:none;padding:0}
+.cr-steps li{counter-increment:cr;padding:7px 0 7px 36px;position:relative;font-size:13.5px;border-bottom:1px solid rgba(46,143,143,.2);line-height:1.65}
+.cr-steps li:last-child{border-bottom:none}
+.cr-steps li::before{content:counter(cr);position:absolute;left:0;top:8px;width:24px;height:24px;background:var(--p-mid);color:#fff;border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:700}
+
+/* FLOW */
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:12px 0}
+.flow .fb{background:var(--p-pale);border:1.5px solid var(--p-light);border-radius:11px;padding:10px 14px;font-size:13px;text-align:center}
+.flow .fb small{display:block;color:var(--muted);font-size:11.5px}
+.flow .fa{text-align:center;color:var(--p);font-size:16px;line-height:1.2;padding:2px 0}
+.flow .fb.warn{background:var(--rose-pale);border-color:var(--rose)}
+.flow .fb.ok{background:var(--mint-pale);border-color:var(--mint)}
+
+/* MNEMONIC */
+.mnemonic{background:linear-gradient(135deg,var(--p-pale),var(--peach-pale));border:2px solid var(--p-light);border-radius:15px;padding:18px 22px;margin:14px 0}
+.mnemonic-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--p-deep);margin-bottom:6px}
+.mnemonic-text{font-family:'Playfair Display',serif;font-size:19px;color:var(--text);font-weight:700}
+.mnemonic-sub{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.6}
+
+/* HIGHLIGHTS */
+.hl-t,.hl-r,.hl-m,.hl-p{padding:1px 7px;border-radius:5px;font-weight:600;font-size:13px}
+.hl-t{background:var(--p-pale);color:var(--p-deep)}
+.hl-r{background:var(--rose-pale);color:var(--rose-deep)}
+.hl-m{background:var(--mint-pale);color:var(--mint-deep)}
+.hl-p{background:var(--peach-pale);color:var(--peach-deep)}
+mark{background:#FFE08A;color:#3a2a00;padding:0 2px;border-radius:3px}
+
+/* COLLAPSE */
+.collapse-btn{background:none;border:none;width:100%;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0;font-family:inherit;color:var(--p-deep);font-weight:600;font-size:14px}
+.collapse-btn .chev{transition:transform .25s;font-size:11px;color:var(--muted)}
+.collapse-btn.open .chev{transform:rotate(180deg)}
+.collapse-body{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
+.collapse-body.open{display:block;animation:fadeUp .25s ease}
+
+/* COMPARE */
+.compare-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.compare-col{border-radius:13px;padding:16px 18px;border:2px solid}
+.compare-col.left{background:var(--p-pale);border-color:var(--p-light)}
+.compare-col.right{background:var(--rose-pale);border-color:var(--rose)}
+.compare-col h4{font-family:'Lora',serif;font-size:15px;margin-bottom:8px}
+.compare-col.left h4{color:var(--p-deep)}
+.compare-col.right h4{color:var(--rose-deep)}
+.compare-col li{font-size:13px;margin-left:16px;margin-bottom:3px}
+@media(max-width:600px){.compare-wrap{grid-template-columns:1fr}}
+
+/* SOROTAN / BANK TAG */
+.cohort-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:6px;margin:1px;color:#fff}
+.cohort-arthron{background:#B8566A}
+.cohort-aorta{background:#3E9C7C}
+.cohort-axon{background:#7A68B8}
+.cohort-ub{background:#C07A3A}
+
+/* GLOSSARY */
+.gl-filter{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:11px;background:var(--card);color:var(--text);font-family:inherit;font-size:14px;margin-bottom:14px}
+.gl{padding:11px 0;border-bottom:1px solid var(--border)}
+.gl:last-child{border-bottom:none}
+.gl b{color:var(--p-deep)}
+.gl span{font-size:13.5px;color:var(--text)}
+
+/* QUIZ */
+.quiz-progress{display:flex;gap:6px;margin-bottom:26px;flex-wrap:wrap}
+.pdot{width:11px;height:11px;border-radius:50%;background:var(--border);transition:background .3s}
+.pdot.ok{background:var(--mint)}
+.pdot.no{background:var(--rose)}
+.quiz-q{background:var(--card);border:1.5px solid var(--border);border-radius:18px;padding:30px 26px 24px;margin-bottom:26px;position:relative}
+.q-num{position:absolute;top:-12px;left:22px;background:linear-gradient(90deg,var(--th1),var(--rose-deep));color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 16px;border-radius:10px}
+.q-lvl{position:absolute;top:-12px;right:22px;background:var(--peach);color:#4A2810;font-size:11px;font-weight:800;padding:4px 12px;border-radius:10px}
+.q-vignette{background:linear-gradient(135deg,var(--p-pale),var(--peach-pale));border-left:4px solid var(--p-light);border-radius:0 11px 11px 0;padding:14px 17px;font-size:13.5px;line-height:1.7;margin-bottom:16px}
+.q-question{font-weight:600;font-size:14px;margin-bottom:14px}
+.q-opts{display:flex;flex-direction:column;gap:8px}
+.q-opt{background:var(--alt);border:1.5px solid var(--border);border-radius:11px;padding:11px 15px;font-size:13.5px;cursor:pointer;text-align:left;font-family:inherit;display:flex;gap:10px;align-items:flex-start;transition:all .18s;color:var(--text)}
+.q-opt:hover:not(:disabled){border-color:var(--p);background:var(--p-pale)}
+.q-opt .ol{font-weight:700;font-size:12px;min-width:22px;height:22px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.q-opt.correct{background:var(--mint-pale)!important;border-color:var(--mint)!important;color:var(--mint-deep)}
+.q-opt.correct .ol{background:var(--mint);color:#fff}
+.q-opt.wrong{background:var(--rose-pale)!important;border-color:var(--rose)!important;color:var(--rose-deep)}
+.q-opt.wrong .ol{background:var(--rose);color:#fff}
+.q-opt:disabled{cursor:default}
+.q-exp{display:none;margin-top:16px}
+.q-exp.show{display:block;animation:fadeUp .3s ease}
+.rz{border-radius:10px;padding:10px 14px;margin-bottom:8px;font-size:13px;line-height:1.65;border-left:3px solid}
+.rz.ok{background:var(--mint-pale);border-color:var(--mint);color:var(--mint-deep)}
+.rz.no{background:var(--alt);border-color:var(--border);color:var(--text)}
+.rz b{display:block;margin-bottom:2px}
+.rz-concept{background:var(--p-pale);border:1.5px solid var(--p-light);border-radius:11px;padding:12px 16px;font-size:13px;margin-top:10px;color:var(--p-deep)}
+.score-card{background:linear-gradient(135deg,var(--g1),var(--g3),var(--g4));color:#fff;border-radius:22px;padding:44px;text-align:center;display:none;margin-top:28px}
+.score-card.show{display:block;animation:fadeUp .4s ease}
+.score-big{font-family:'Playfair Display',serif;font-size:76px;font-weight:900;color:#E1F3F1;line-height:1;margin:10px 0}
+.btn{background:var(--p);color:#fff;border:none;border-radius:30px;padding:10px 24px;font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;transition:transform .2s,opacity .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:var(--p-pale);color:var(--p-deep);border:1px solid var(--border)}
+.btn.rose{background:var(--rose-deep);color:#fff}
+[data-theme="dark"] .btn.rose{color:#3A1F27}
+.btn-restart{margin-top:22px;background:#fff;color:var(--g1)}
+
+/* FLASHCARD */
+.fc-wrap{max-width:560px;margin:0 auto}
+.fc-meta{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.fc-scene{perspective:1100px;height:290px;margin-bottom:16px}
+.fc{position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d;cursor:pointer}
+.fc.flip{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border:2px solid var(--p-light);overflow:auto}
+.fc-front{background:var(--card);font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--p-deep)}
+.fc-back{background:linear-gradient(135deg,var(--p-pale),var(--mint-pale));transform:rotateY(180deg);font-size:14.5px;line-height:1.7}
+.fc-hint{font-size:11px;color:var(--muted);margin-top:14px;font-family:'DM Sans',sans-serif;font-weight:400}
+.fc-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+
+/* FLOATS */
+.fab-stack{position:fixed;bottom:22px;right:22px;z-index:9000;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.fab{border:none;border-radius:50px;padding:11px 18px;font-family:inherit;font-size:12.5px;font-weight:700;cursor:pointer;color:#fff;display:flex;align-items:center;gap:8px;box-shadow:0 6px 22px rgba(0,0,0,.28);transition:transform .2s}
+.fab:hover{transform:translateY(-3px)}
+.fab.dr{background:linear-gradient(135deg,#4A1060,#C070E8)}
+.fab.jump{background:linear-gradient(135deg,var(--g1),var(--g3))}
+.pulse{width:9px;height:9px;border-radius:50%;background:#FFB0C0;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.7}}
+.jump-panel{display:none;position:fixed;bottom:130px;right:22px;z-index:9001;background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:12px;width:250px;max-height:60vh;overflow-y:auto;box-shadow:0 10px 36px rgba(0,0,0,.3)}
+.jump-panel.open{display:block;animation:fadeUp .2s ease}
+.jump-panel button{display:block;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:13px;padding:8px 10px;border-radius:8px;cursor:pointer;color:var(--text)}
+.jump-panel button:hover{background:var(--p-pale)}
+.jump-panel button.cur{background:var(--p-pale);color:var(--p-deep);font-weight:700}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,20,20,.82);z-index:99999;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.modal-overlay.open{display:flex;animation:fadeUp .3s ease}
+.modal-box{background:linear-gradient(160deg,#1A0A2E,#2E1050);border:2px solid #C070E8;border-radius:24px;max-width:700px;width:100%;max-height:86vh;overflow-y:auto;padding:30px;position:relative;box-shadow:0 20px 60px rgba(180,60,220,.4)}
+.modal-close{position:absolute;top:14px;right:16px;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:18px;width:34px;height:34px;border-radius:50%;cursor:pointer}
+.modal-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#E8D0FF;margin-bottom:6px}
+.modal-sub{color:rgba(255,255,255,.55);font-size:12.5px;margin-bottom:22px}
+.modal-item{background:rgba(255,255,255,.05);border:1px solid rgba(192,112,232,.25);border-radius:12px;padding:16px 16px 12px;margin-bottom:14px;position:relative}
+.modal-item-num{position:absolute;top:-9px;left:14px;background:linear-gradient(90deg,#C070E8,#9B40C8);color:#fff;font-size:10px;font-weight:800;padding:2px 10px;border-radius:10px;letter-spacing:.1em}
+.modal-item-q{color:#E8C8FF;font-weight:600;font-size:13.5px;margin-bottom:5px}
+.modal-item-a{color:rgba(255,255,255,.82);font-size:13px;line-height:1.65}
+.modal-item-a b{color:#A0FFD8}
+
+/* SEARCH */
+.search-overlay{display:none;position:fixed;inset:0;background:rgba(10,20,20,.7);z-index:99998;padding:70px 16px 16px;backdrop-filter:blur(3px)}
+.search-overlay.open{display:block}
+.search-box{max-width:680px;margin:0 auto;background:var(--card);border-radius:18px;border:1.5px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}
+.search-box input{width:100%;border:none;border-bottom:1.5px solid var(--border);padding:16px 20px;font-family:inherit;font-size:15px;background:var(--card);color:var(--text);outline:none}
+.search-res{max-height:60vh;overflow-y:auto}
+.sr{padding:12px 20px;border-bottom:1px solid var(--border);cursor:pointer}
+.sr:hover{background:var(--p-pale)}
+.sr .sr-t{font-weight:700;font-size:13.5px;color:var(--p-deep)}
+.sr .sr-s{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.sr .sr-x{font-size:12.5px;color:var(--text);margin-top:2px}
+.sr-empty{padding:22px;text-align:center;color:var(--muted);font-size:13.5px}
+
+@media(max-width:600px){
+  .hero{padding:36px 20px 32px}.container{padding:26px 14px 90px}.card{padding:18px 18px}
+  .nav-tools .tool-btn span{display:none}
+  .fc-scene{height:320px}
+}
+
+.nb{margin-top:16px;border-top:1px dashed var(--border);padding-top:10px}
+.nb-t{background:var(--yel);color:var(--yel-d);border:1px solid #E9D27A;border-radius:10px;padding:5px 12px;font:600 12.5px 'DM Sans';cursor:pointer}
+.nb-t.has::after{content:' ●'}
+.nb-p{display:none;margin-top:10px;border:1.5px solid #E9D27A;border-radius:14px;background:var(--yel);overflow:hidden}
+.nb-p.open{display:block}
+.nb-bar{display:flex;flex-wrap:wrap;gap:4px;padding:8px;background:rgba(255,255,255,.45);border-bottom:1px solid #E9D27A;align-items:center}
+.nb-bar button,.nb-bar select{border:1px solid #D9C877;background:var(--card);color:var(--text);border-radius:7px;min-width:28px;height:28px;font:600 12px 'DM Sans';cursor:pointer;padding:0 6px}
+.nb-bar .sw{width:22px;min-width:22px;height:22px;border-radius:50%;padding:0;border:2px solid #fff;box-shadow:0 0 0 1px #999}
+.nb-bar i{width:1px;height:20px;background:#D9C877;margin:0 3px}
+.nb-e{min-height:90px;padding:12px 14px;font-size:14px;line-height:1.65;outline:none;color:var(--text);background:var(--card);margin:0}
+.nb-e:empty::before{content:'Tulis catatanmu di sini… (Ctrl+B tebal, Ctrl+I miring, Ctrl+U garis bawah)';color:var(--muted)}
+.nb-f{display:flex;justify-content:space-between;font-size:11px;color:var(--yel-d);padding:4px 12px}
+.sg{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:10px 0}.sg figure{text-align:center;font-size:12px;width:128px}.sg figcaption{margin-top:4px;line-height:1.35}
+.pb{background:#111;color:#fff;font-size:11.5px;padding:6px 8px;border-radius:4px;text-align:center;line-height:1.3}
+.card svg{max-width:100%}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-eyebrow">💊 Blok Rational Therapy · Prof. Da'i · Penggolongan Obat &amp; UU Obat</div><h1>Penggolongan Obat &amp; <em>Undang-undang</em> Obat</h1><p class="hero-sub">Dari transkrip kuliah, slide, modul, dan bank soal. Logika inti: hukum batas minimal, golongan menentukan jalur, tujuan akhir obat rasional.</p><div class="hero-pills"><span class="pill">⚖️ Moral·Etik·Hukum</span><span class="pill">💊 Golongan obat</span><span class="pill">🧠 12 Soal + 24 Flashcard</span></div></div>
+<div class="sticky-nav" id="mainNav"><div class="nav-scroll"><button class="nav-btn active" data-sec="overview" onclick="show('overview')">🏠 Overview</button><button class="nav-btn" data-sec="meh" onclick="show('meh')">⚖️ Moral·Etik·Hukum</button><button class="nav-btn" data-sec="hier" onclick="show('hier')">🏛️ Hierarki</button><button class="nav-btn" data-sec="regu" onclick="show('regu')">📜 Regulasi</button><button class="nav-btn" data-sec="gol" onclick="show('gol')">💊 Golongan</button><button class="nav-btn" data-sec="alur" onclick="show('alur')">🧭 Alur Cepat</button><button class="nav-btn" data-sec="langgar" onclick="show('langgar')">🚫 Pelanggaran</button><button class="nav-btn" data-sec="rasional" onclick="show('rasional')">✅ Rasional</button><button class="nav-btn" data-sec="bank" onclick="show('bank')">📊 Analisis Soal</button><button class="nav-btn" data-sec="glosarium" onclick="show('glosarium')">📖 Glosarium</button><button class="nav-btn" data-sec="ringkas" onclick="show('ringkas')">⚡ Ringkasan</button><button class="nav-btn" data-sec="quiz" onclick="show('quiz')">🧠 Quiz</button><button class="nav-btn" data-sec="flash" onclick="show('flash')">🃏 Flashcard</button></div><div class="nav-tools"><button class="tool-btn" onclick="openSearch()">🔍 <span>Cari</span></button><button class="tool-btn" id="themeBtn" onclick="toggleTheme()">🌙 <span>Gelap</span></button></div></div>
+<div class="container">
+<div id="sec-overview" class="section active"><h2 class="section-heading">Bagaimana negara mengatur obat, dan apa artinya bagi dokter?</h2><p class="section-desc">Fondasi: moral–etik–hukum → hierarki aturan → golongan obat → pengobatan rasional.</p>
+<div class="card" id="c-tujuan" data-t="Tujuan belajar"><div class="card-title">🎯 Tujuan Belajar </div><ul class="styled-list"><li>Membedakan moral, etik, dan hukum beserta sanksinya.</li><li>Menyusun hierarki peraturan dan memilih asas yang menyelesaikan konflik aturan.</li><li>Mengenali golongan obat, tanda kemasan, dan siapa yang boleh menyerahkan.</li><li>Menyebut pelanggaran obat yang sering terjadi dan dasar pidananya.</li><li>Mengenali pola soal blok: golongan obat, UU, etik–legal, hak pasien.</li></ul><div class="alert alert-sky"><span class="alert-icon">ℹ️</span><div><b>Legenda:</b> <span class="tg hy">High yield</span><span class="tg mm">Must memorize</span><span class="tg ct">Common trap</span><span class="tg fa">Sering keluar</span><span class="tg dr">Sorotan dosen</span><span class="tg add">Tambahan</span> ⚠️ = perlu verifikasi.</div></div></div>
+<div class="card" id="c-peta" data-t="Peta konsep"><div class="card-title">🗺️ Alur Besar Kuliah <span class="tg hy">High yield</span></div><div class="flow"><div class="fb"><b>Dokter = profesi → moral, etik, hukum</b></div><div class="fa">▼</div><div class="fb"><b>Hukum bersumber Pancasila → hierarki (Pasal 7 UU 12/2011)</b></div><div class="fa">▼</div><div class="fb"><b>Obat komoditas terbatas → diatur ketat</b></div><div class="fa">▼</div><div class="fb"><b>Golongan obat menentukan jalur peredaran</b></div><div class="fa">▼</div><div class="fb"><b>Pelanggaran → sanksi pidana/etik/disiplin</b></div><div class="fa">▼</div><div class="fb ok"><b>Tujuan akhir: penggunaan obat RASIONAL</b></div></div><div class="dr-note">Muara semua aturan farmasi, baik hukum maupun etik, adalah <b>penggunaan obat yang rasional</b>.</div></div>
+<div class="card" id="c-hy" data-t="Prioritas belajar"><div class="card-title">🔥 Prioritas Belajar <span class="tg fa">Sering keluar</span></div><div class="table-wrap"><table><tr><th>Prioritas</th><th>Topik</th><th>Muncul di</th></tr><tr><td>⭐⭐⭐</td><td>Golongan obat &amp; tanda; siapa penentu obat keras</td><td>Slide, bank AXON'20, ARTHRON'18</td></tr><tr><td>⭐⭐⭐</td><td>Moral vs etik vs hukum (kasus dilema)</td><td>Transkrip, ARTHRON'18 #83</td></tr><tr><td>⭐⭐</td><td>Hierarki &amp; asas lex</td><td>Transkrip, slide</td></tr><tr><td>⭐⭐</td><td>UU Narkotika &amp; Psikotropika</td><td>AXON'20 #23</td></tr></table></div></div>
+</div>
+<div id="sec-meh" class="section"><h2 class="section-heading">⚖️ Moral, Etik, dan Hukum</h2><p class="section-desc">Tiga norma yang mengatur perilaku dokter: sumber, cakupan, dan sanksinya berbeda.</p>
+<div class="card" id="c-meh-tb" data-t="Perbandingan tiga norma"><div class="card-title">🧩 Moral vs Etik vs Hukum <span class="tg mm">Must memorize</span><span class="tg hy">High yield</span></div><div class="table-wrap"><table><tr><th></th><th>Moral</th><th>Etik profesi</th><th>Hukum</th></tr><tr><td><b>Sumber</b></td><td>Hati nurani, agama, budaya</td><td>KODEKI, Sumpah Dokter</td><td>Lembaga negara berwenang</td></tr><tr><td><b>Bentuk</b></td><td>Umumnya tak tertulis</td><td>Kode etik tertulis</td><td>Peraturan perundang-undangan</td></tr><tr><td><b>Berlaku untuk</b></td><td>Individu</td><td>Anggota profesi</td><td><b>Seluruh warga</b></td></tr><tr><td><b>Sanksi</b></td><td>Rasa bersalah, sanksi sosial</td><td>Oleh MKEK (komisi etik)</td><td>Pidana, perdata, administratif</td></tr></table></div><div class="dr-note"><span class="hl-r">Hukum = batas minimal</span>; etik standarnya <b>lebih tinggi</b>. Orang yang mengaku dokter padahal bukan masuk ranah <b>pidana</b>, bukan sidang etik.</div></div>
+<div class="card" id="c-meh-dil" data-t="Dilema moral–etik–hukum"><div class="card-title">🧭 Kasus Dilema <span class="tg ct">Common trap</span><span class="tg dr">Sorotan dosen</span></div><div class="table-wrap"><table><tr><th>Kasus</th><th>Moral</th><th>Etik</th><th>Hukum</th></tr><tr><td>Dokter <b>self dispensing</b> di daerah terpencil</td><td>✓ niat menolong</td><td>✓ berwenang meresepkan</td><td><span class="hl-r">✗</span> penyerahan oleh apoteker</td></tr><tr><td>Resep narkotika untuk pasien yang diketahui akan menyalahgunakan</td><td><span class="hl-r">✗</span></td><td><span class="hl-r">✗</span></td><td>Tampak sah bila jumlah wajar</td></tr><tr><td>Kebiri sebagai hukuman</td><td>—</td><td><span class="hl-r">✗</span> justice vs non-maleficence</td><td>Diatur UU</td></tr></table></div><div class="alert alert-peach"><span class="alert-icon">⚠️</span><div>Ideal: perilaku memenuhi <b>ketiganya</b>. Bank ARTHRON'18 #83 berkunci "perawat diagnosis &amp; beri obat", padahal contoh dosen adalah self dispensing. Cek ulang.</div></div></div>
+<div class="card" id="c-meh-pro" data-t="Enam karakteristik profesional"><div class="card-title">🏅 6 Karakteristik Profesional <span class="tg dr">Sorotan dosen</span></div><div class="grid-3"><div class="mini-card"><h4>Altruism</h4><p>Tidak semata mencari keuntungan (setara <i>ikhlas</i>)</p></div><div class="mini-card"><h4>Akuntabel</h4><p>Diagnosis, tindakan, resep dapat dipertanggungjawabkan</p></div><div class="mini-card"><h4>Duty</h4><p>Tetap menjalankan tugas; tidak diskriminatif (BPJS/umum)</p></div><div class="mini-card"><h4>Excellence</h4><p>Melampaui standar minimal; belajar terus</p></div><div class="mini-card"><h4>Honor &amp; integrity</h4><p>Jaga marwah: tolak suap, narkoba</p></div><div class="mini-card"><h4>Respect for others</h4><p>Hormati kolega, pasien, nakes lain</p></div></div><div class="dr-note">Tidak menjatuhkan kolega saat diminta <i>second opinion</i>; cukup katakan "menurut saya begini".</div></div>
+<div class="card" id="c-meh-bio" data-t="Bioetik"><div class="card-title">🧬 Empat Kaidah Dasar Bioetik <span class="tg mm">Must memorize</span></div><div class="grid-4"><div class="mini-card"><h4>Beneficence</h4><p>Berbuat baik</p></div><div class="mini-card"><h4>Non-maleficence</h4><p>Tidak merugikan</p></div><div class="mini-card"><h4>Autonomy</h4><p>Hormati hak pasien</p></div><div class="mini-card"><h4>Justice</h4><p>Adil</p></div></div><p>Tiga ranah tanggung jawab: <b>etik</b> (MKEK), <b>disiplin</b> (majelis disiplin), <b>hukum</b> (pengadilan).</p></div>
+</div>
+<div id="sec-hier" class="section"><h2 class="section-heading">🏛️ Filosofi &amp; Hierarki Peraturan</h2><p class="section-desc">Pancasila sebagai norma dasar; aturan lebih rendah bersumber dari yang lebih tinggi.</p>
+<div class="card" id="c-hier-p" data-t="Piramida hierarki"><div class="card-title">📐 Tata Urutan Pasal 7 UU 12/2011 <span class="tg mm">Must memorize</span><span class="tg hy">High yield</span></div><svg viewBox="0 0 420 250" width="100%" style="max-width:440px;display:block;margin:8px auto"><rect x="110" y="4" width="200" height="30" rx="6" fill="#2B4F7C" stroke="#2B4F7C" stroke-opacity=".3"/><text x="210" y="24" text-anchor="middle" font-size="13" font-family="DM Sans,Arial" font-weight="700" fill="#fff">1. UUD 1945</text><rect x="96" y="38" width="228" height="30" rx="6" fill="#4A7FB5" stroke="#2B4F7C" stroke-opacity=".3"/><text x="210" y="58" text-anchor="middle" font-size="13" font-family="DM Sans,Arial" font-weight="700" fill="#fff">2. Tap MPR</text><rect x="82" y="72" width="256" height="30" rx="6" fill="#7FAEDC" stroke="#2B4F7C" stroke-opacity=".3"/><text x="210" y="92" text-anchor="middle" font-size="13" font-family="DM Sans,Arial" font-weight="700" fill="#1B2B3E">3. UU / Perppu</text><rect x="68" y="106" width="284" height="30" rx="6" fill="#B6D2EE" stroke="#2B4F7C" stroke-opacity=".3"/><text x="210" y="126" text-anchor="middle" font-size="13" font-family="DM Sans,Arial" font-weight="700" fill="#1B2B3E">4. Peraturan Pemerintah</text><rect x="54" y="140" width="312" height="30" rx="6" fill="#F6E2A0" stroke="#2B4F7C" stroke-opacity=".3"/><text x="210" y="160" text-anchor="middle" font-size="13" font-family="DM Sans,Arial" font-weight="700" fill="#1B2B3E">5. Peraturan Presiden</text><rect x="40" y="174" width="340" height="30" rx="6" fill="#F9EDBE" stroke="#2B4F7C" stroke-opacity=".3"/><text x="210" y="194" text-anchor="middle" font-size="13" font-family="DM Sans,Arial" font-weight="700" fill="#1B2B3E">6. Perda Provinsi</text><rect x="26" y="208" width="368" height="30" rx="6" fill="#FCF4D6" stroke="#2B4F7C" stroke-opacity=".3"/><text x="210" y="228" text-anchor="middle" font-size="13" font-family="DM Sans,Arial" font-weight="700" fill="#1B2B3E">7. Perda Kab/Kota</text></svg><div class="alert alert-sky"><span class="alert-icon">ℹ️</span><div><b>Di luar hierarki (Pasal 8):</b> Permenkes, Peraturan BPOM dll. tetap mengikat bila diperintahkan aturan lebih tinggi atau dibentuk atas kewenangan. Gambar: ilustrasi buatan.</div></div></div>
+<div class="card" id="c-hier-a" data-t="Asas lex"><div class="card-title">⚔️ Asas Penyelesai Konflik Aturan <span class="tg mm">Must memorize</span><span class="tg ct">Common trap</span></div><div class="table-wrap"><table><tr><th>Asas</th><th>Makna</th><th>Contoh</th></tr><tr><td><b>Lex superior</b></td><td>Yang lebih tinggi mengalahkan yang lebih rendah</td><td>PP 28/2024 di atas Permenkes</td></tr><tr><td><b>Lex specialis</b></td><td>Yang khusus mengalahkan yang umum</td><td>UU 35/2009 Narkotika</td></tr><tr><td><b>Lex posterior</b></td><td>Yang baru mengalahkan yang lama, setingkat</td><td>UU 17/2023 menggantikan UU 36/2009</td></tr></table></div><p>Uji materi: <b>UU → UUD</b> ke Mahkamah Konstitusi; <b>di bawah UU → UU</b> ke Mahkamah Agung.</p></div>
+<div class="card" id="c-hier-l" data-t="Tiga landasan"><div class="card-title">🧱 Landasan Pembentukan </div><div class="grid-3"><div class="mini-card"><h4>Filosofis</h4><p>Sejalan Pancasila &amp; Pembukaan UUD</p></div><div class="mini-card"><h4>Sosiologis</h4><p>Menjawab kebutuhan nyata masyarakat</p></div><div class="mini-card"><h4>Yuridis</h4><p>Mengisi kekosongan hukum, kewenangan jelas</p></div></div><p>Sanksi pidana hanya boleh dimuat dalam <b>UU dan Perda</b> (Pasal 15 UU 12/2011), bukan Permenkes.</p></div>
+</div>
+<div id="sec-regu" class="section"><h2 class="section-heading">📜 Mengapa Obat Diatur &amp; Peta Regulasi</h2><p class="section-desc">Obat bermata dua; pasien tidak dapat menilai mutunya sendiri.</p>
+<div class="card" id="c-regu-w" data-t="Alasan pengaturan"><div class="card-title">🔒 Mengapa Diatur Ketat <span class="tg hy">High yield</span><span class="tg dr">Sorotan dosen</span></div><div class="table-wrap"><table><tr><th>Prinsip</th><th>Penjelasan / contoh dosen</th></tr><tr><td><b>Keamanan, khasiat, mutu</b></td><td>Izin edar + pengawasan pascapasar BPOM. Contoh: VIOXX (inhibitor COX) ditarik karena efek lambung &amp; jantung</td></tr><tr><td><b>Akses &amp; keterjangkauan</b></td><td>Fornas, generik. Contoh: kelangkaan obat TB dan ARV (HIV)</td></tr><tr><td><b>Pemisahan kewenangan</b></td><td>Dokter meresepkan, apoteker menyerahkan (<i>check and balance</i>, Pasal 145)</td></tr><tr><td><b>Berbasis risiko</b></td><td>Bebas → bebas terbatas → keras → psikotropika → narkotika</td></tr><tr><td><b>Kendali penyalahgunaan</b></td><td>Kodein ekspektoran, dekstrometorfan; sirup EG/DEG 2022</td></tr></table></div><div class="dr-note">Obat dosis kecil berisiko besar: "Novalgin" terbaca "norepinefrin" membuat pasien sakit gigi jadi bermasalah jantung. Tulis resep jelas.</div></div>
+<div class="card" id="c-regu-p" data-t="Peta regulasi"><div class="card-title">🗺️ Peta Regulasi Farmasi <span class="tg mm">Must memorize</span></div><div class="table-wrap"><table><tr><th>Jenjang</th><th>Aturan</th></tr><tr><td>UUD 1945</td><td>Pasal 28H(1), 34(3): hak atas pelayanan kesehatan</td></tr><tr><td>UU</td><td>17/2023 Kesehatan (Pasal 145 praktik kefarmasian; 435–436 pidana) · 35/2009 Narkotika · 5/1997 Psikotropika (gol. III–IV) · 8/1999 Perlindungan Konsumen</td></tr><tr><td>PP</td><td>28/2024 (golongan obat Pasal 920; obat keras via resep Pasal 922) · 40/2013 · 44/2010</td></tr><tr><td>Perpres</td><td>80/2017 BPOM</td></tr><tr><td>Permenkes</td><td>917/1993 · 2380/1983 · 02396/1986 · 28/2022 · 5/2023</td></tr><tr><td>PerBPOM</td><td>10/2019 OOT · 24/2021</td></tr><tr><td>Kolonial</td><td>Ordonansi Obat Keras → istilah "Daftar G" (<i>gevaarlijk</i>)</td></tr></table></div><div class="alert alert-peach"><span class="alert-icon">⚠️</span><div>Nomor pasal dari modul/slide; transkrip memuat angka pasal yang berantakan. Cek teks resmi.</div></div></div>
+</div>
+<div id="sec-gol" class="section"><h2 class="section-heading">💊 Golongan Obat</h2><p class="section-desc">Tanda kemasan menentukan cara memperoleh obat.</p>
+<div class="card" id="c-gol-tn" data-t="Tanda dan golongan"><div class="card-title">🔴 Tanda &amp; Cara Memperoleh <span class="tg mm">Must memorize</span><span class="tg hy">High yield</span><span class="tg fa">Sering keluar</span></div><div class="sg"><figure><svg viewBox="0 0 80 80" width="78"><circle cx="40" cy="40" r="34" fill="#3FA34D" stroke="#111" stroke-width="5"/></svg><figcaption><b>Obat bebas</b><br>lingkaran hijau, tepi hitam</figcaption></figure><figure><svg viewBox="0 0 80 80" width="78"><circle cx="40" cy="40" r="34" fill="#2F6FD0" stroke="#111" stroke-width="5"/></svg><figcaption><b>Bebas terbatas</b><br>lingkaran biru, tepi hitam</figcaption></figure><figure><svg viewBox="0 0 80 80" width="78"><circle cx="40" cy="40" r="34" fill="#D32F2F" stroke="#111" stroke-width="5"/><text x="40" y="56" text-anchor="middle" font-size="46" font-weight="800" font-family="Arial" fill="#111">K</text></svg><figcaption><b>Obat keras</b><br>lingkaran merah, huruf K menyentuh tepi</figcaption></figure><figure><svg viewBox="0 0 80 80" width="78"><rect x="8" y="8" width="64" height="64" rx="4" fill="#fff" stroke="#C62828" stroke-width="4"/><path d="M34 16h12v18h18v12H46v18H34V46H16V34h18z" fill="#C62828"/></svg><figcaption><b>Narkotika</b><br>palang medali merah (ilustrasi disederhanakan)</figcaption></figure></div><div class="table-wrap"><table><tr><th>Golongan</th><th>Cara memperoleh</th><th>Contoh</th></tr><tr><td><b>Bebas</b></td><td>Tanpa resep; apotek, toko obat, gerai</td><td>Parasetamol, antasida, vit C</td></tr><tr><td><b>Bebas terbatas</b></td><td>Tanpa resep; apotek/toko obat berizin; wajib <b>P1–P6</b></td><td>CTM, bromheksin, loratadin</td></tr><tr><td><b>Keras</b></td><td><span class="hl-r">Hanya resep dokter</span>, diserahkan apoteker</td><td>Antibiotik, antihipertensi, kortikosteroid oral, infus</td></tr></table></div><div class="dr-note">Infus NaCl itu obat keras; kalau berupa minuman isotonik boleh dibeli bebas.</div></div>
+<div class="card" id="c-gol-p" data-t="Peringatan P1-P6"><div class="card-title">⚠️ Peringatan P1–P6 <span class="tg mm">Must memorize</span></div><div class="grid-3"><div><div class="pb"><b>P1</b><br>Awas! Obat keras<br>Bacalah aturan memakainya</div></div><div><div class="pb"><b>P2</b><br>Awas! Obat keras<br>Hanya untuk kumur, jangan ditelan</div></div><div><div class="pb"><b>P3</b><br>Awas! Obat keras<br>Hanya untuk bagian luar badan</div></div><div><div class="pb"><b>P4</b><br>Awas! Obat keras<br>Hanya untuk dibakar</div></div><div><div class="pb"><b>P5</b><br>Awas! Obat keras<br>Tidak boleh ditelan</div></div><div><div class="pb"><b>P6</b><br>Awas! Obat keras<br>Obat wasir, jangan ditelan</div></div></div></div>
+<div class="card" id="c-gol-x" data-t="Hal sering ditanyakan"><div class="card-title">🪤 OWA, Perubahan Golongan <span class="tg ct">Common trap</span></div><ul class="styled-list"><li><b>OWA</b>: obat keras tertentu diserahkan apoteker tanpa resep, indikasi &amp; jumlah terbatas (antibiotik oral tidak termasuk).</li><li>Golongan dapat berubah (Permenkes 28/2022): loratadin, setirizin, famotidin → bebas terbatas; <b>lidokain, benzokain → keras</b>.</li><li>Psikotropika: tanda K, resep asli. Narkotika: palang medali merah, resep asli tanpa iter.</li><li>Penentu obat keras = <b>Menteri Kesehatan</b> (bank AXON'20 #39, #71).</li></ul></div>
+</div>
+<div id="sec-alur" class="section"><h2 class="section-heading">🧭 Alur Cepat</h2><p class="section-desc">Pohon keputusan untuk soal kasus.</p>
+<div class="card" id="c-alur1" data-t="Alur keputusan"><div class="card-title">🧭 Obat Ini Boleh Dibeli Tanpa Resep? <span class="tg hy">High yield</span><span class="tg ct">Common trap</span></div><div class="flow"><div class="fb"><b>Lihat tanda kemasan</b></div><div class="fa">▼</div><div class="fb"><b>Hijau atau biru: tanpa resep (biru wajib P1–P6)</b></div><div class="fa">▼</div><div class="fb"><b>Merah K: resep dokter, diserahkan apoteker</b></div><div class="fa">▼</div><div class="fb"><b>Pengecualian: OWA oleh apoteker</b></div><div class="fa">▼</div><div class="fb ok"><b>Narkotika/psikotropika: resep asli</b></div></div><div class="alert alert-peach"><span class="alert-icon">⚠️</span><div>Antibiotik oral sistemik bukan OWA.</div></div></div>
+<div class="card" id="c-alur2" data-t="Cara menalar kasus etik-hukum"><div class="card-title">🔍 Tiga Pertanyaan <span class="tg mm">Must memorize</span></div><ul class="styled-list"><li>Apakah niatnya baik? (moral)</li><li>Apakah sesuai KODEKI dan 4 kaidah bioetik? (etik)</li><li>Apakah ada aturan yang dilanggar? (hukum)</li></ul></div>
+</div>
+<div id="sec-langgar" class="section"><h2 class="section-heading">🚫 Pelanggaran &amp; Pidana</h2><p class="section-desc">Dua pusat masalah: obat keras keluar jalur resep dan obat tidak bermutu beredar.</p>
+<div class="card" id="c-lg-tb" data-t="Pelanggaran"><div class="card-title">📋 Pelanggaran yang Sering Terjadi <span class="tg fa">Sering keluar</span></div><div class="table-wrap"><table><tr><th>Pelanggaran</th><th>Contoh</th></tr><tr><td>Obat keras tanpa resep</td><td>Antibiotik/kortikosteroid dijual bebas (warung, daring). Dulu tetrasiklin eceran → <span class="hl-r">resistensi gonore</span></td></tr><tr><td>Praktik kefarmasian tanpa kewenangan</td><td>Warung meracik obat; perawat Anda suruh meracik</td></tr><tr><td>Obat ilegal/palsu/substandar</td><td>E-commerce; sirup EG 2022</td></tr><tr><td>Penyalahgunaan OOT</td><td>Tramadol, triheksifenidil, dekstrometorfan</td></tr><tr><td>Jamu + BKO</td><td>Over-claim "herbal pasti aman"</td></tr><tr><td>Oleh dokter</td><td>Resep tak terbaca, gratifikasi, jual obat tanpa ketentuan</td></tr></table></div></div>
+<div class="card" id="c-lg-pd" data-t="Pidana UU 17/2023"><div class="card-title">⛓️ Ancaman Pidana <span class="tg mm">Must memorize</span></div><div class="table-wrap"><table><tr><th>Pasal</th><th>Perbuatan</th><th>Ancaman maks.</th></tr><tr><td><b>435</b></td><td>Edar sediaan tak memenuhi keamanan, khasiat, mutu</td><td>12 tahun / Rp5 miliar</td></tr><tr><td><b>436(1)</b></td><td>Praktik kefarmasian tanpa keahlian &amp; kewenangan</td><td>Denda Rp200 juta</td></tr><tr><td><b>436(2)</b></td><td>Idem, terkait obat keras</td><td>5 tahun / Rp500 juta</td></tr></table></div><div class="alert alert-peach"><span class="alert-icon">⚠️</span><div>Besaran menyesuaikan KUHP baru &amp; UU 1/2026 (menurut modul).</div></div></div>
+</div>
+<div id="sec-rasional" class="section"><h2 class="section-heading">✅ Pengobatan Rasional &amp; Islami</h2><p class="section-desc">Kriteria "tepat", langkah peresepan, dan tiga rumus pengobatan Islami.</p>
+<div class="card" id="c-rs-k" data-t="Kriteria tepat"><div class="card-title">🎯 Kriteria Tepat (WHO 1985) <span class="tg mm">Must memorize</span><span class="tg hy">High yield</span></div><div class="table-wrap"><table><tr><th>Tepat</th><th>Makna</th></tr><tr><td>Diagnosis</td><td>Dasar semua pilihan obat</td></tr><tr><td>Indikasi / Obat</td><td>Ada alasan medis; efektif, aman, terjangkau</td></tr><tr><td>Dosis / Interval / Lama</td><td>Sesuai individu; pola praktis</td></tr><tr><td>Cara pemberian</td><td>Rute dan aturan minum</td></tr><tr><td>Kondisi pasien</td><td>Hamil, menyusui, anak, lansia, komorbid</td></tr><tr><td>Efek samping, informasi, tindak lanjut</td><td>Waspada, edukasi, kontrol</td></tr></table></div></div>
+<div class="card" id="c-rs-i" data-t="Implementasi"><div class="card-title">🛠️ Implementasi </div><div class="flow"><div class="fb"><b>Dokter: 6 langkah WHO Guide to Good Prescribing</b></div><div class="fa">▼</div><div class="fb"><b>Faskes: formularium, Komite Farmasi &amp; Terapi, pedoman antibiotik</b></div><div class="fa">▼</div><div class="fb"><b>Pemantauan indikator peresepan</b></div><div class="fa">▼</div><div class="fb ok"><b>Masyarakat: GeMa CerMat, DaGuSiBu</b></div></div><p>6 langkah: masalah → tujuan terapi → P-drug → resep → informasi → pantau.</p></div>
+<div class="card" id="c-rs-is" data-t="Pengobatan Islami"><div class="card-title">🌙 Tiga Rumus Pengobatan Islami <span class="tg dr">Sorotan dosen</span><span class="tg hy">High yield</span></div><div class="grid-3"><div class="mini-card"><h4>1. Rasional</h4><p>Evidence-based; klaim tanpa bukti justru tidak Islami</p></div><div class="mini-card"><h4>2. Halal</h4><p>Bahan &amp; produksi, mis. isu vaksin</p></div><div class="mini-card"><h4>3. Bebas syirik</h4><p>Metode alternatif tanpa anasir kesyirikan</p></div></div><div class="dr-note">Mengidentikkan "Islami" dengan bekam, madu, herbal saja adalah simplifikasi.</div></div>
+</div>
+<div id="sec-bank" class="section"><h2 class="section-heading">📊 Analisis Soal</h2><p class="section-desc">Dipetakan dari bank ARTHRON'18, AORTA'19, AXON'20.</p>
+<div class="card" id="c-bk-p" data-t="Peta soal"><div class="card-title">🗂️ Peta Soal per Topik <span class="tg fa">Sering keluar</span></div><div class="table-wrap"><table><tr><th>Topik</th><th>Soal &amp; kunci bank</th><th>Sumber</th></tr><tr><td>Hak pasien: ganti paten → generik</td><td>Setuju karena hak pasien (C)</td><td><span class="cohort-tag cohort-arthron">ARTHRON'18 #19, #68</span></td></tr><tr><td>Sikap thd perundangan</td><td>Laksanakan sebagai kesadaran etik &amp; profesional (D)</td><td><span class="cohort-tag cohort-arthron">ARTHRON'18 #22</span></td></tr><tr><td>Etis-moral tapi tidak legal</td><td>Kunci bank E (perawat diagnosis &amp; beri obat) ⚠️</td><td><span class="cohort-tag cohort-arthron">ARTHRON'18 #83</span></td></tr><tr><td>Obat bebas</td><td>Paracetamol (C)</td><td><span class="cohort-tag cohort-arthron">ARTHRON'18 #72</span></td></tr><tr><td>Penentu obat keras</td><td>Menteri Kesehatan</td><td><span class="cohort-tag cohort-axon">AXON'20 #39, #71</span></td></tr><tr><td>Tujuan UU 35/2009</td><td>Mencegah &amp; memberantas penyalahgunaan dan peredaran gelap narkotika</td><td><span class="cohort-tag cohort-axon">AXON'20 #23</span></td></tr><tr><td>Hak pasien (UU 36)</td><td>Informed consent (B)</td><td><span class="cohort-tag cohort-axon">AXON'20 #16</span></td></tr><tr><td>Bebas terbatas</td><td>Tanpa kunci di bank; bromheksin sesuai slide</td><td><span class="cohort-tag cohort-aorta">AORTA'19 #7</span></td></tr></table></div></div>
+<div class="card" id="c-bk-t" data-t="Jebakan"><div class="card-title">🪤 Jebakan &amp; Catatan Kunci <span class="tg ct">Common trap</span></div><ul class="styled-list"><li>ARTHRON'18 #83: kunci E bertentangan dengan contoh dosen (self dispensing). ⚠️</li><li>AXON'20 #16 menyebut UU 36/2009 yang sudah digantikan UU 17/2023. ⚠️</li><li>AORTA'19 #7: CTM dan klorfeniramin maleat sama; soal tanpa kunci. ⚠️</li></ul></div>
+</div>
+<div id="sec-glosarium" class="section"><h2 class="section-heading">📖 Glosarium</h2><p class="section-desc">Ketik untuk menyaring.</p><div class="card" id="c-gloss" data-t="Glosarium istilah"><input class="gl-filter" id="glFilter" placeholder="🔎 Saring istilah… (mis. lex, OWA)" oninput="filterGl()"><div id="glList"></div></div></div>
+<div id="sec-ringkas" class="section"><h2 class="section-heading">⚡ Ringkasan &amp; Quick Review</h2><p class="section-desc">Baca 10 menit sebelum ujian.</p>
+<div class="card" id="c-rg1" data-t="Ringkasan"><div class="card-title">📝 Satu Halaman <span class="tg mm">Must memorize</span></div><ul class="styled-list"><li>Hukum = batas minimal; etik lebih tinggi.</li><li>Hierarki: UUD → Tap MPR → UU/Perppu → PP → Perpres → Perda Prov → Perda Kab/Kota.</li><li>Lex superior, specialis, posterior.</li><li>Bebas (hijau), bebas terbatas (biru + P1–P6), keras (merah K, resep).</li><li>Pidana: Pasal 435 (12 th/Rp5 M), 436(1) Rp200 jt, 436(2) 5 th/Rp500 jt.</li><li>Pengobatan rasional = rasional + halal + bebas syirik (Islami).</li></ul></div>
+<div class="card" id="c-rg2" data-t="Sumber dan kejujuran"><div class="card-title">📚 Sumber &amp; Catatan Kejujuran <span class="tg add">Tambahan</span></div><ul class="styled-list"><li>Sumber: transkrip kuliah (speech-to-text, sebagian berantakan), slide, modul, bank soal.</li><li>Nomor pasal, besaran pidana, dan status Permenkes berasal dari modul; verifikasi ke JDIH/BPK.</li><li>Gambar tanda obat dibuat sebagai SVG ilustrasi, bukan foto resmi.</li><li>Nama dosen dari catatan pengguna.</li></ul></div>
+</div>
+<!-- ======================= QUIZ (jumlah soal diisi otomatis dari QUIZ.length) ======================= -->
+<div id="sec-quiz" class="section">
+  <h2 class="section-heading">🧠 Quiz — Vignette Klinis (C2–C4)</h2>
+  <p class="section-desc"><span class="qn"></span> soal. Urutan pilihan diacak setiap kali dimuat. Setelah menjawab, kamu mendapat pembahasan <b>tiap pilihan</b> beserta konsep intinya.</p>
+  <div class="quiz-progress" id="quizProg"></div>
+  <div id="quizBox"></div>
+  <div class="score-card" id="scoreCard">
+    <div style="font-size:40px;margin-bottom:8px">🩺</div>
+    <div class="score-big" id="scoreNum">0</div>
+    <div style="font-size:18px;opacity:.8">/ <span class="qn"></span></div>
+    <p id="scoreMsg" style="margin-top:8px;opacity:.9"></p>
+    <button class="btn btn-restart" onclick="resetQuiz()">🔁 Ulangi &amp; Acak Ulang</button>
+  </div>
+</div>
+
+<!-- ======================= FLASHCARD ======================= -->
+<div id="sec-flash" class="section">
+  <h2 class="section-heading">🃏 Flashcard — Active Recall</h2>
+  <p class="section-desc">Klik kartu untuk membalik. Tandai "Hafal" atau "Ulang" supaya kartu yang sulit muncul lagi.</p>
+  <div class="fc-wrap">
+    <div class="fc-meta"><span id="fcPos">1 / 1</span><span id="fcStat">Hafal: 0</span></div>
+    <div class="fc-scene"><div class="fc" id="fc" onclick="flipCard()">
+      <div class="fc-face fc-front"><div id="fcQ"></div><div class="fc-hint">klik untuk melihat jawaban</div></div>
+      <div class="fc-face fc-back"><div id="fcA"></div></div>
+    </div></div>
+    <div class="fc-actions">
+      <button class="btn ghost" onclick="fcMove(-1)">◀ Sebelumnya</button>
+      <button class="btn rose" onclick="fcMark(false)">↻ Ulang lagi</button>
+      <button class="btn" onclick="fcMark(true)">✓ Hafal</button>
+      <button class="btn ghost" onclick="fcMove(1)">Berikutnya ▶</button>
+    </div>
+    <div class="fc-actions" style="margin-top:10px">
+      <button class="btn ghost" onclick="fcShuffle()">🔀 Acak</button>
+      <button class="btn ghost" id="fcOnly" onclick="fcToggleOnly()">Tampilkan hanya yang belum hafal: OFF</button>
+      <button class="btn ghost" onclick="fcReset()">♻ Reset</button>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<!-- SEARCH -->
+<div class="search-overlay" id="searchOv" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <input id="searchIn" placeholder="🔍 Cari di seluruh materi… (mis. lex, OWA)" oninput="doSearch()">
+    <div class="search-res" id="searchRes"><div class="sr-empty">Ketik minimal 2 huruf.</div></div>
+  </div>
+</div>
+
+<!-- FABs (hapus tombol 🎤 + #drModal bila poin lisan dosen < ±8) -->
+<div class="jump-panel" id="jumpPanel"></div>
+<div class="fab-stack">
+  <button class="fab jump" onclick="toggleJump()">⚡ Quick Jump</button>
+  <button class="fab jump" onclick="exportNotes()">⬇ Ekspor Catatan</button>
+  <button class="fab dr" onclick="openModal()"><span class="pulse"></span>🎤 Sorotan Prof. Da'i</button>
+</div>
+
+<!-- MODAL SOROTAN -->
+<div class="modal-overlay" id="drModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title">🎤 Sorotan Prof. Da'i</div>
+    <div class="modal-sub">Hal-hal yang ditekankan dosen secara lisan (dari transkrip) + keterkaitannya dengan bank soal.</div>
+    <div class="modal-item"><span class="modal-item-num">01</span><div class="modal-item-q">Hukum = batas minimal</div><div class="modal-item-a">Etik standarnya <b>lebih tinggi</b>.</div></div><div class="modal-item"><span class="modal-item-num">02</span><div class="modal-item-q">Self dispensing</div><div class="modal-item-a">Moral &amp; etik oke, <b>hukum dilanggar</b>.</div></div><div class="modal-item"><span class="modal-item-num">03</span><div class="modal-item-q">Enam karakteristik</div><div class="modal-item-a">Altruism, akuntabel, duty, excellence, honor &amp; integrity, respect.</div></div><div class="modal-item"><span class="modal-item-num">04</span><div class="modal-item-q">Tiga lex</div><div class="modal-item-a">Superior, specialis, posterior.</div></div><div class="modal-item"><span class="modal-item-num">05</span><div class="modal-item-q">Obat keras</div><div class="modal-item-a">Hanya resep, diserahkan <b>apoteker</b>.</div></div><div class="modal-item"><span class="modal-item-num">06</span><div class="modal-item-q">Obat dan risiko</div><div class="modal-item-a">VIOXX, sirup EG, Novalgin vs norepinefrin.</div></div><div class="modal-item"><span class="modal-item-num">07</span><div class="modal-item-q">Resistensi</div><div class="modal-item-a">Tetrasiklin eceran → gonore resisten.</div></div><div class="modal-item"><span class="modal-item-num">08</span><div class="modal-item-q">Islami</div><div class="modal-item-a">Rasional, halal, bebas syirik.</div></div><button class="btn" style="width:100%;margin-top:6px" onclick="closeModal();show('quiz')">🧠 Langsung ke Quiz →</button>
+  </div>
+</div>
+
+<script>
+/* ============ DATA ============ */
+/* QUIZ item: {lvl:"C1|C2|C3|C4", topic:"LABEL", v:"vignette", q:"pertanyaan",
+   o:[[teks opsi, true|false, alasan opsi], ... 5 opsi, tepat 1 true], k:"konsep inti"}
+   Alasan opsi benar diawali "Benar. ". Urutan opsi diacak otomatis saat render. */
+const QUIZ = [{"lvl": "C3", "topic": "ETIK-HUKUM", "v": "Dokter puskesmas di daerah tanpa apotek menyerahkan obat langsung kepada pasien demi menolong.", "q": "Penilaian yang tepat:", "o": [["Moral &amp; etik terpenuhi, hukum dilanggar", true, "Benar. Dokter berwenang meresepkan, tetapi penyerahan obat tugas apoteker."], ["Moral, etik, hukum semua terpenuhi", false, "Hukum memisahkan resep dan penyerahan."], ["Hanya hukum terpenuhi", false, "Niat menolong memenuhi moral."], ["Moral dilanggar, etik terpenuhi", false, "Niatnya baik."], ["Semua dilanggar", false, "Moral dan etik tidak dilanggar."]], "k": "Self dispensing: moral+etik ya, hukum tidak."}, {"lvl": "C3", "topic": "PIDANA", "v": "Penjual warung meracik dan menjual amoksisilin tanpa resep ke ibu dengan anak demam.", "q": "Dasar pidana bagi penjual:", "o": [["Pasal 436 ayat (2) UU 17/2023", true, "Benar. Praktik kefarmasian tanpa kewenangan terkait obat keras: 5 tahun / Rp500 juta."], ["Pasal 435", false, "Untuk edar sediaan tidak bermutu."], ["Permenkes 917/1993", false, "Pidana hanya di UU/Perda."], ["Pasal 28H UUD 1945", false, "Itu hak atas kesehatan."], ["PerBPOM 10/2019", false, "Aturan teknis OOT, tanpa pidana."]], "k": "Pidana hanya di UU."}, {"lvl": "C2", "topic": "ASAS", "v": "Pasal narkotika UU 35/2009 berbeda dengan UU Kesehatan.", "q": "Asas yang dipakai:", "o": [["Lex specialis", true, "Benar. Aturan khusus menang."], ["Lex superior", false, "Setingkat (sama-sama UU)."], ["Lex posterior", false, "UU 35/2009 lebih lama."], ["Stufenbau", false, "Teori jenjang norma."], ["Asas legalitas", false, "Tidak menyelesaikan konflik antar UU."]], "k": "Khusus mengalahkan umum."}, {"lvl": "C3", "topic": "UJI MATERI", "v": "Warga menilai PP bertentangan dengan UU.", "q": "Diajukan ke:", "o": [["Mahkamah Agung", true, "Benar. Di bawah UU → MA."], ["Mahkamah Konstitusi", false, "MK untuk UU terhadap UUD."], ["DPR", false, "Bukan lembaga uji."], ["BPOM", false, "Pengawas obat."], ["Kemenkes", false, "Bukan lembaga uji."]], "k": "UU→UUD: MK. Di bawah UU: MA."}, {"lvl": "C3", "topic": "GOLONGAN", "v": "Kemasan bertanda lingkaran biru dengan kotak P2.", "q": "Pernyataan benar:", "o": [["Tanpa resep di apotek/toko obat berizin", true, "Benar. Bebas terbatas."], ["Hanya dengan resep dokter", false, "Itu obat keras."], ["Boleh di warung tanpa batas", false, "Wajib berizin."], ["Boleh ditelan", false, "P2: kumur, jangan ditelan."], ["Termasuk narkotika", false, "Narkotika bertanda palang merah."]], "k": "Biru = bebas terbatas."}, {"lvl": "C2", "topic": "PERUBAHAN", "v": "Seorang apoteker menjelaskan perubahan penggolongan obat menurut Permenkes 28/2022 kepada mahasiswa kedokteran.", "q": "Obat yang dinaikkan menjadi obat keras:", "o": [["Lidokain dan benzokain", true, "Benar."], ["Loratadin", false, "Turun ke bebas terbatas."], ["Setirizin", false, "Turun."], ["Famotidin", false, "Turun."], ["Parasetamol", false, "Tetap bebas."]], "k": "Hafal: lidokain/benzokain naik."}, {"lvl": "C3", "topic": "PROFESI", "v": "Dokter menjelekkan kolega di depan pasien yang meminta second opinion.", "q": "Karakteristik profesional yang dilanggar:", "o": [["Respect for others", true, "Benar."], ["Altruism", false, "Soal motivasi non-keuntungan."], ["Excellence", false, "Soal kompetensi."], ["Duty", false, "Soal menjalankan tugas."], ["Akuntabel", false, "Soal pertanggungjawaban."]], "k": "Hormati kolega."}, {"lvl": "C4", "topic": "ISLAMI", "v": "Seorang ustaz menjual ramuan yang diklaim menyembuhkan kanker tanpa bukti.", "q": "Fondasi pengobatan Islami yang dilanggar:", "o": [["Rasional (berbasis bukti)", true, "Benar. Klaim tanpa bukti tidak Islami."], ["Halal", false, "Soal bahan."], ["Bebas syirik", false, "Tidak ada unsur syirik."], ["Bekam", false, "Bukan rumus."], ["Madu", false, "Bukan rumus."]], "k": "Rasional, halal, bebas syirik."}, {"lvl": "C3", "topic": "HAK PASIEN", "v": "Pasien meminta apoteker mengganti obat paten yang diresepkan dengan obat generik; apoteker meminta persetujuan dokter.", "q": "Sikap dokter yang tepat:", "o": [["Menyetujui karena itu hak pasien", true, "Benar. Sesuai bank ARTHRON'18 #19: penggantian atas permintaan pasien adalah haknya."], ["Menolak karena paten lebih efektif", false, "Tidak berbasis bukti."], ["Menyetujui sebagian saja", false, "Tidak ada dasarnya."], ["Meminta pasien ke apotek lain", false, "Menyulitkan pasien."], ["Mengganti dengan merk lain yang lebih murah", false, "Bukan permintaan pasien."]], "k": "Penggantian paten ke generik = hak pasien."}, {"lvl": "C3", "topic": "PENENTU", "v": "Seorang mahasiswa bertanya siapa yang menetapkan suatu zat aktif masuk golongan obat keras.", "q": "Yang berwenang menetapkan:", "o": [["Menteri Kesehatan", true, "Benar. Bank AXON'20 #39 dan #71."], ["Apoteker", false, "Menyerahkan, bukan menetapkan."], ["Dokter", false, "Meresepkan."], ["Pasien", false, "Tidak berwenang."], ["Presiden", false, "Bukan penetap golongan obat."]], "k": "Golongan ditetapkan Menkes."}, {"lvl": "C3", "topic": "PSIKOTROPIKA", "v": "Dokter menulis resep diazepam untuk pasien ansietas.", "q": "Aturan hukum yang menjadi dasar golongannya:", "o": [["UU 5/1997 Psikotropika (gol. III–IV)", true, "Benar. Diazepam dan fenobarbital termasuk psikotropika gol. III–IV."], ["UU 35/2009 Narkotika", false, "Psikotropika gol. I–II dipindah ke narkotika, bukan gol. III–IV."], ["UU 8/1999", false, "Perlindungan konsumen."], ["Perpres 80/2017", false, "Tentang BPOM."], ["Ordonansi Obat Keras", false, "Asal istilah Daftar G."]], "k": "Diazepam: psikotropika III–IV."}, {"lvl": "C4", "topic": "SANKSI", "v": "Sebuah toko menjual sirup obat tercemar etilen glikol hingga menimbulkan korban anak.", "q": "Pasal pidana yang paling relevan:", "o": [["Pasal 435 UU 17/2023", true, "Benar. Mengedarkan sediaan tidak memenuhi keamanan, khasiat, mutu: 12 tahun / Rp5 miliar."], ["Pasal 436 ayat (1)", false, "Praktik kefarmasian tanpa kewenangan."], ["Pasal 436 ayat (2)", false, "Khusus obat keras tanpa kewenangan."], ["Pasal 145", false, "Mengatur praktik kefarmasian, bukan pidana."], ["Pasal 7 UU 12/2011", false, "Hierarki peraturan."]], "k": "Mutu buruk = Pasal 435."}];
+const FLASH = [["Siapa penetap golongan obat keras?", "Menteri Kesehatan"], ["Contoh obat bebas?", "Parasetamol, antasida, vitamin C"], ["Contoh obat bebas terbatas?", "CTM, bromheksin, loratadin"], ["Contoh obat keras?", "Antibiotik, antihipertensi, kortikosteroid oral, infus"], ["Enam karakteristik karakteristik profesional?", "Altruism, akuntabel, duty, excellence, honor &amp; integrity, respect for others"], ["Sumber moral / etik / hukum?", "Hati nurani / KODEKI / lembaga negara"], ["Sanksi etik oleh?", "MKEK"], ["Empat kaidah bioetik?", "Beneficence, non-maleficence, autonomy, justice"], ["Tiga lex?", "Superior, specialis, posterior"], ["Uji UU terhadap UUD?", "Mahkamah Konstitusi"], ["Uji PP/Perpres terhadap UU?", "Mahkamah Agung"], ["Pasal 7 UU 12/2011 urutan?", "UUD, Tap MPR, UU/Perppu, PP, Perpres, Perda Prov, Perda Kab/Kota"], ["Pidana hanya dimuat di?", "UU dan Perda (Pasal 15 UU 12/2011)"], ["Tanda obat bebas?", "Lingkaran hijau, tepi hitam"], ["Tanda bebas terbatas?", "Lingkaran biru + P1–P6"], ["Tanda obat keras?", "Lingkaran merah, huruf K"], ["Cara memperoleh obat keras?", "Resep dokter, diserahkan apoteker"], ["Siapa yang menyerahkan obat?", "Apoteker (Pasal 145)"], ["Pasal 435 ancaman?", "12 tahun / Rp5 miliar"], ["Pasal 436(2) ancaman?", "5 tahun / Rp500 juta"], ["Obat naik jadi keras 2022?", "Lidokain, benzokain"], ["Psikotropika gol. III–IV diatur?", "UU 5/1997 (mis. diazepam, fenobarbital)"], ["Tiga rumus pengobatan Islami?", "Rasional, halal, bebas syirik"], ["Definisi POR WHO?", "Obat sesuai kebutuhan klinis, dosis individu, waktu memadai, biaya terendah"]];
+const GLOSS = [["Lex specialis", "Aturan khusus mengesampingkan umum."], ["Lex superior", "Aturan tinggi mengalahkan rendah."], ["Lex posterior", "Aturan baru mengalahkan lama setingkat."], ["Stufenbau", "Teori jenjang norma Kelsen/Nawiasky."], ["KODEKI", "Kode Etik Kedokteran Indonesia."], ["MKEK", "Majelis Kehormatan Etik Kedokteran."], ["OWA", "Obat Wajib Apotek: obat keras tanpa resep terbatas."], ["Daftar G", "Obat keras (<i>gevaarlijk</i>), warisan ordonansi kolonial."], ["Self dispensing", "Dokter menyerahkan obat sendiri."], ["OOT", "Obat-obat tertentu yang sering disalahgunakan."], ["BKO", "Bahan kimia obat dalam jamu."], ["Altruism", "Motivasi tidak semata mencari keuntungan."], ["GeMa CerMat", "Gerakan Masyarakat Cermat Menggunakan Obat."], ["DaGuSiBu", "Dapatkan, Gunakan, Simpan, Buang obat."]];
+
+/* ============ UTIL ============ */
+function $(id){return document.getElementById(id);}
+function secName(id){const b=document.querySelector('.nav-btn[data-sec="'+id+'"]');return b?b.textContent.trim():id;}
+function show(id,keep){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.sec===id));
+  $('sec-'+id).classList.add('active');
+  const act=document.querySelector('.nav-btn.active'); if(act) act.scrollIntoView({inline:'center',block:'nearest'});
+  if(!keep) window.scrollTo({top:0,behavior:'smooth'});
+  $('jumpPanel').classList.remove('open'); buildJump();
+}
+function toggle(btn){btn.classList.toggle('open');btn.nextElementSibling.classList.toggle('open');}
+function go(sec,el){show(sec,true);const t=$(el);if(t){setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'start'}),60);t.style.outline='3px solid var(--p-light)';setTimeout(()=>t.style.outline='',1800);}}
+function curSec(){const a=document.querySelector('.section.active');return a?a.id.replace('sec-',''):'';}
+
+/* theme */
+function toggleTheme(){
+  const d=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',d);
+  $('themeBtn').innerHTML=d==='dark'?'☀️ <span>Terang</span>':'🌙 <span>Gelap</span>';
+  try{localStorage.setItem('uo-theme',d);}catch(e){}
+}
+(function(){try{const t=localStorage.getItem('uo-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');$('themeBtn').innerHTML='☀️ <span>Terang</span>';}}catch(e){}})();
+
+/* chips (quick jump per section) */
+function buildChips(){
+  document.querySelectorAll('.section').forEach(sec=>{
+    const cards=[...sec.querySelectorAll('.card[id]')]; if(cards.length<2) return;
+    const d=document.createElement('div');d.className='chips';
+    d.innerHTML='<span class="chips-label">⚡ Lompat ke</span>';
+    cards.forEach(c=>{const a=document.createElement('a');a.textContent=c.dataset.t||c.id;a.onclick=()=>go(sec.id.replace('sec-',''),c.id);d.appendChild(a);});
+    const desc=sec.querySelector('.section-desc'); desc.insertAdjacentElement('afterend',d);
+  });
+}
+/* jump panel */
+function buildJump(){
+  const p=$('jumpPanel');p.innerHTML='';const cur=curSec();
+  document.querySelectorAll('.nav-btn').forEach(b=>{const x=document.createElement('button');x.textContent=b.textContent.trim();if(b.dataset.sec===cur)x.className='cur';x.onclick=()=>show(b.dataset.sec);p.appendChild(x);});
+}
+function toggleJump(){buildJump();$('jumpPanel').classList.toggle('open');}
+
+/* modal */
+function openModal(){const m=$('drModal');if(!m)return;m.classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){const m=$('drModal');if(m)m.classList.remove('open');document.body.style.overflow='';}
+
+/* glossary */
+function renderGl(list){if(!$('glList'))return;$('glList').innerHTML=list.map(g=>'<div class="gl" data-s="1"><b>'+g[0]+'</b><br><span>'+g[1]+'</span></div>').join('')||'<p style="color:var(--muted)">Tidak ada istilah cocok.</p>';}
+function filterGl(){const q=$('glFilter').value.toLowerCase();renderGl(GLOSS.filter(g=>(g[0]+' '+g[1]).toLowerCase().includes(q)));}
+
+/* search */
+function openSearch(){$('searchOv').classList.add('open');$('searchIn').value='';$('searchRes').innerHTML='<div class="sr-empty">Ketik minimal 2 huruf.</div>';setTimeout(()=>$('searchIn').focus(),50);}
+function closeSearch(){$('searchOv').classList.remove('open');}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function doSearch(){
+  const q=$('searchIn').value.trim().toLowerCase();const box=$('searchRes');
+  if(q.length<2){box.innerHTML='<div class="sr-empty">Ketik minimal 2 huruf.</div>';return;}
+  const out=[];
+  document.querySelectorAll('.card').forEach(c=>{
+    const txt=c.textContent.replace(/\s+/g,' ');const i=txt.toLowerCase().indexOf(q);if(i<0)return;
+    const sec=c.closest('.section').id.replace('sec-','');
+    const t=c.dataset.t||(c.querySelector('.card-title')?c.querySelector('.card-title').textContent:'')||'Kartu';
+    const s=Math.max(0,i-50),e=Math.min(txt.length,i+q.length+90);
+    const sn=esc(txt.slice(s,i))+'<mark>'+esc(txt.slice(i,i+q.length))+'</mark>'+esc(txt.slice(i+q.length,e));
+    out.push({sec,id:c.id,t,sn:(s>0?'…':'')+sn+(e<txt.length?'…':'')});
+  });
+  document.querySelectorAll('.gl').forEach(g=>{const txt=g.textContent;if(txt.toLowerCase().includes(q)){out.push({sec:'glosarium',id:'c-gloss',t:g.querySelector('b').textContent,sn:esc(txt.slice(0,140))});}});
+  box.innerHTML=out.length?'':'<div class="sr-empty">Tidak ditemukan.</div>';
+  out.slice(0,25).forEach(r=>{const d=document.createElement('div');d.className='sr';d.innerHTML='<div class="sr-s">'+secName(r.sec)+'</div><div class="sr-t">'+esc(r.t.replace(/\s+/g,' ').slice(0,80))+'</div><div class="sr-x">'+r.sn+'</div>';d.onclick=()=>{closeSearch();go(r.sec,r.id);};box.appendChild(d);});
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSearch();closeModal();const jp=$('jumpPanel');if(jp)jp.classList.remove('open');}if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openSearch();}});
+
+/* ============ QUIZ ============ */
+let answered={},score=0;
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function renderQuiz(){
+  document.querySelectorAll('.qn').forEach(x=>x.textContent=QUIZ.length);
+  answered={};score=0;$('scoreCard').classList.remove('show');
+  $('quizProg').innerHTML=QUIZ.map((_,i)=>'<div class="pdot" id="dot'+i+'"></div>').join('');
+  const L='ABCDE';
+  $('quizBox').innerHTML=QUIZ.map((q,qi)=>{
+    const opts=shuffle(q.o.map((o,i)=>({o,i})));
+    return '<div class="quiz-q" id="q'+qi+'"><div class="q-num">SOAL '+String(qi+1).padStart(2,'0')+' / '+q.topic+'</div><div class="q-lvl">'+q.lvl+'</div>'
+     +'<div class="q-vignette">'+q.v+'</div><p class="q-question">'+q.q+'</p><div class="q-opts">'
+     +opts.map((x,k)=>'<button class="q-opt" data-ok="'+(x.o[1]?1:0)+'" onclick="ans('+qi+',this)"><span class="ol">'+L[k]+'</span><span>'+x.o[0]+'</span></button>').join('')
+     +'</div><div class="q-exp" id="exp'+qi+'">'
+     +opts.map((x,k)=>'<div class="rz '+(x.o[1]?'ok':'no')+'"><b>'+(x.o[1]?'✅ ':'✖ ')+L[k]+(x.o[1]?' — Jawaban benar':' — Kurang tepat')+'</b>'+x.o[2]+'</div>').join('')
+     +'<div class="rz-concept">🧠 <b>Konsep inti:</b> '+q.k+'</div></div></div>';
+  }).join('');
+}
+function ans(qi,btn){
+  if(answered[qi])return;answered[qi]=true;
+  const card=$('q'+qi);const ok=btn.dataset.ok==='1';
+  card.querySelectorAll('.q-opt').forEach(b=>{b.disabled=true;if(b.dataset.ok==='1')b.classList.add('correct');});
+  if(ok){score++;$('dot'+qi).classList.add('ok');}else{btn.classList.add('wrong');$('dot'+qi).classList.add('no');}
+  $('exp'+qi).classList.add('show');
+  if(Object.keys(answered).length===QUIZ.length)setTimeout(showScore,700);
+}
+function showScore(){
+  const sc=$('scoreCard');sc.classList.add('show');$('scoreNum').textContent=score;
+  const m=['Yuk baca ulang tab materinya, kamu pasti bisa! 💪','Lumayan, fokus lagi ke pembahasan tiap pilihan. 📖','Bagus! Tinggal rapikan bagian yang masih salah. 🌟','Hampir sempurna! 🔥','PERFECT! 🩺✨'];
+  const r=score/QUIZ.length;$('scoreMsg').textContent=m[r<=.3?0:r<=.5?1:r<=.75?2:r<1?3:4];
+  sc.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetQuiz(){renderQuiz();window.scrollTo({top:0,behavior:'smooth'});}
+
+/* ============ FLASHCARD ============ */
+let fcOrder=[],fcI=0,fcKnown=new Set(),fcOnlyUnknown=false;
+function fcBuild(){fcOrder=FLASH.map((_,i)=>i);if(fcOnlyUnknown)fcOrder=fcOrder.filter(i=>!fcKnown.has(i));fcI=Math.min(fcI,Math.max(0,fcOrder.length-1));}
+function fcRender(){
+  $('fc').classList.remove('flip');
+  if(!fcOrder.length){$('fcQ').innerHTML='🎉 Semua kartu sudah hafal!';$('fcA').innerHTML='';$('fcPos').textContent='0 / 0';}
+  else{const c=FLASH[fcOrder[fcI]];$('fcQ').innerHTML=c[0];$('fcA').innerHTML=c[1];$('fcPos').textContent=(fcI+1)+' / '+fcOrder.length;}
+  $('fcStat').textContent='Hafal: '+fcKnown.size+' / '+FLASH.length;
+}
+function flipCard(){if(fcOrder.length)$('fc').classList.toggle('flip');}
+function fcMove(d){if(!fcOrder.length)return;fcI=(fcI+d+fcOrder.length)%fcOrder.length;fcRender();}
+function fcMark(k){if(!fcOrder.length)return;const id=fcOrder[fcI];if(k)fcKnown.add(id);else fcKnown.delete(id);if(fcOnlyUnknown&&k){fcBuild();fcRender();}else fcMove(1);}
+function fcShuffle(){shuffle(fcOrder);fcI=0;fcRender();}
+function fcToggleOnly(){fcOnlyUnknown=!fcOnlyUnknown;$('fcOnly').textContent='Tampilkan hanya yang belum hafal: '+(fcOnlyUnknown?'ON':'OFF');fcI=0;fcBuild();fcRender();}
+function fcReset(){fcKnown.clear();fcOnlyUnknown=false;$('fcOnly').textContent='Tampilkan hanya yang belum hafal: OFF';fcI=0;fcBuild();fcRender();}
+
+/* ============ INIT ============ */
+if($('glList'))renderGl(GLOSS);
+if($('quizBox'))renderQuiz();
+if($('fc')){fcBuild();fcRender();}
+buildChips();buildJump();
+
+/* NOTES */
+(function(){
+const SW=['#FFF176','#A5D6FF','#B9F6CA','#FFB3C6','#FFCC80','#D1B3FF'],FC=['#C62828','#1565C0','#2E7D32','#6A1B9A','#1B2B3E'];
+const k=id=>'uo-n-'+id;
+function ex(c,v){document.execCommand(c,false,v||null);}
+document.querySelectorAll('.card[id]').forEach(card=>{
+ if(card.closest('#sec-glosarium'))return;
+ const id=card.id,box=document.createElement('div');box.className='nb';
+ let sv='';try{sv=localStorage.getItem(k(id))||'';}catch(e){}
+ box.innerHTML='<button class="nb-t'+(sv?' has':'')+'">📝 Catatan</button><div class="nb-p"><div class="nb-bar">'+
+ '<button data-c="bold"><b>B</b></button><button data-c="italic"><i>I</i></button><button data-c="underline"><u>U</u></button><button data-c="strikeThrough"><s>S</s></button><i></i>'+
+ SW.map(c=>'<button class="sw" data-h="'+c+'" style="background:'+c+'" title="Stabilo"></button>').join('')+'<button data-h="transparent" title="Hapus stabilo">⌫</button><i></i>'+
+ FC.map(c=>'<button class="sw" data-f="'+c+'" style="background:'+c+'" title="Warna teks"></button>').join('')+'<i></i>'+
+ '<select data-s><option value="">Ukuran</option><option value="2">Kecil</option><option value="3">Normal</option><option value="5">Besar</option><option value="6">Judul</option></select>'+
+ '<button data-c="insertUnorderedList">• List</button><button data-c="insertOrderedList">1. List</button><button data-c="insertHorizontalRule">―</button><button data-c="removeFormat" title="Bersihkan format">Tx</button><button data-c="undo">↶</button><button data-c="redo">↷</button><button data-clr title="Hapus catatan">🗑</button></div>'+
+ '<div class="nb-e" contenteditable="true"></div><div class="nb-f"><span class="st">Tersimpan otomatis</span><span class="ct"></span></div></div>';
+ card.appendChild(box);
+ const t=box.querySelector('.nb-t'),p=box.querySelector('.nb-p'),e=box.querySelector('.nb-e'),ct=box.querySelector('.ct');
+ e.innerHTML=sv;ct.textContent=e.innerText.trim().length+' karakter';
+ t.onclick=()=>{p.classList.toggle('open');if(p.classList.contains('open'))e.focus();};
+ p.querySelectorAll('button').forEach(b=>b.onmousedown=ev=>{ev.preventDefault();
+  if(b.dataset.c)ex(b.dataset.c);else if(b.dataset.h)ex('hiliteColor',b.dataset.h);else if(b.dataset.f)ex('foreColor',b.dataset.f);
+  else if(b.hasAttribute('data-clr')){if(confirm('Hapus catatan kartu ini?')){e.innerHTML='';sv2();}}
+  sv2();});
+ p.querySelector('select').onchange=function(){if(this.value){e.focus();ex('fontSize',this.value);this.value='';sv2();}};
+ function sv2(){const h=e.innerHTML;try{h&&e.innerText.trim()?localStorage.setItem(k(id),h):localStorage.removeItem(k(id));}catch(x){}
+  t.classList.toggle('has',!!e.innerText.trim());ct.textContent=e.innerText.trim().length+' karakter';}
+ e.oninput=sv2;
+});
+window.exportNotes=function(){let o='';document.querySelectorAll('.card[id]').forEach(c=>{const e=c.querySelector('.nb-e');if(e&&e.innerText.trim())o+='## '+(c.dataset.t||c.id)+'\n'+e.innerText.trim()+'\n\n';});
+ if(!o){alert('Belum ada catatan.');return;}const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([o],{type:'text/plain'}));a.download='catatan-penggolongan-obat.txt';a.click();};
+})();
+</script>
+</body>
+</html>

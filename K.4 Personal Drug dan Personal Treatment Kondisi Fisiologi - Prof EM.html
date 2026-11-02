@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💊 Penggunaan Obat pada Kondisi Khusus — Prof EM · Blok Rational Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --p:#1F7A7A;--p-deep:#0F4C4C;--p-mid:#2E8F8F;--p-light:#6CC0BA;--p-pale:#E1F3F1;
+  --rose:#D4788A;--rose-deep:#A84D60;--rose-pale:#FDE8EC;
+  --mint:#5FB894;--mint-deep:#2F7F63;--mint-pale:#E3F5EC;
+  --peach:#E8A87C;--peach-deep:#B8693A;--peach-pale:#FDF0E6;
+  --sky:#6FA8CF;--sky-deep:#2F6F96;--sky-pale:#E4F1FA;
+  --bg:#F3FAF9;--card:#fff;--text:#12302F;--muted:#4E6E6C;--border:#CDE4E1;--shadow:rgba(31,122,122,.14);--alt:#F7FCFB;
+  --th1:#0F4C4C;--th2:#1F7A7A;
+}
+[data-theme="dark"]{
+  --p:#4FC3BC;--p-deep:#8EE0DA;--p-mid:#3AA8A2;--p-light:#2C6F6B;--p-pale:#16302F;
+  --rose:#E58C9E;--rose-deep:#F2A9B7;--rose-pale:#3A1F27;
+  --mint:#6BCBA2;--mint-deep:#8FE0BE;--mint-pale:#173226;
+  --peach:#EDB287;--peach-deep:#F2C29E;--peach-pale:#3A2A1A;
+  --sky:#7CB6DC;--sky-deep:#9CCDEB;--sky-pale:#162B3A;
+  --bg:#0C1717;--card:#132424;--text:#E2F1EF;--muted:#9BBDBA;--border:#244240;--shadow:rgba(0,0,0,.4);--alt:#102020;
+  --th1:#1E5F5C;--th2:#2A7A76;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.75;transition:background .25s,color .25s}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0B3B3B 0%,#14645F 40%,#2A8C86 72%,#6CB8A8 100%);padding:60px 52px 52px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;right:-80px;width:480px;height:480px;border-radius:50%;background:rgba(255,255,255,.07)}
+.hero::after{content:'';position:absolute;bottom:-100px;left:6%;width:320px;height:320px;border-radius:50%;background:rgba(232,168,124,.12)}
+.hero-eyebrow{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.92);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:20px;position:relative;z-index:1}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,52px);font-weight:900;color:#fff;line-height:1.12;margin-bottom:14px;position:relative;z-index:1}
+.hero h1 em{font-style:italic;color:#C8F2E6}
+.hero-sub{color:rgba(255,255,255,.8);font-size:14.5px;font-weight:300;max-width:620px;line-height:1.7;position:relative;z-index:1}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;position:relative;z-index:1}
+.pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);color:#fff;padding:6px 16px;border-radius:30px;font-size:12px;font-weight:500}
+
+/* NAV */
+.sticky-nav{position:sticky;top:0;z-index:200;background:linear-gradient(90deg,#0B3B3B,#14645F);display:flex;align-items:stretch;box-shadow:0 3px 20px rgba(11,59,59,.45)}
+.nav-scroll{display:flex;overflow-x:auto;scrollbar-width:none;flex:1}
+.nav-scroll::-webkit-scrollbar{display:none}
+.nav-btn{background:none;border:none;color:rgba(214,245,238,.7);font-family:inherit;font-size:12px;font-weight:500;letter-spacing:.4px;padding:13px 17px;white-space:nowrap;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
+.nav-btn:hover,.nav-btn.active{color:#fff;border-bottom-color:#E8A87C}
+.nav-tools{display:flex;align-items:center;gap:6px;padding:0 10px;border-left:1px solid rgba(255,255,255,.15)}
+.tool-btn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:20px;padding:5px 12px;font-family:inherit;font-size:12px;cursor:pointer;white-space:nowrap;transition:background .2s}
+.tool-btn:hover{background:rgba(255,255,255,.25)}
+
+/* LAYOUT */
+.container{max-width:960px;margin:0 auto;padding:40px 24px 90px}
+.section{display:none;animation:fadeUp .3s ease}
+.section.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.section-heading{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--p-deep);margin-bottom:6px;line-height:1.2}
+.section-desc{color:var(--muted);font-size:13.5px;padding-bottom:16px;border-bottom:2px solid var(--border);margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+.chips a{font-size:11.5px;font-weight:600;color:var(--p-deep);background:var(--p-pale);border:1px solid var(--border);padding:4px 12px;border-radius:20px;cursor:pointer;transition:all .15s}
+.chips a:hover{background:var(--p);color:#fff;border-color:var(--p)}
+.chips-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);width:100%}
+
+/* CARDS */
+.card{background:var(--card);border-radius:18px;padding:24px 28px;margin-bottom:20px;border:1px solid var(--border);box-shadow:0 2px 14px var(--shadow);scroll-margin-top:70px}
+.card-title{font-family:'Lora',serif;font-size:17px;font-weight:600;color:var(--p-deep);margin-bottom:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card p{font-size:14px;margin-bottom:8px}
+.card p:last-child{margin-bottom:0}
+.sub{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+
+/* TAGS */
+.tg{display:inline-block;font-family:'DM Sans',sans-serif;font-size:9.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:3px 9px;border-radius:12px;vertical-align:middle;white-space:nowrap}
+.tg.hy{background:#E8A87C;color:#4A2810}
+.tg.mm{background:#D4788A;color:#fff}
+.tg.ct{background:#C0392B;color:#fff}
+.tg.fa{background:#2F6F96;color:#fff}
+.tg.dr{background:linear-gradient(90deg,#8E44AD,#C070E8);color:#fff}
+.tg.add{background:transparent;border:1px dashed var(--muted);color:var(--muted)}
+
+/* ALERTS */
+.alert{padding:13px 17px;border-radius:11px;margin:13px 0;font-size:13.5px;display:flex;gap:10px;line-height:1.65}
+.alert>div{flex:1}
+.alert-teal{background:var(--p-pale);border-left:4px solid var(--p);color:var(--p-deep)}
+.alert-rose{background:var(--rose-pale);border-left:4px solid var(--rose);color:var(--rose-deep)}
+.alert-mint{background:var(--mint-pale);border-left:4px solid var(--mint);color:var(--mint-deep)}
+.alert-peach{background:var(--peach-pale);border-left:4px solid var(--peach);color:var(--peach-deep)}
+.alert-sky{background:var(--sky-pale);border-left:4px solid var(--sky);color:var(--sky-deep)}
+.alert-icon{flex-shrink:0;font-size:15px;margin-top:1px}
+
+/* DR NOTE */
+.dr-note{background:linear-gradient(135deg,var(--p-pale),var(--peach-pale));border:1.5px solid var(--p-light);border-radius:13px;padding:14px 18px;margin:14px 0;font-size:13.5px;line-height:1.7}
+.dr-note::before{content:'🎤 Prof EM menekankan: ';font-weight:700;color:var(--p-deep)}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border);margin:10px 0 16px}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:520px}
+th{background:linear-gradient(90deg,var(--th1),var(--th2));color:#fff;padding:10px 13px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.3px}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;font-size:13px}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:var(--alt)}
+tr:hover td{background:var(--p-pale)}
+
+/* GRIDS */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:760px){.grid-3,.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.mini-card{background:var(--alt);border:1px solid var(--border);border-radius:13px;padding:14px 16px}
+.mini-card h4{font-family:'Lora',serif;font-size:14px;color:var(--p-deep);margin-bottom:6px}
+.mini-card p,.mini-card li{font-size:12.8px;color:var(--muted);line-height:1.6}
+.mini-card ul{padding-left:16px}
+.mini-card .arrow{display:block;margin-top:6px;font-weight:700;color:var(--rose-deep);font-size:12.5px}
+
+.styled-list{list-style:none;padding:0}
+.styled-list li{padding:7px 0 7px 24px;border-bottom:1px solid var(--border);font-size:13.5px;position:relative;line-height:1.65}
+.styled-list li::before{content:'◆';position:absolute;left:0;color:var(--p-light);font-size:9px;top:11px}
+.styled-list li:last-child{border-bottom:none}
+
+/* CLINICAL REASONING */
+.cr-box{background:linear-gradient(135deg,var(--p-pale),var(--sky-pale));border:1.5px solid var(--p-light);border-radius:14px;padding:18px 22px;margin:14px 0}
+.cr-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--p-deep);margin-bottom:10px}
+.cr-steps{counter-reset:cr;list-style:none;padding:0}
+.cr-steps li{counter-increment:cr;padding:7px 0 7px 36px;position:relative;font-size:13.5px;border-bottom:1px solid rgba(46,143,143,.2);line-height:1.65}
+.cr-steps li:last-child{border-bottom:none}
+.cr-steps li::before{content:counter(cr);position:absolute;left:0;top:8px;width:24px;height:24px;background:var(--p-mid);color:#fff;border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:700}
+
+/* FLOW */
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:12px 0}
+.flow .fb{background:var(--p-pale);border:1.5px solid var(--p-light);border-radius:11px;padding:10px 14px;font-size:13px;text-align:center}
+.flow .fb small{display:block;color:var(--muted);font-size:11.5px}
+.flow .fa{text-align:center;color:var(--p);font-size:16px;line-height:1.2;padding:2px 0}
+.flow .fb.warn{background:var(--rose-pale);border-color:var(--rose)}
+.flow .fb.ok{background:var(--mint-pale);border-color:var(--mint)}
+
+/* MNEMONIC */
+.mnemonic{background:linear-gradient(135deg,var(--p-pale),var(--peach-pale));border:2px solid var(--p-light);border-radius:15px;padding:18px 22px;margin:14px 0}
+.mnemonic-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--p-deep);margin-bottom:6px}
+.mnemonic-text{font-family:'Playfair Display',serif;font-size:19px;color:var(--text);font-weight:700}
+.mnemonic-sub{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.6}
+
+/* HIGHLIGHTS */
+.hl-t,.hl-r,.hl-m,.hl-p{padding:1px 7px;border-radius:5px;font-weight:600;font-size:13px}
+.hl-t{background:var(--p-pale);color:var(--p-deep)}
+.hl-r{background:var(--rose-pale);color:var(--rose-deep)}
+.hl-m{background:var(--mint-pale);color:var(--mint-deep)}
+.hl-p{background:var(--peach-pale);color:var(--peach-deep)}
+mark{background:#FFE08A;color:#3a2a00;padding:0 2px;border-radius:3px}
+
+/* COLLAPSE */
+.collapse-btn{background:none;border:none;width:100%;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0;font-family:inherit;color:var(--p-deep);font-weight:600;font-size:14px}
+.collapse-btn .chev{transition:transform .25s;font-size:11px;color:var(--muted)}
+.collapse-btn.open .chev{transform:rotate(180deg)}
+.collapse-body{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
+.collapse-body.open{display:block;animation:fadeUp .25s ease}
+
+/* COMPARE */
+.compare-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.compare-col{border-radius:13px;padding:16px 18px;border:2px solid}
+.compare-col.left{background:var(--p-pale);border-color:var(--p-light)}
+.compare-col.right{background:var(--rose-pale);border-color:var(--rose)}
+.compare-col h4{font-family:'Lora',serif;font-size:15px;margin-bottom:8px}
+.compare-col.left h4{color:var(--p-deep)}
+.compare-col.right h4{color:var(--rose-deep)}
+.compare-col li{font-size:13px;margin-left:16px;margin-bottom:3px}
+@media(max-width:600px){.compare-wrap{grid-template-columns:1fr}}
+
+/* SOROTAN / BANK TAG */
+.cohort-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:6px;margin:1px;color:#fff}
+.cohort-arthron{background:#B8566A}
+.cohort-aorta{background:#3E9C7C}
+.cohort-axon{background:#7A68B8}
+.cohort-ub{background:#C07A3A}
+
+/* GLOSSARY */
+.gl-filter{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:11px;background:var(--card);color:var(--text);font-family:inherit;font-size:14px;margin-bottom:14px}
+.gl{padding:11px 0;border-bottom:1px solid var(--border)}
+.gl:last-child{border-bottom:none}
+.gl b{color:var(--p-deep)}
+.gl span{font-size:13.5px;color:var(--text)}
+
+/* QUIZ */
+.quiz-progress{display:flex;gap:6px;margin-bottom:26px;flex-wrap:wrap}
+.pdot{width:11px;height:11px;border-radius:50%;background:var(--border);transition:background .3s}
+.pdot.ok{background:var(--mint)}
+.pdot.no{background:var(--rose)}
+.quiz-q{background:var(--card);border:1.5px solid var(--border);border-radius:18px;padding:30px 26px 24px;margin-bottom:26px;position:relative}
+.q-num{position:absolute;top:-12px;left:22px;background:linear-gradient(90deg,var(--th1),var(--rose-deep));color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 16px;border-radius:10px}
+.q-lvl{position:absolute;top:-12px;right:22px;background:var(--peach);color:#4A2810;font-size:11px;font-weight:800;padding:4px 12px;border-radius:10px}
+.q-vignette{background:linear-gradient(135deg,var(--p-pale),var(--peach-pale));border-left:4px solid var(--p-light);border-radius:0 11px 11px 0;padding:14px 17px;font-size:13.5px;line-height:1.7;margin-bottom:16px}
+.q-question{font-weight:600;font-size:14px;margin-bottom:14px}
+.q-opts{display:flex;flex-direction:column;gap:8px}
+.q-opt{background:var(--alt);border:1.5px solid var(--border);border-radius:11px;padding:11px 15px;font-size:13.5px;cursor:pointer;text-align:left;font-family:inherit;display:flex;gap:10px;align-items:flex-start;transition:all .18s;color:var(--text)}
+.q-opt:hover:not(:disabled){border-color:var(--p);background:var(--p-pale)}
+.q-opt .ol{font-weight:700;font-size:12px;min-width:22px;height:22px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.q-opt.correct{background:var(--mint-pale)!important;border-color:var(--mint)!important;color:var(--mint-deep)}
+.q-opt.correct .ol{background:var(--mint);color:#fff}
+.q-opt.wrong{background:var(--rose-pale)!important;border-color:var(--rose)!important;color:var(--rose-deep)}
+.q-opt.wrong .ol{background:var(--rose);color:#fff}
+.q-opt:disabled{cursor:default}
+.q-exp{display:none;margin-top:16px}
+.q-exp.show{display:block;animation:fadeUp .3s ease}
+.rz{border-radius:10px;padding:10px 14px;margin-bottom:8px;font-size:13px;line-height:1.65;border-left:3px solid}
+.rz.ok{background:var(--mint-pale);border-color:var(--mint);color:var(--mint-deep)}
+.rz.no{background:var(--alt);border-color:var(--border);color:var(--text)}
+.rz b{display:block;margin-bottom:2px}
+.rz-concept{background:var(--p-pale);border:1.5px solid var(--p-light);border-radius:11px;padding:12px 16px;font-size:13px;margin-top:10px;color:var(--p-deep)}
+.score-card{background:linear-gradient(135deg,#0B3B3B,#2A8C86,#6CB8A8);color:#fff;border-radius:22px;padding:44px;text-align:center;display:none;margin-top:28px}
+.score-card.show{display:block;animation:fadeUp .4s ease}
+.score-big{font-family:'Playfair Display',serif;font-size:76px;font-weight:900;color:#E1F3F1;line-height:1;margin:10px 0}
+.btn{background:var(--p);color:#fff;border:none;border-radius:30px;padding:10px 24px;font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;transition:transform .2s,opacity .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:var(--p-pale);color:var(--p-deep);border:1px solid var(--border)}
+.btn.rose{background:var(--rose-deep);color:#fff}
+[data-theme="dark"] .btn.rose{color:#3A1F27}
+.btn-restart{margin-top:22px;background:#fff;color:#0F4C4C}
+
+/* FLASHCARD */
+.fc-wrap{max-width:560px;margin:0 auto}
+.fc-meta{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.fc-scene{perspective:1100px;height:290px;margin-bottom:16px}
+.fc{position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d;cursor:pointer}
+.fc.flip{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border:2px solid var(--p-light);overflow:auto}
+.fc-front{background:var(--card);font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--p-deep)}
+.fc-back{background:linear-gradient(135deg,var(--p-pale),var(--mint-pale));transform:rotateY(180deg);font-size:14.5px;line-height:1.7}
+.fc-hint{font-size:11px;color:var(--muted);margin-top:14px;font-family:'DM Sans',sans-serif;font-weight:400}
+.fc-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+
+/* FLOATS */
+.fab-stack{position:fixed;bottom:22px;right:22px;z-index:9000;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.fab{border:none;border-radius:50px;padding:11px 18px;font-family:inherit;font-size:12.5px;font-weight:700;cursor:pointer;color:#fff;display:flex;align-items:center;gap:8px;box-shadow:0 6px 22px rgba(0,0,0,.28);transition:transform .2s}
+.fab:hover{transform:translateY(-3px)}
+.fab.dr{background:linear-gradient(135deg,#4A1060,#C070E8)}
+.fab.jump{background:linear-gradient(135deg,#0F4C4C,#2E8F8F)}
+.pulse{width:9px;height:9px;border-radius:50%;background:#FFB0C0;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.7}}
+.jump-panel{display:none;position:fixed;bottom:130px;right:22px;z-index:9001;background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:12px;width:250px;max-height:60vh;overflow-y:auto;box-shadow:0 10px 36px rgba(0,0,0,.3)}
+.jump-panel.open{display:block;animation:fadeUp .2s ease}
+.jump-panel button{display:block;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:13px;padding:8px 10px;border-radius:8px;cursor:pointer;color:var(--text)}
+.jump-panel button:hover{background:var(--p-pale)}
+.jump-panel button.cur{background:var(--p-pale);color:var(--p-deep);font-weight:700}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,20,20,.82);z-index:99999;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.modal-overlay.open{display:flex;animation:fadeUp .3s ease}
+.modal-box{background:linear-gradient(160deg,#1A0A2E,#2E1050);border:2px solid #C070E8;border-radius:24px;max-width:700px;width:100%;max-height:86vh;overflow-y:auto;padding:30px;position:relative;box-shadow:0 20px 60px rgba(180,60,220,.4)}
+.modal-close{position:absolute;top:14px;right:16px;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:18px;width:34px;height:34px;border-radius:50%;cursor:pointer}
+.modal-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#E8D0FF;margin-bottom:6px}
+.modal-sub{color:rgba(255,255,255,.55);font-size:12.5px;margin-bottom:22px}
+.modal-item{background:rgba(255,255,255,.05);border:1px solid rgba(192,112,232,.25);border-radius:12px;padding:16px 16px 12px;margin-bottom:14px;position:relative}
+.modal-item-num{position:absolute;top:-9px;left:14px;background:linear-gradient(90deg,#C070E8,#9B40C8);color:#fff;font-size:10px;font-weight:800;padding:2px 10px;border-radius:10px;letter-spacing:.1em}
+.modal-item-q{color:#E8C8FF;font-weight:600;font-size:13.5px;margin-bottom:5px}
+.modal-item-a{color:rgba(255,255,255,.82);font-size:13px;line-height:1.65}
+.modal-item-a b{color:#A0FFD8}
+
+/* SEARCH */
+.search-overlay{display:none;position:fixed;inset:0;background:rgba(10,20,20,.7);z-index:99998;padding:70px 16px 16px;backdrop-filter:blur(3px)}
+.search-overlay.open{display:block}
+.search-box{max-width:680px;margin:0 auto;background:var(--card);border-radius:18px;border:1.5px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}
+.search-box input{width:100%;border:none;border-bottom:1.5px solid var(--border);padding:16px 20px;font-family:inherit;font-size:15px;background:var(--card);color:var(--text);outline:none}
+.search-res{max-height:60vh;overflow-y:auto}
+.sr{padding:12px 20px;border-bottom:1px solid var(--border);cursor:pointer}
+.sr:hover{background:var(--p-pale)}
+.sr .sr-t{font-weight:700;font-size:13.5px;color:var(--p-deep)}
+.sr .sr-s{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.sr .sr-x{font-size:12.5px;color:var(--text);margin-top:2px}
+.sr-empty{padding:22px;text-align:center;color:var(--muted);font-size:13.5px}
+
+@media(max-width:600px){
+  .hero{padding:36px 20px 32px}.container{padding:26px 14px 90px}.card{padding:18px 18px}
+  .nav-tools .tool-btn span{display:none}
+  .fc-scene{height:320px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">💊 Blok Rational Therapy · Prof EM · Farmakologi</div>
+  <h1>Penggunaan Obat pada <em>Kondisi Khusus</em><br>Fisiologis & Patologis</h1>
+  <p class="hero-sub">Disusun dari PPT, transkrip kuliah Prof EM, bank soal blok (ARTHRON'18, AORTA'19, AXON'20, UB RT), dan Fornas 2025. Logikanya: kenali kondisi pasien dulu, baru pilih dan sesuaikan obatnya.</p>
+  <div class="hero-pills">
+    <span class="pill">👶 Anak & Neonatus</span>
+    <span class="pill">👵 Geriatri</span>
+    <span class="pill">🤰 Hamil & Menyusui</span>
+    <span class="pill">🫀 GIT · CVD · Hati · Ginjal</span>
+    <span class="pill">🧬 Genetik</span>
+    <span class="pill">🧠 12 Soal + Flashcard</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="sticky-nav" id="mainNav">
+  <div class="nav-scroll">
+    <button class="nav-btn active" data-sec="overview" onclick="show('overview')">🏠 Overview</button>
+    <button class="nav-btn" data-sec="anak" onclick="show('anak')">👶 Anak</button>
+    <button class="nav-btn" data-sec="geriatri" onclick="show('geriatri')">👵 Geriatri</button>
+    <button class="nav-btn" data-sec="hamil" onclick="show('hamil')">🤰 Hamil</button>
+    <button class="nav-btn" data-sec="susu" onclick="show('susu')">🍼 Menyusui</button>
+    <button class="nav-btn" data-sec="patologik" onclick="show('patologik')">🫀 Patologik & Genetik</button>
+    <button class="nav-btn" data-sec="resep" onclick="show('resep')">📝 Terapi & Resep</button>
+    <button class="nav-btn" data-sec="bank" onclick="show('bank')">📊 Analisis Soal</button>
+    <button class="nav-btn" data-sec="glosarium" onclick="show('glosarium')">📖 Glosarium</button>
+    <button class="nav-btn" data-sec="ringkas" onclick="show('ringkas')">⚡ Ringkasan</button>
+    <button class="nav-btn" data-sec="quiz" onclick="show('quiz')">🧠 Quiz</button>
+    <button class="nav-btn" data-sec="flash" onclick="show('flash')">🃏 Flashcard</button>
+  </div>
+  <div class="nav-tools">
+    <button class="tool-btn" onclick="openSearch()">🔍 <span>Cari</span></button>
+    <button class="tool-btn" id="themeBtn" onclick="toggleTheme()">🌙 <span>Gelap</span></button>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ======================= OVERVIEW ======================= -->
+<div id="sec-overview" class="section active">
+  <h2 class="section-heading">Peta Konsep: Kenapa "Dosis Biasa" Tidak Selalu Cocok</h2>
+  <p class="section-desc">Fondasi seluruh kuliah. Semua kondisi khusus di bawah ini hanyalah variasi dari satu pertanyaan: apa yang berubah di farmakokinetik (PK) dan farmakodinamik (PD)?</p>
+
+  <div class="card" id="c-tujuan" data-t="Tujuan belajar">
+    <div class="card-title">🎯 Tujuan Belajar</div>
+    <ul class="styled-list">
+      <li>Menjelaskan faktor yang membuat respons pasien berbeda dari dosis "rata-rata" (fisiologis, patologis, genetik, lainnya).</li>
+      <li>Menjelaskan perubahan PK/PD pada <b>neonatus, geriatri, ibu hamil, ibu menyusui</b>, dan penyakit <b>saluran cerna, kardiovaskular, hati, ginjal</b>.</li>
+      <li>Menerapkan prinsip umum pemilihan dan penyesuaian dosis pada tiap kondisi (termasuk kategori keamanan obat untuk kehamilan).</li>
+      <li>Mengkomunikasikan risiko obat secara jujur kepada pasien hamil/menyusui.</li>
+      <li>Mengenali pola soal blok: hampir semuanya bertanya <i>"apa yang berubah, kenapa, lalu apa akibatnya pada kadar/efek obat"</i>.</li>
+    </ul>
+    <div class="alert alert-sky"><span class="alert-icon">ℹ️</span><div><b>Legenda penanda:</b> <span class="tg hy">High yield</span> <span class="tg mm">Must memorize</span> <span class="tg ct">Common trap</span> <span class="tg fa">Sering keluar</span> <span class="tg dr">Sorotan dosen</span> <span class="tg add">Tambahan, verifikasi</span><br>Penanda <i>Tambahan</i> = informasi di luar slide/transkrip (pengetahuan umum atau bank soal) yang sebaiknya kamu cek ke referensi resmi.</div></div>
+  </div>
+
+  <div class="card" id="c-peta" data-t="Peta konsep dosis ke respons">
+    <div class="card-title">🗺️ Dari Dosis Resep ke Respons Pasien <span class="tg hy">High yield</span></div>
+    <div class="flow">
+      <div class="fb"><b>Dosis yang diresepkan</b><small>dokter</small></div><div class="fa">▼</div>
+      <div class="fb"><b>Dosis yang diminum</b><small>ditentukan: kepatuhan pasien &amp; kesalahan medikasi</small></div><div class="fa">▼</div>
+      <div class="fb"><b>Faktor FARMAKOKINETIK</b><small>absorpsi · distribusi · biotransformasi · eliminasi (ekskresi)</small></div><div class="fa">▼</div>
+      <div class="fb"><b>Kadar obat di tempat kerja</b><small>berapa banyak yang benar-benar sampai ke reseptor</small></div><div class="fa">▼</div>
+      <div class="fb"><b>Faktor FARMAKODINAMIK</b><small>interaksi obat-reseptor · keadaan fungsional jaringan · mekanisme homeostatik · sensitivitas reseptor</small></div><div class="fa">▼</div>
+      <div class="fb ok"><b>Intensitas efek farmakologik = respons pasien</b></div>
+    </div>
+    <div class="dr-note">Dosis biasa cocok untuk <b>sebagian besar</b> pasien. Pada sebagian lain: <span class="hl-r">terlalu besar → toksik</span> atau <span class="hl-p">terlalu kecil → tidak efektif</span>. Orang sehat pun responsnya bisa berbeda-beda.</div>
+    <p><span class="tg mm">Must memorize</span> Untuk kebanyakan obat, keragaman respons terutama berasal dari <b>perbedaan individual faktor farmakokinetik</b>, dan <b>kecepatan biotransformasi</b> adalah variasi terbesar. Untuk beberapa obat, penyebab utamanya perubahan farmakodinamik.</p>
+    <div class="sub">Sumber variasi individual</div>
+    <div class="grid-4">
+      <div class="mini-card"><h4>Fisiologik</h4><p>Anak, usia lanjut, hamil, menyusui</p></div>
+      <div class="mini-card"><h4>Patologik</h4><p>GIT, CVD, hati, ginjal</p></div>
+      <div class="mini-card"><h4>Genetik</h4><p>Terutama metabolisme obat (farmakogenetik)</p></div>
+      <div class="mini-card"><h4>Lain-lain</h4><p>Interaksi obat, toleransi, plasebo, lingkungan</p></div>
+    </div>
+  </div>
+
+  <div class="card" id="c-adme" data-t="Matriks ADME per kondisi">
+    <div class="card-title">🧩 Matriks ADME per Kondisi (cheat sheet) <span class="tg mm">Must memorize</span> <span class="tg fa">Sering keluar</span></div>
+    <p style="font-size:13px;color:var(--muted)">Tabel ini merangkum seluruh kuliah. Hafalkan polanya: <b>"yang turun → kadar obat naik"</b> (hepar, ginjal, albumin), dan <b>"yang naik → distribusi meluas"</b> (volume plasma ibu hamil).</p>
+    <div class="table-wrap"><table>
+      <tr><th>Kondisi</th><th>Absorpsi</th><th>Distribusi</th><th>Metabolisme</th><th>Eliminasi</th><th>Sensitivitas (PD)</th></tr>
+      <tr><td><b>Neonatus / prematur</b></td><td>Lambung lebih lambat/lama <span class="tg add">bank soal</span></td><td>Ikatan protein plasma <span class="hl-r">rendah</span> → obat bebas ↑; sawar darah-otak belum sempurna</td><td>Hepar belum matang (glukuronidasi, hidroksilasi) ↓</td><td>Fungsi ginjal hanya 60–70% dewasa</td><td>Sensitivitas reseptor ↑ untuk beberapa obat</td></tr>
+      <tr><td><b>Geriatri</b></td><td>Absorpsi aktif ↓</td><td>Albumin ↓ → obat bebas ↑; BB &amp; cairan tubuh ↓, lemak ↑</td><td>Kapasitas metabolisme ↓</td><td>Filtrasi glomerulus ↓ ±30% (usia 65 th); t½ bisa ↑ sampai 50%</td><td>Reseptor otak lebih sensitif; homeostatik ↓</td></tr>
+      <tr><td><b>Hamil</b></td><td>Asam lambung ↓, motilitas ↓ → absorpsi ↑</td><td>CO ↑ (s.d. 30%), volume darah ↑ (s.d. 50%) → Vd ↑; albumin ↓ → obat bebas ↑</td><td>Metabolisme ↑</td><td>Aliran darah ginjal ↑ (akhir kehamilan)</td><td>Janin: enzim hepatik minimal, risiko teratogen</td></tr>
+      <tr><td><b>Penyakit GIT</b></td><td>Diare: absorpsi ↓; stenosis: lambat / ulserasi</td><td>—</td><td>Levodopa dimetabolisme di dinding GIT ↑</td><td>—</td><td>—</td></tr>
+      <tr><td><b>Penyakit CVD</b></td><td>—</td><td>Vd ↓</td><td>Aliran darah hepar ↓</td><td>Aliran darah ginjal ↓</td><td>—</td></tr>
+      <tr><td><b>Penyakit hati berat</b></td><td>—</td><td>Sintesis albumin ↓ → obat bebas ↑</td><td><span class="hl-r">Metabolisme ↓</span></td><td>—</td><td>Otak sensitif ↑ (risiko ensefalopati)</td></tr>
+      <tr><td><b>Penyakit ginjal</b></td><td>—</td><td>Ikatan protein ↓ (uremia, nefrotik) → obat bebas ↑</td><td>—</td><td><span class="hl-r">Ekskresi ↓</span> (obat &amp; metabolit aktif)</td><td>Sensitivitas jaringan berubah, elektrolit &amp; asam-basa bergeser</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card" id="c-hy" data-t="Topik high yield">
+    <div class="card-title">🔥 Prioritas Belajar (berdasarkan pola soal) <span class="tg fa">Sering keluar</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Prioritas</th><th>Topik</th><th>Muncul di</th></tr>
+      <tr><td>⭐⭐⭐</td><td>Insufisiensi ginjal → <b>penurunan klirens</b> → kadar obat ↑</td><td>ARTHRON'18, AORTA'19, AXON'20, UB RT (±6×)</td></tr>
+      <tr><td>⭐⭐⭐</td><td>Geriatri / hipoalbuminemia → <b>obat bebas ↑ → efek ↑</b></td><td>ARTHRON'18, AORTA'19, AXON'20, UB RT</td></tr>
+      <tr><td>⭐⭐⭐</td><td>Penyakit hati: <b>metabolisme ↓</b>; simetidin/morfin pada gagal hati berat</td><td>ARTHRON'18, AORTA'19, AXON'20, UB RT</td></tr>
+      <tr><td>⭐⭐</td><td>Neonatus: metabolisme lemah → over effect; gray baby; kernikterus</td><td>ARTHRON'18, AORTA'19, AXON'20</td></tr>
+      <tr><td>⭐⭐</td><td>Hamil: perubahan PK + pemilihan obat aman + teratogen</td><td>ARTHRON'18, AORTA'19, AXON'20</td></tr>
+      <tr><td>⭐</td><td>Menyusui: faktor obat menembus ASI</td><td>AORTA'19</td></tr>
+      <tr><td>⭐</td><td>Farmakogenetik: asetilator lambat INH</td><td>ARTHRON'18, UB RT</td></tr>
+    </table></div>
+    <p style="font-size:12.5px;color:var(--muted)">Detail pemetaan per soal ada di tab <b>📊 Analisis Soal</b>.</p>
+  </div>
+</div>
+
+<!-- ======================= ANAK ======================= -->
+<div id="sec-anak" class="section">
+  <h2 class="section-heading">👶 Anak, Neonatus & Bayi Prematur</h2>
+  <p class="section-desc">Inti: anak <b>bukan miniatur orang dewasa</b>. Organ tubuhnya masih dalam proses pematangan.</p>
+
+  <div class="card" id="c-dosisanak" data-t="Menghitung dosis anak: BB vs LPT">
+    <div class="card-title">🧮 Menghitung Dosis Anak: Kenapa LPT Lebih Tepat dari BB <span class="tg dr">Sorotan dosen</span> <span class="tg hy">High yield</span></div>
+    <div class="dr-note">Kalau anak dianggap miniatur, faktornya cuma dosis (misal 20 kg / 50 kg). <b>Tidak begitu.</b> Ada pematangan organ: hepar matang atau belum? Berat badan sebenarnya bukan indikator utama; yang lebih tepat adalah <b>luas permukaan tubuh (LPT)</b>, karena mencerminkan <b>volume distribusi</b>.</div>
+    <p><b>Kelompok usia:</b> neonatus (≤1 bulan) · bayi (≤1 tahun) · anak 1–5 tahun · anak 6–12 tahun.</p>
+    <div class="alert alert-peach"><span class="alert-icon">⚠️</span><div><b>Kenapa BB saja sering menghasilkan dosis terlalu kecil?</b> Anak punya laju metabolisme lebih tinggi sehingga per kg BB sering butuh dosis lebih besar daripada dewasa, <u>kecuali neonatus</u> (metabolisme justru belum matang).</div></div>
+    <div class="sub">Tabel 1. Usia, BB, dan dosis anak (dihitung dari LPT) <span class="tg mm">Must memorize pola</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Usia</th><th>BB (kg)</th><th>Dosis anak (% dosis dewasa)</th></tr>
+      <tr><td>Neonatus</td><td>3,4</td><td>&lt; 12,5%</td></tr>
+      <tr><td>1 bulan</td><td>4,2</td><td>&lt; 14,5%</td></tr>
+      <tr><td>3 bulan</td><td>5,6</td><td>18%</td></tr>
+      <tr><td>6 bulan</td><td>7,7</td><td>22%</td></tr>
+      <tr><td>1 tahun</td><td>10</td><td>25%</td></tr>
+      <tr><td>3 tahun</td><td>14</td><td>33%</td></tr>
+      <tr><td>5 tahun</td><td>18</td><td>40%</td></tr>
+      <tr><td>7 tahun</td><td>23</td><td>50%</td></tr>
+      <tr><td>12 tahun</td><td>37</td><td>75%</td></tr>
+    </table></div>
+    <p style="font-size:12.5px;color:var(--muted)">Neonatus sampai 1 bulan: pakai dosis <b>lebih kecil</b> dari hasil hitung LPT. Prematur: lebih rendah lagi sesuai kondisi klinis.</p>
+    <button class="collapse-btn" onclick="toggle(this)"><span>🧪 Contoh hitung (klik untuk buka) <span class="tg add">Tambahan</span></span><span class="chev">▼</span></button>
+    <div class="collapse-body">
+      <p><b>Contoh 1: % dosis dewasa.</b> Anak 5 tahun (18 kg), obat dengan dosis dewasa 500 mg/kali → 40% × 500 = <b>200 mg/kali</b>. Sanity check: 200 mg / 18 kg ≈ 11 mg/kgBB, masuk akal untuk obat yang dosisnya ±10–15 mg/kgBB.</p>
+      <p><b>Contoh 2: eGFR anak (Schwartz).</b> Anak 6 tahun, tinggi 115 cm, kreatinin serum 0,6 mg/dL, k = 0,55 → eGFR = 0,55 × 115 / 0,6 ≈ <b>105 mL/mnt/1,73 m²</b> (normal).</p>
+    </div>
+  </div>
+
+  <div class="card" id="c-its" data-t="Range terapeutik dan indeks terapeutik sempit">
+    <div class="card-title">🎯 Range Terapeutik & Indeks Terapeutik Sempit <span class="tg dr">Sorotan dosen</span> <span class="tg mm">Must memorize</span></div>
+    <div class="dr-note"><b>Range of therapeutic</b> = rentang kadar obat dalam darah yang masih memberi efek terapi. Misal 5–10 µg/mL: kadar 5, 6, 7, 9 sama-sama menyembuhkan, sehingga dosis tidak harus 100% presisi <u>selama masih dalam rentang</u>.</div>
+    <div class="compare-wrap">
+      <div class="compare-col left"><h4>Indeks terapeutik SEMPIT</h4><ul><li>Jarak dosis terapi ke dosis toksik <b>dekat</b></li><li>Naik sedikit → <b>over effect</b></li><li>Contoh (dosen): <b>teofilin, fenitoin, digoksin</b>; aminofilin</li><li>Pada kondisi khusus: dosis <b>wajib</b> diturunkan</li></ul></div>
+      <div class="compare-col right"><h4>Indeks terapeutik LEBAR</h4><ul><li>Margin aman luas</li><li>Penyesuaian dosis relatif longgar, tidak mutlak</li></ul></div>
+    </div>
+  </div>
+
+  <div class="card" id="c-neo4" data-t="Neonatus: 4 alasan respons berubah">
+    <div class="card-title">🧬 Neonatus & Prematur: 4 Alasan Respons Berubah <span class="tg hy">High yield</span> <span class="tg fa">Sering keluar</span></div>
+    <div class="grid-4">
+      <div class="mini-card"><h4>1. Hepar belum matang</h4><p>Biotransformasi (glukuronidasi, hidroksilasi) kurang.</p><span class="arrow">→ metabolisme ↓</span></div>
+      <div class="mini-card"><h4>2. Ginjal belum sempurna</h4><p>Filtrasi glomerulus &amp; sekresi tubulus hanya 60–70% dewasa.</p><span class="arrow">→ eliminasi ↓</span></div>
+      <div class="mini-card"><h4>3. Ikatan protein plasma rendah</h4><p>Terutama albumin.</p><span class="arrow">→ obat bebas ↑ (efek Vd)</span></div>
+      <div class="mini-card"><h4>4. Sawar darah-otak &amp; kulit belum sempurna</h4><p>Obat lebih mudah masuk otak / terserap kulit.</p><span class="arrow">→ neurotoksik</span></div>
+    </div>
+    <div class="alert alert-rose"><span class="alert-icon">⚠️</span><div><b>Resultan:</b> kadar obat tinggi di darah dan jaringan + sensitivitas reseptor ↑ pada beberapa obat → <b>over effect / toksik pada dosis standar</b> (hasil hitung LPT sekalipun).</div></div>
+    <div class="mnemonic"><div class="mnemonic-label">Mnemonic</div><div class="mnemonic-text">H · G · P · B</div><div class="mnemonic-sub"><b>H</b>epar belum matang · <b>G</b>injal belum sempurna · <b>P</b>rotein plasma rendah · sawar <b>B</b>arier (darah-otak, kulit) belum sempurna. Urutan = Metabolisme, Eliminasi, Distribusi, Penetrasi SSP.</div></div>
+  </div>
+
+  <div class="card" id="c-neotabel" data-t="Tabel obat bermasalah pada neonatus">
+    <div class="card-title">💊 Obat Bermasalah pada Neonatus / Prematur <span class="tg mm">Must memorize</span> <span class="tg fa">Sering keluar</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Obat</th><th>Respons</th><th>Mekanisme utama</th></tr>
+      <tr><td>Heksaklorofen topikal</td><td>Neurotoksisitas</td><td>Sawar kulit belum sempurna</td></tr>
+      <tr><td>Sulfonamid, salisilat</td><td><b>Kernikterus</b> (bilirubin masuk otak)</td><td>Obat mendesak bilirubin dari ikatan protein plasma; kapasitas ikatan ↓; glukuronidasi bilirubin ↓; sawar darah-otak belum sempurna</td></tr>
+      <tr><td>Kloramfenikol</td><td><b>Sindrom bayi abu-abu (gray baby)</b></td><td>Glukuronidasi obat di hepar ↓ + filtrasi glomerulus obat utuh ↓ → kadar plasma &amp; jaringan ↑</td></tr>
+      <tr><td>Aminoglikosida (gentamisin, kanamisin)</td><td>Intoksikasi</td><td>Filtrasi glomerulus ↓</td></tr>
+      <tr><td>Morfin, barbiturat IV</td><td>Depresi pernapasan</td><td>Sawar darah-otak belum sempurna</td></tr>
+      <tr><td>Oksigen berlebihan</td><td>Retrolental fibroplasia</td><td>Mekanisme belum diketahui</td></tr>
+    </table></div>
+    <div class="alert alert-peach"><span class="alert-icon">🪤</span><div><span class="tg ct">Common trap</span> Aspirin pada neonatus/anak sering ditanyakan sebagai <b>Reye syndrome</b> (AORTA'19 #28), sedangkan kloramfenikol = <b>baby gray syndrome</b>, tetrasiklin = <b>gigi kuning / pertumbuhan tulang terhambat</b>. Jangan tertukar.</div></div>
+  </div>
+
+  <div class="card" id="c-prinsipneo" data-t="Prinsip umum neonatus">
+    <div class="card-title">🩺 Prinsip Umum Penggunaan Obat pada Neonatus <span class="tg dr">Sorotan dosen</span></div>
+    <div class="cr-box"><div class="cr-label">Algoritma praktis</div><ol class="cr-steps">
+      <li><b>Hindari</b> sulfonamid, aspirin, morfin, barbiturat IV, golongan opioid/trankuilizer.</li>
+      <li>Untuk obat lain: <b>dosis lebih rendah dari hasil hitung LPT</b>. Tidak ada pedoman umum seberapa turun, jadi gunakan <i>educated guess</i> atau petunjuk pabrik.</li>
+      <li><b>Start low, go slow</b>: naikkan bertahap sampai dosis efektif.</li>
+      <li><b>Monitor</b> respons klinis; bila perlu ukur kadar plasma (TDM) untuk menyesuaikan dosis.</li>
+    </ol></div>
+    <div class="dr-note">Kalau ragu pada neonatus, berikan dosis yang <b>lebih rendah</b>. Pasien sekarang pintar: begitu dapat resep, mereka cek ke Google atau AI apakah obatnya aman. Jadi kita harus bisa menjelaskan alasannya.</div>
+  </div>
+</div>
+
+<!-- ======================= GERIATRI ======================= -->
+<div id="sec-geriatri" class="section">
+  <h2 class="section-heading">👵 Usia Lanjut (Geriatri)</h2>
+  <p class="section-desc">Inti: hepar &amp; ginjal <b>sudah berkurang</b> fungsinya (beda dengan neonatus yang <i>belum sempurna</i>). Hasil akhirnya: kadar obat lebih tinggi dan bertahan lebih lama.</p>
+
+  <div class="card" id="c-gerpk" data-t="Perubahan farmakokinetik dan farmakodinamik geriatri">
+    <div class="card-title">🔬 Perubahan PK & PD pada Usia Lanjut <span class="tg hy">High yield</span> <span class="tg fa">Sering keluar</span></div>
+    <div class="grid-2">
+      <div class="mini-card"><h4>Farmakokinetik</h4><ul>
+        <li><b>Ginjal</b>: filtrasi glomerulus &amp; sekresi tubulus ↓ (±30% pada usia 65 th) — perubahan PK terpenting</li>
+        <li>Kapasitas metabolisme beberapa obat ↓ (hepar)</li>
+        <li><b>Albumin ↓ → obat bebas ↑</b></li>
+        <li>BB &amp; cairan tubuh ↓, lemak tubuh ↑ → distribusi berubah</li>
+        <li>Absorpsi aktif ↓</li></ul></div>
+      <div class="mini-card"><h4>Farmakodinamik &amp; lain-lain</h4><ul>
+        <li>Sensitivitas reseptor ↑ (terutama otak, untuk obat kerja sentral)</li>
+        <li>Mekanisme homeostatik ↓ (mis. kardiovaskular → hipotensi postural)</li>
+        <li>Banyak penyakit penyerta</li>
+        <li><b>Polifarmasi</b> → interaksi obat</li></ul></div>
+    </div>
+    <div class="alert alert-rose"><span class="alert-icon">📌</span><div><b>Resultan:</b> kadar obat lebih tinggi &amp; bertahan lebih lama; waktu paruh bisa ↑ sampai 50%. Dosis <b>harus dikurangi</b>.</div></div>
+
+    <div class="sub">Ilustrasi waktu paruh dari dosen <span class="tg dr">Sorotan dosen</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Waktu</th><th>Ginjal normal (t½ = 5 jam)</th><th>Fungsi ginjal turun (ilustrasi)</th></tr>
+      <tr><td>5 jam</td><td>sisa ½</td><td>masih ¾</td></tr>
+      <tr><td>10 jam</td><td>sisa ¼</td><td>masih ½</td></tr>
+      <tr><td>15 jam</td><td>sisa ⅛</td><td>akumulasi bila dosis tidak diturunkan</td></tr>
+    </table></div>
+    <p style="font-size:12.5px;color:var(--muted)">Pesan: obat bertahan lebih lama di tubuh → bila dosis tidak diturunkan → <b>over effect</b>.</p>
+  </div>
+
+  <div class="card" id="c-gerbanding" data-t="Perbandingan neonatus vs geriatri">
+    <div class="card-title">⚖️ Neonatus vs Geriatri <span class="tg ct">Common trap</span></div>
+    <div class="compare-wrap">
+      <div class="compare-col left"><h4>Neonatus</h4><ul><li>Hepar <b>belum</b> sempurna</li><li>Ginjal <b>belum</b> sempurna</li><li>Albumin <b>belum</b> sempurna (kapasitas ikatan rendah)</li><li>Sawar darah-otak belum sempurna</li></ul></div>
+      <div class="compare-col right"><h4>Geriatri</h4><ul><li>Hepar fungsi <b>berkurang</b></li><li>Ginjal fungsi <b>berkurang</b></li><li>Kadar albumin <b>berkurang</b></li><li>Reseptor otak lebih sensitif</li></ul></div>
+    </div>
+    <p style="margin-top:10px">Keduanya berujung sama: <b>kadar obat bebas lebih tinggi dan lebih lama → risiko over effect</b>. Bedanya hanya "belum" vs "sudah menurun".</p>
+  </div>
+
+  <div class="card" id="c-gerobat" data-t="Tabel obat bermasalah pada geriatri">
+    <div class="card-title">💊 Obat Bermasalah pada Geriatri <span class="tg mm">Must memorize</span> <span class="tg fa">Sering keluar</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Obat</th><th>Respons</th><th>Mekanisme</th></tr>
+      <tr><td>Digoksin</td><td>Intoksikasi</td><td>BB ↓, filtrasi glomerulus ↓, gangguan elektrolit, penyakit CV lanjut (indeks terapeutik sempit)</td></tr>
+      <tr><td>Antihipertensi (terutama penghambat saraf adrenergik)</td><td>Sinkop (hipotensi postural), insufisiensi koroner</td><td>Homeostatik kardiovaskular ↓</td></tr>
+      <tr><td>Diuretik tiazid, furosemid</td><td>Hipotensi, <b>hipokalemia</b>, hipovolemia, hiperglikemia, hiperurikemia</td><td>BB ↓, fungsi ginjal ↓, homeostatik ↓</td></tr>
+      <tr><td>Antikoagulan (oral)</td><td>Perdarahan</td><td>Respons hemostatik vaskular ↓; sensitivitas reseptor hati ↑; ikatan protein ↓</td></tr>
+      <tr><td>Barbiturat</td><td>Gelisah sampai psikosis (kebingungan)</td><td>Sensitivitas otak ↑, metabolisme hepar ↓</td></tr>
+      <tr><td>Diazepam, nitrazepam, flurazepam</td><td>Depresi SSP ↑</td><td>Sensitivitas otak ↑, metabolisme hepar ↓</td></tr>
+      <tr><td>Fenotiazin (klorpromazin)</td><td>Hipotensi postural, hipotermia, reaksi koreiform</td><td>Sensitivitas otak ↑, metabolisme hepar ↓</td></tr>
+      <tr><td>Triheksifenidil</td><td>Konfusi, halusinasi, konstipasi, retensi urin</td><td>Sensitivitas otak ↑, eliminasi ↓</td></tr>
+      <tr><td>Streptomisin, asam etakrinat</td><td>Ototoksisitas</td><td>Fungsi ginjal ↓</td></tr>
+      <tr><td>Isoniazid</td><td>Hepatotoksisitas (ikterus)</td><td>Metabolisme hepar ↓</td></tr>
+      <tr><td>Klorpropamid</td><td>Hipoglikemia</td><td>BB ↓, filtrasi glomerulus ↓</td></tr>
+    </table></div>
+    <div class="alert alert-peach"><span class="alert-icon">🪤</span><div><span class="tg ct">Common trap</span> Pola bank soal: <b>hipokalemia pada geriatri → furosemid</b> (AORTA'19 #37), <b>glucose intolerance → tiazid</b> (AORTA'19 #33), <b>ikterus pasca obat → isoniazid</b> (AORTA'19 #51).</div></div>
+  </div>
+
+  <div class="card" id="c-gerprinsip" data-t="Prinsip umum obat geriatri">
+    <div class="card-title">🩺 6 Prinsip Umum pada Geriatri <span class="tg dr">Sorotan dosen</span> <span class="tg mm">Must memorize</span></div>
+    <div class="cr-box"><div class="cr-label">Checklist peresepan geriatri</div><ol class="cr-steps">
+      <li>Berikan obat <b>hanya yang betul-betul diperlukan</b> (indikasi tepat). Bila butuh efek plasebo, gunakan plasebo sungguhan.</li>
+      <li>Pilih rasio <b>manfaat-risiko</b> terbaik, tidak berinteraksi dengan obat/penyakit lain (mis. hipnotik: jangan barbiturat).</li>
+      <li><b>Mulai dengan dosis separuh</b> dari dosis dewasa muda.</li>
+      <li>Sesuaikan dosis berdasarkan <b>respons klinik</b>; bila perlu <b>TDM</b> (therapeutic drug monitoring). Dosis penunjang umumnya lebih rendah.</li>
+      <li><b>Regimen sederhana</b> (ideal <b>1× sehari</b>, mis. tiap pagi) dan sediaan mudah ditelan (<b>sirop atau tablet yang dilarutkan</b>) demi kepatuhan.</li>
+      <li><b>Periksa berkala</b> semua obat yang diminum; hentikan yang tidak diperlukan lagi.</li>
+    </ol></div>
+    <div class="dr-note">Jangan buat regimen rumit: "pagi dua, siang satu, sore dua" itu rumit. Sekali sehari tiap pagi lebih mudah dan lebih patuh.</div>
+    <p><b>Menentukan besar penurunan dosis:</b> perkirakan dari BB, indeks terapi, dan cara eliminasi. Untuk obat yang eliminasi utamanya lewat ginjal (digoksin, aminoglikosida, klorpropamid) → hitung dari penurunan <b>bersihan kreatinin</b>. Untuk obat lain → <i>educated guess</i>.</p>
+  </div>
+</div>
+
+<!-- ======================= HAMIL ======================= -->
+<div id="sec-hamil" class="section">
+  <h2 class="section-heading">🤰 Penggunaan Obat pada Ibu Hamil</h2>
+  <p class="section-desc">Dua pertanyaan sekaligus: <b>(1)</b> apakah obat aman bagi janin, dan <b>(2)</b> apakah jenis &amp; dosis obat perlu disesuaikan karena fisiologi ibu berubah?</p>
+
+  <div class="card" id="c-hamilkom" data-t="Komunikasi dengan pasien hamil">
+    <div class="card-title">🗣️ Jangan Pernah Menjawab "Aman" <span class="tg dr">Sorotan dosen</span> <span class="tg hy">High yield</span></div>
+    <div class="dr-note">Pasien hamil hampir selalu bertanya: <i>"Dok, obatnya aman untuk janin saya?"</i> Anda <b>tidak boleh menjawab aman</b>, karena <b>tidak ada obat yang 100% aman</b>. Jawabannya kira-kira: <span class="hl-t">"Bu, tidak ada yang 100% aman, tetapi kita berusaha memilihkan yang lebih aman dibanding obat lain."</span> Keputusan menerima obat adalah <b>keputusan bersama</b> dokter dan pasien, bukan keputusan tunggal dokter.</div>
+    <div class="alert alert-sky"><span class="alert-icon">💡</span><div>Dua pertanyaan normatif pada ibu hamil: <b>aman bagi janin?</b> dan <b>jenis &amp; dosis perlu dievaluasi?</b> Keduanya "iya".</div></div>
+  </div>
+
+  <div class="card" id="c-hamilpk" data-t="Perubahan fisiologis dan kinetika kehamilan">
+    <div class="card-title">🔬 Perubahan PK Selama Kehamilan <span class="tg mm">Must memorize</span> <span class="tg fa">Sering keluar</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Proses</th><th>Perubahan fisiologis</th><th>Akibat pada obat</th></tr>
+      <tr><td>Absorpsi</td><td>Progesteron ↑ → motilin ↓; sekresi asam lambung ↓; motilitas GIT ↓</td><td>Absorpsi obat ↑ (pengosongan lambung lebih lama)</td></tr>
+      <tr><td>Distribusi</td><td>Curah jantung ↑ s.d. 30%; volume darah ↑ s.d. 50%; volume plasma &amp; CES ↑; BB ↑; <b>albumin ↓</b></td><td>Volume distribusi ↑ (obat larut lemak ↑); <b>obat bebas ↑</b>; aliran darah ke plasenta ↑</td></tr>
+      <tr><td>Metabolisme</td><td>Aktivitas metabolisme obat ↑</td><td>Kadar bisa ↓ untuk obat yang dimetabolisme hepar</td></tr>
+      <tr><td>Eliminasi</td><td>Akhir kehamilan: aliran darah ginjal ↑ (GFR ↑)</td><td>Eliminasi obat ↑</td></tr>
+    </table></div>
+    <div class="alert alert-peach"><span class="alert-icon">⚖️</span><div><b>Kapan dosis wajib disesuaikan?</b> Obat dibagi dua: <b>indeks terapeutik lebar</b> (relatif tidak apa-apa tidak diubah) vs <b>indeks terapeutik sempit</b> (<b>wajib</b> dosis dikurangi/dievaluasi).</div></div>
+    <div class="alert alert-peach"><span class="alert-icon">🪤</span><div><span class="tg ct">Common trap</span> Hamil = banyak yang ↑ (absorpsi, Vd, metabolisme, eliminasi), tapi albumin ↓. Contoh soal: <i>"CO ↑ pada ibu hamil → proses yang terpengaruh?"</i> = <b>distribusi</b>. <i>"GFR ↑ → ?"</i> = <b>eliminasi ↑</b>. <i>"Pengosongan lambung lebih lama → ?"</i> = absorpsi di lambung ↑ <span class="tg add">lihat kunci di tab Analisis Soal</span>.</div></div>
+  </div>
+
+  <div class="card" id="c-teratogen" data-t="Teratogen dan transfer plasenta">
+    <div class="card-title">☠️ Teratogen: 2 Syarat & Faktor Transfer Plasenta <span class="tg dr">Sorotan dosen</span> <span class="tg hy">High yield</span></div>
+    <div class="dr-note"><b>Teratogen</b> = obat yang menimbulkan cacat pada janin. Terjadinya cacat butuh <b>dua syarat sekaligus</b>: (1) struktur molekul obat memang dapat menimbulkan cacat, <b>dan</b> (2) obat dapat <b>menembus plasenta</b>. Salah satu tidak terpenuhi → tidak cacat.</div>
+    <div class="grid-2">
+      <div class="mini-card"><h4>Lebih mudah menembus plasenta bila…</h4><ul>
+        <li>Berat molekul <b>kecil</b></li><li>Larut lemak (<b>lipofil</b>), tidak terionisasi</li><li>Ikatan protein <b>rendah</b> (yang menyeberang = obat bebas)</li><li>Aliran darah umbilikal &amp; uterus baik</li></ul></div>
+      <div class="mini-card"><h4>Mekanisme transfer</h4><ul>
+        <li><b>Difusi sederhana</b>: sebagian besar obat</li><li>Difusi terfasilitasi: glukosa</li><li>Transport aktif: beberapa vitamin &amp; asam amino</li><li>Obat basa cenderung <b>terperangkap</b> di sirkulasi janin</li></ul></div>
+    </div>
+    <div class="sub">Kenapa janin sensitif terhadap obat?</div>
+    <ul class="styled-list">
+      <li>Fungsi enzim hepatik janin minimal.</li>
+      <li>Protein janin bertambah linear dengan usia gestasi → obat bebas lebih banyak.</li>
+      <li>Jaringan baru sedang berkembang.</li>
+    </ul>
+    <div class="alert alert-peach"><span class="alert-icon">⏱️</span><div>Paparan <b>sekali minum</b> belum tentu teratogenik; paparan <b>beberapa hari saat organogenesis/embriogenesis</b> lebih berisiko. Lamanya paparan mempengaruhi.</div></div>
+  </div>
+
+  <div class="card" id="c-fase" data-t="Fase perkembangan embrio dan jenis cacat">
+    <div class="card-title">⏳ Waktu Paparan Menentukan Jenis Cacat <span class="tg dr">Sorotan dosen</span> <span class="tg hy">High yield</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Fase</th><th>Waktu</th><th>Proses</th><th>Bila terpapar teratogen</th></tr>
+      <tr><td>Pre-embrionik</td><td>0–17 hari</td><td>Proliferasi (belum ada diferensiasi)</td><td>Hasilnya cenderung <b>abortus</b> / tidak terjadi cacat</td></tr>
+      <tr><td>Embrionik (organogenesis)</td><td>18–56 hari</td><td>Pembentukan organ</td><td><b>Cacat anatomik</b> (struktural)</td></tr>
+      <tr><td>Janin</td><td>8–38 minggu</td><td>Pematangan fungsi</td><td><b>Cacat fungsional</b> (mis. mata terbentuk tapi tidak melihat; telinga terbentuk tapi tuli)</td></tr>
+    </table></div>
+    <div class="sub">Kepekaan per organ (hari gestasi)</div>
+    <div class="table-wrap"><table>
+      <tr><th>Hari</th><th>Diferensiasi</th></tr>
+      <tr><td>&lt; 15</td><td>Belum ada diferensiasi, hanya proliferasi sel</td></tr>
+      <tr><td>15–25</td><td>Diferensiasi SSP</td></tr>
+      <tr><td>24–40</td><td>Mata, jantung, ekstremitas (kaki)</td></tr>
+      <tr><td>42</td><td>Mulai pembentukan palatum</td></tr>
+      <tr><td>60</td><td>Diferensiasi berlanjut, beberapa organ hampir lengkap</td></tr>
+      <tr><td>70</td><td>Fusi palatum</td></tr>
+      <tr><td>90</td><td>Diferensiasi komplit → pematangan fungsi</td></tr>
+    </table></div>
+    <div class="mnemonic"><div class="mnemonic-label">Mnemonic</div><div class="mnemonic-text">0–17 "Gagal jadi" · 18–56 "Bentuk salah" · 8 mgg+ "Fungsi salah"</div><div class="mnemonic-sub">Abortus/all-or-none → cacat anatomi → cacat fungsional.</div></div>
+  </div>
+
+  <div class="card" id="c-thali" data-t="Talidomid pelajaran teratogen">
+    <div class="card-title">🧷 Studi Kasus Talidomid & Pelajarannya <span class="tg hy">High yield</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Hari pemakaian</th><th>Penyimpangan embriogenesis</th></tr>
+      <tr><td>21–22</td><td>Tidak ada telinga luar, paralisis saraf kranial</td></tr>
+      <tr><td>24–27</td><td>Maksimal <b>fokomelia</b> (flipper limbs)</td></tr>
+      <tr><td>28–29</td><td>Reduksi berat pada pembentukan kaki</td></tr>
+      <tr><td>34–36</td><td>Hipoplasia ibu jari, stenosis anorektal</td></tr>
+    </table></div>
+    <div class="dr-note">Obat yang <b>aman pada hewan uji belum tentu aman pada manusia</b>; yang tidak lolos di hewan uji tidak boleh dilanjutkan ke manusia, tetapi yang lolos pun tidak selalu aman. Obat yang aman bagi ibu belum tentu aman bagi janin.</div>
+    <ul class="styled-list">
+      <li>Sulit menguji teratogenesis manusia pada binatang.</li>
+      <li>Malformasi butuh waktu untuk muncul (paparan harus cukup lama).</li>
+      <li>Sejak <b>1962</b>: wajib uji teratogen pada hewan uji.</li>
+    </ul>
+    <p style="font-size:12.5px;color:var(--muted)">Gambar malformasi di slide: polidaktili/sindaktili, cleft lip &amp; palate, fokomelia (talidomid), fetal warfarin syndrome (hidung hipoplastik, wajah datar, kalsifikasi abnormal).</p>
+  </div>
+
+  <div class="card" id="c-kategori" data-t="Kategori keamanan obat kehamilan FDA TGA">
+    <div class="card-title">🏷️ Kategori Keamanan Kehamilan (FDA & TGA) <span class="tg mm">Must memorize</span> <span class="tg fa">Sering keluar</span></div>
+    <div class="dr-note">FDA mengelompokkan A, B, C, D, X. <b>A paling relatif aman, X kontraindikasi.</b> Hindari <b>D dan X</b>. Cari kategori A dulu; kalau tidak ada → B; tidak ada → C. <b>Jangan memilih D atau X</b>. Contoh: pasien hamil dengan otitis media perforata butuh antibiotik → cari yang kelompok A, lalu B, lalu C. Obat topikal &amp; vitamin umumnya A; obat hormonal &amp; penenang cenderung D/X. Tidak perlu menghafal semuanya; yang sering dipakai akan terbiasa.</div>
+    <div class="table-wrap"><table>
+      <tr><th>Kategori</th><th>Arti singkat</th><th>Contoh (dari slide)</th></tr>
+      <tr><td><span class="hl-m">A</span></td><td>Tanpa bukti risiko / peningkatan cacat</td><td>Antasid; digoksin; preparat Fe oral; <b>parasetamol</b>; dimenhidrinat, difenhidramin, metoklopramid; kortikosteroid (prednison, hidrokortison, dll.); <b>amoksisilin, ampisilin</b>; eritromisin; kodein, dekstrometorfan; bromheksin; efedrin, <b>salbutamol, terbutalin, teofilin</b>; klorfeniramin</td></tr>
+      <tr><td><span class="hl-m">B1</span></td><td>Data manusia terbatas tanpa risiko; hewan aman</td><td>Simetidin, famotidin, <b>ranitidin</b>, sukralfat; sefaklor, sefotaksim, <b>seftriakson</b></td></tr>
+      <tr><td><span class="hl-m">B2</span></td><td>Data hewan sangat sedikit, tidak menunjukkan risiko</td><td><b>Domperidon</b>, hiosin</td></tr>
+      <tr><td><span class="hl-p">B3</span></td><td>Hewan menunjukkan peningkatan gangguan janin; manusia belum jelas</td><td>Lansoprazol, omeprazol, pantoprazol; loperamid; griseofulvin, itrakonazol, ketokonazol; <b>siprofloksasin, ofloksasin</b>; asiklovir, valasiklovir, ritonavir</td></tr>
+      <tr><td><span class="hl-p">C</span></td><td>Efek farmakologi berbahaya pada janin/bayi baru lahir tanpa cacat (mungkin reversibel)</td><td>CCB (amlodipin, nifedipin, diltiazem, verapamil); ergotamin; <b>aspirin</b>; benzodiazepin (diazepam, alprazolam, dll.); klorpromazin, haloperidol; <b>NSAID</b> (diklofenak, ibuprofen, asam mefenamat…); kotrimoksazol</td></tr>
+      <tr><td><span class="hl-r">D</span></td><td>Bukti/dugaan peningkatan cacat atau kerusakan ireversibel</td><td><b>Kaptopril</b> (ACE-i); <b>losartan, valsartan</b> (ARB); <b>doksisiklin, minosiklin, tetrasiklin</b>; <b>aminoglikosida</b> (amikasin, gentamisin, kanamisin, neomisin)</td></tr>
+      <tr><td><span class="hl-r">X</span></td><td>Risiko tinggi kerusakan permanen; <b>kontraindikasi</b></td><td><b>Misoprostol</b></td></tr>
+    </table></div>
+    <div class="alert alert-peach"><span class="alert-icon">🪤</span><div><span class="tg ct">Common trap</span> <b>Slide menyebut FDA A–X tetapi daftar contohnya mengikuti TGA Australia (A, B1–B3, C, D, X).</b> Ergotamin ada di kategori C pada slide, namun pada bank soal (AORTA'19 #16) dijawab sebagai "obat tidak aman untuk ibu hamil", sedangkan yang "kontraindikasi sekali (X)" adalah <b>misoprostol</b>. Bila ada pilihan keduanya, ikuti konteks soal.</div></div>
+    <div class="alert alert-sky"><span class="alert-icon">ℹ️</span><div><span class="tg add">Tambahan, verifikasi</span> FDA sudah mengganti kategori huruf A–X dengan format narasi (Pregnancy and Lactation Labeling Rule, berlaku sejak 2015), tetapi kuliah dan soal blok masih memakai kategori huruf. Untuk ujian ikuti slide Prof EM; untuk praktik klinis gunakan label obat terbaru &amp; pedoman nasional.</div></div>
+  </div>
+
+  <div class="card" id="c-trimester" data-t="Teratogen trimester 1 dan 2">
+    <div class="card-title">📆 Contoh Teratogen per Trimester <span class="tg hy">High yield</span></div>
+    <div class="grid-2">
+      <div class="mini-card"><h4>Trimester 1</h4><ul>
+        <li>Antineoplastik</li><li>Amfetamin, LSD</li><li>Klorpromazin</li><li>Barbiturat</li><li>Fenitoin</li><li>Litium</li><li><b>ACE inhibitor</b> (gangguan ginjal) — kaptopril</li></ul></div>
+      <div class="mini-card"><h4>Trimester 2</h4><ul>
+        <li><b>Aminoglikosida</b> (streptomisin &amp; kuinin) → tuli</li><li><b>Tetrasiklin</b> → gigi berwarna, pertumbuhan tulang terhambat</li><li>Novobiosin &amp; sulfonamid → bilirubin ↑ saat lahir</li><li><b>Kloramfenikol</b> → gray baby syndrome</li><li>Obat antidiabetes oral → hipoglikemia</li><li>Hormonal → perubahan fisiologi janin; androgen &amp; progesteron → maskulinisasi janin perempuan</li><li>Vitamin A dosis besar → tekanan intrakranial ↑</li></ul></div>
+    </div>
+  </div>
+
+  <div class="card" id="c-algo-hamil" data-t="Algoritma memilih obat ibu hamil">
+    <div class="card-title">🧭 Algoritma Memilih Obat pada Ibu Hamil <span class="tg add">Rangkuman saya</span></div>
+    <div class="flow">
+      <div class="fb"><b>Perlu obat?</b><small>indikasi jelas; manfaat ibu vs risiko janin</small></div><div class="fa">▼</div>
+      <div class="fb"><b>Cari kategori A</b><small>tidak ada → B → C; hindari D &amp; X</small></div><div class="fa">▼</div>
+      <div class="fb"><b>Cek usia kehamilan</b><small>organogenesis (hari 18–56)? trimester 2/3?</small></div><div class="fa">▼</div>
+      <div class="fb"><b>Indeks terapeutik sempit?</b><small>ya → dosis wajib dievaluasi/diturunkan</small></div><div class="fa">▼</div>
+      <div class="fb ok"><b>Jelaskan jujur: "tidak ada yang 100% aman"</b><small>putuskan bersama pasien</small></div>
+    </div>
+  </div>
+
+  <div class="card" id="c-fornas-hamil" data-t="Restriksi Fornas kondisi khusus hamil anak">
+    <div class="card-title">📘 Restriksi Fornas 2025 Terkait Kondisi Khusus <span class="tg add">Dari file Fornas</span></div>
+    <p style="font-size:12.5px;color:var(--muted)">KMK HK.01.07/MENKES/1199/2025 (berlaku 1 April 2026). Dikutip dari dokumen yang kamu kirim; cek ulang bila ada revisi.</p>
+    <div class="table-wrap"><table>
+      <tr><th>Obat</th><th>Restriksi Fornas</th><th>Nyambung ke kuliah</th></tr>
+      <tr><td>Doksisiklin, tetrasiklin</td><td>Tidak untuk anak &lt; 6 th, ibu hamil, ibu menyusui</td><td>Kategori D; gigi berwarna &amp; tulang</td></tr>
+      <tr><td>Levofloksasin, moksifloksasin, ofloksasin, siprofloksasin</td><td>Tidak untuk &lt; 18 th, ibu hamil, ibu menyusui</td><td>Kuinolon (B3 di slide)</td></tr>
+      <tr><td>Metildopa</td><td>Untuk hipertensi pada wanita hamil</td><td>Pengganti ACE-i/ARB (D)</td></tr>
+      <tr><td>Albendazol</td><td>Hamil: hanya bila manfaat jelas &gt; risiko; sebaiknya trimester 2–3</td><td>Teratogen: waktu paparan</td></tr>
+      <tr><td>Dietilkarbamazin</td><td>Tidak untuk ibu hamil/menyusui</td><td>—</td></tr>
+      <tr><td>Asam retinoat (krim), podofilin</td><td>Tidak untuk ibu hamil</td><td>Vitamin A &amp; retinoid teratogen</td></tr>
+      <tr><td>Insulin</td><td>Wanita hamil: diutamakan human insulin</td><td>—</td></tr>
+      <tr><td>Spiramisin</td><td>Dapat dipakai untuk toksoplasmosis pada kehamilan</td><td>—</td></tr>
+      <tr><td>Loperamid</td><td>Tidak untuk anak; ≥ 60 th maks 4 tab/kasus</td><td>Anak &amp; geriatri</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<!-- ======================= MENYUSUI ======================= -->
+<div id="sec-susu" class="section">
+  <h2 class="section-heading">🍼 Penggunaan Obat pada Ibu Menyusui</h2>
+  <p class="section-desc">Pertanyaan kunci: berapa banyak obat yang akhirnya benar-benar diminum bayi lewat ASI?</p>
+
+  <div class="card" id="c-asifaktor" data-t="Faktor perpindahan obat ke ASI">
+    <div class="card-title">🔀 Faktor yang Mempengaruhi Obat ke ASI <span class="tg hy">High yield</span> <span class="tg fa">Sering keluar</span></div>
+    <p>Risiko pada bayi tergantung: bioavailabilitas obat pada ibu · jumlah obat yang mencapai ASI · jumlah yang dicerna bayi · bioavailabilitas pada bayi.</p>
+    <div class="grid-3">
+      <div class="mini-card"><h4>Parameter ibu</h4><ul><li>Dosis, lama terapi, rute, frekuensi</li><li>Metabolisme, klirens ginjal</li><li>Aliran darah ke payudara</li><li>pH &amp; komposisi ASI</li></ul></div>
+      <div class="mini-card"><h4>Parameter obat</h4><ul><li>Bioavailabilitas ibu &amp; bayi</li><li>Berat molekul kecil</li><li>pKa, kelarutan lemak</li><li>Ikatan protein</li></ul></div>
+      <div class="mini-card"><h4>Parameter bayi</h4><ul><li>Umur bayi</li><li>Pola/waktu menyusu, jumlah ASI</li><li>Absorpsi, distribusi, metabolisme, eliminasi</li></ul></div>
+    </div>
+  </div>
+
+  <div class="card" id="c-asisifat" data-t="Sifat fisikokimia obat ASI">
+    <div class="card-title">⚗️ Sifat Obat yang Mudah Masuk ASI <span class="tg dr">Sorotan dosen</span> <span class="tg mm">Must memorize</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Sifat</th><th>Lebih banyak masuk ASI</th><th>Alasan</th></tr>
+      <tr><td>Sifat asam-basa</td><td><b>Basa</b></td><td>pH ASI (6,9) &lt; pH plasma (7,4) → basa terperangkap di ASI <span class="tg add">ion trapping</span></td></tr>
+      <tr><td>Ikatan protein</td><td><b>Rendah</b> (obat bebas)</td><td>Yang terikat protein tetap di plasma ibu; kapasitas ikatan protein ASI lebih rendah</td></tr>
+      <tr><td>Lipofilisitas</td><td><b>Semakin lipofil</b></td><td>Kadar lemak ASI lebih tinggi</td></tr>
+      <tr><td>Berat molekul</td><td><b>Kecil</b></td><td>Lebih mudah menembus</td></tr>
+    </table></div>
+    <div class="alert alert-peach"><span class="alert-icon">🪤</span><div><span class="tg ct">Common trap</span> Soal AORTA'19 #50: <i>"faktor yang memudahkan obat menembus ASI?"</i> → <b>free drug ibu tinggi</b>. Bukan BM tinggi, bukan larut air, bukan ikatan protein ibu tinggi.</div></div>
+  </div>
+
+  <div class="card" id="c-asikontra" data-t="Obat kontraindikasi menyusui">
+    <div class="card-title">🚫 Obat Kontraindikasi, Menurunkan & Meningkatkan ASI <span class="tg mm">Must memorize</span></div>
+    <div class="grid-3">
+      <div class="mini-card"><h4>Kontraindikasi saat menyusui</h4><ul><li>Amfetamin</li><li>Antineoplastik</li><li>Bromokriptin</li><li>Kokain, heroin, etanol</li><li>Ergotamin</li><li>Imunosupresan</li><li>Litium</li><li>Obat kategori D &amp; X pada hamil umumnya juga</li></ul></div>
+      <div class="mini-card"><h4>↓ Produksi ASI</h4><ul><li>Estrogen</li><li>Diuretik tiazid (HCT)</li><li>Antagonis serotonin (siproheptadin)</li><li>Agonis dopamin (<b>bromokriptin</b>)</li></ul></div>
+      <div class="mini-card"><h4>↑ Produksi ASI</h4><ul><li>Antagonis dopamin: <b>metoklopramid</b></li></ul></div>
+    </div>
+  </div>
+
+  <div class="card" id="c-asipedoman" data-t="Pedoman peresepan ibu menyusui">
+    <div class="card-title">📋 Pedoman Peresepan pada Ibu Menyusui <span class="tg dr">Sorotan dosen</span></div>
+    <div class="cr-box"><div class="cr-label">Hentikan sementara menyusui bila…</div><ol class="cr-steps">
+      <li>Obat diketahui memiliki efek berbahaya bagi bayi.</li>
+      <li>Obat sangat poten sehingga kadar kecil dalam ASI pun dapat membahayakan.</li>
+      <li>Ibu mengalami gangguan fungsi ginjal &amp; hati (pengaruh ke ASI).</li>
+      <li>Hindari penggunaan <b>obat baru</b>: data keamanan belum cukup.</li>
+    </ol></div>
+  </div>
+</div>
+
+<!-- ======================= PATOLOGIK ======================= -->
+<div id="sec-patologik" class="section">
+  <h2 class="section-heading">🫀 Kondisi Patologik & Faktor Genetik</h2>
+  <p class="section-desc">Dibatasi pada empat organ yang menjalankan fungsi farmakokinetik: saluran cerna, kardiovaskular, hati, ginjal.</p>
+
+  <div class="card" id="c-git" data-t="Penyakit saluran cerna dan obat">
+    <div class="card-title">🍽️ Penyakit Saluran Cerna <span class="tg hy">High yield</span></div>
+    <p>Mengurangi <b>kecepatan dan/atau jumlah</b> obat yang diabsorpsi lewat oral (pengosongan lambung lambat, transit cepat, malabsorpsi, metabolisme di dinding GIT).</p>
+    <div class="table-wrap"><table>
+      <tr><th>Keadaan</th><th>Obat</th><th>Respons</th><th>Mekanisme</th></tr>
+      <tr><td>Diare / gastroenteritis</td><td>Digoksin, kontrasepsi oral, fenitoin, sediaan salut enterik/lepas lambat</td><td>Respons ↓</td><td>Waktu transit ↓ → waktu melarut &amp; absorpsi ↓</td></tr>
+      <tr><td>Stenosis pilorus</td><td>Parasetamol, aspirin</td><td>Respons ↓ (lambat)</td><td>Pengosongan lambung ↓ → absorpsi lambat</td></tr>
+      <tr><td>Stenosis pilorus, konstipasi</td><td><b>Levodopa</b></td><td>Respons ↓</td><td>Waktu di lambung/usus ↑ → metabolisme di dinding GIT ↑ → obat mencapai sirkulasi ↓</td></tr>
+      <tr><td>Stenosis esofagus/pilorus/duodenum</td><td>KCl, aspirin, obat iritan</td><td><b>Ulserasi lokal</b></td><td>Obat tertahan lama → pelepasan iritan di satu tempat ↑</td></tr>
+      <tr><td>Idem + sediaan lepas lambat / salut enterik</td><td>KCl, aspirin, iritan</td><td>Ulserasi usus halus</td><td>Iritan dilepas mendadak dalam jumlah besar di usus yang stasis</td></tr>
+      <tr><td>Sindrom malabsorpsi</td><td>Digoksin, penisilin V</td><td>Respons ↓</td><td>Kapasitas absorpsi ↓</td></tr>
+    </table></div>
+    <div class="cr-box"><div class="cr-label">Prinsip umum</div><ol class="cr-steps">
+      <li><b>Hindari obat iritan</b> (KCl, aspirin, NSAID) pada stasis/hipomotilitas.</li>
+      <li><b>Hindari sediaan lepas lambat dan salut enterik</b> pada hiper- maupun hipomotilitas.</li>
+      <li><b>Levodopa diberikan bersama karbidopa.</b></li>
+      <li>Obat lain: sesuaikan dosis dari respons klinik; bila perlu ukur kadar plasma.</li>
+    </ol></div>
+  </div>
+
+  <div class="card" id="c-cvd" data-t="Penyakit kardiovaskular dan obat">
+    <div class="card-title">❤️ Penyakit Kardiovaskular</div>
+    <p>Mengurangi <b>distribusi obat</b> dan <b>aliran darah ke hepar &amp; ginjal</b> (organ eliminasi) → kadar obat tinggi → efek berlebihan/toksik.</p>
+    <div class="table-wrap"><table>
+      <tr><th>Keadaan</th><th>Obat</th><th>Respons</th><th>Mekanisme</th></tr>
+      <tr><td>Infark miokard (terutama dengan syok / gagal jantung)</td><td>Lidokain</td><td>Intoksikasi</td><td>Vd ↓, aliran darah hepar ↓ → kadar ↑</td></tr>
+      <tr><td>Idem</td><td>Prokainamid, kuinidin</td><td>Intoksikasi</td><td>Vd ↓, aliran darah ginjal ↓ → kadar ↑</td></tr>
+    </table></div>
+    <div class="alert alert-mint"><span class="alert-icon">✅</span><div><b>Prinsip:</b> turunkan dosis awal (<i>loading</i>, DL) <u>dan</u> dosis penunjang (DM); sesuaikan dari respons klinik / kadar plasma.</div></div>
+  </div>
+
+  <div class="card" id="c-hati" data-t="Penyakit hati dan obat">
+    <div class="card-title">🟤 Penyakit Hati Berat <span class="tg hy">High yield</span> <span class="tg fa">Sering keluar</span></div>
+    <p>Mengurangi <b>metabolisme obat</b> dan <b>sintesis protein plasma</b> → kadar obat (terutama <b>obat bebas</b>) ↑. Perubahan baru jelas pada penyakit <b>berat</b>, karena hati punya kapasitas cadangan besar (penyakit ringan tidak banyak mengubah).</p>
+    <div class="dr-note" style="margin-top:8px">Ini jawaban baku soal bank: <b>gangguan fungsi hepar → penurunan metabolisme</b> (ARTHRON'18 #2, AXON'20 #11, UB RT #3).</div>
+    <div class="grid-2">
+      <div class="mini-card"><h4>Otak lebih sensitif → ensefalopati hepatik</h4><ul><li>Sedatif-hipnotik, analgesik narkotik (morfin), antipsikotik, antihistamin</li><li><b>Diuretik</b> penyebab hipokalemia (tiazid, loop)</li><li>Obat penyebab <b>konstipasi</b> (antasida garam Ca, difenoksilat)</li></ul></div>
+      <div class="mini-card"><h4>Faktor lain</h4><ul><li>Sintesis faktor pembekuan ↓ → <b>antikoagulan oral</b> ↑ respons (perdarahan)</li><li>Edema/asites diperburuk obat retensi cairan: NSAID, kortikosteroid</li><li>Hepatotoksisitas lebih sering pada penyakit hati</li></ul></div>
+    </div>
+    <div class="table-wrap"><table>
+      <tr><th>Keadaan</th><th>Obat</th><th>Respons</th><th>Mekanisme</th></tr>
+      <tr><td>Koma/prekoma hepatikum</td><td>Morfin, barbiturat</td><td>Ensefalopati</td><td>Sensitivitas otak ↑, depresi napas</td></tr>
+      <tr><td>Sirosis + edema/asites</td><td>Diuretik tiazid &amp; kuat</td><td>Ensefalopati</td><td>Kehilangan banyak K</td></tr>
+      <tr><td>Hepatitis, sirosis</td><td>Antikoagulan oral</td><td>Perdarahan</td><td>Sintesis faktor pembekuan ↓</td></tr>
+      <tr><td>Ikterus obstruktif</td><td>Antikoagulan oral</td><td>Perdarahan</td><td>Absorpsi vitamin K ↓</td></tr>
+      <tr><td>Penyakit hati/empedu kolestatik</td><td>Kontrasepsi oral</td><td>Kolestasis, toksisitas estrogen</td><td>Metabolisme estrogen ↓</td></tr>
+      <tr><td>Penyakit hati berat</td><td>Antidiabetik oral</td><td>Hipoglikemia, ikterus (sulfonilurea), asidosis laktat (biguanid)</td><td>Metabolisme ↓, obat bebas ↑</td></tr>
+      <tr><td>Penyakit hati berat</td><td>Teofilin, lidokain</td><td>Toksisitas ↑ (SSP pada lidokain)</td><td>Metabolisme ↓</td></tr>
+      <tr><td>Penyakit hati berat</td><td>Rifampisin, isoniazid, pirazinamid, metildopa, klorpromazin, valproat, parasetamol dosis besar, ketokonazol, dll.</td><td>Hepatotoksisitas ↑</td><td>Metabolisme ↓</td></tr>
+      <tr><td>Penyakit hati berat</td><td>Aspirin, fenilbutazon</td><td>Perdarahan lambung / retensi cairan</td><td>Metabolisme ↓, obat bebas ↑</td></tr>
+      <tr><td>Penyakit hati berat</td><td><b>Simetidin</b></td><td><b>Kebingungan mental</b></td><td>Metabolisme ↓</td></tr>
+      <tr><td>Penyakit hati berat</td><td>Metotreksat; kloramfenikol (sirosis)</td><td>Depresi sumsum tulang</td><td>Metabolisme ↓</td></tr>
+      <tr><td>Penyakit hati berat dengan disfungsi ginjal</td><td>Fenitoin</td><td>Toksisitas SSP</td><td>Metabolisme ↓, obat bebas ↑</td></tr>
+      <tr><td>Penyakit hati berat</td><td>Suksinilkolin</td><td>Respons ↑</td><td>Pseudokolinesterase plasma ↓</td></tr>
+    </table></div>
+    <div class="cr-box"><div class="cr-label">Prinsip umum pada penyakit hati berat</div><ol class="cr-steps">
+      <li>Pilih obat yang eliminasi utamanya <b>lewat ginjal</b>.</li>
+      <li><b>Hindari</b>: depresan SSP (morfin), tiazid &amp; diuretik kuat, obat penyebab konstipasi, antikoagulan oral, kontrasepsi oral, obat hepatotoksik. <b>Sedatif teraman: oksazepam dan lorazepam.</b></li>
+      <li><b>Dosis lebih rendah</b> dari normal (terutama obat dengan eliminasi hepar): mulai kecil, titrasi menurut respons, kadar plasma, dan uji fungsi hati.</li>
+    </ol></div>
+    <div class="alert alert-rose"><span class="alert-icon">🪤</span><div><span class="tg ct">Common trap</span> Kunci bank AORTA'19 #40 ("obat penyebab ensefalopati pada sirosis") tertulis <b>D (NSAID)</b>, padahal catatan di bawahnya menyebut "depresi SSP, diuretik hipokalemi, konstipasi", yang menunjuk ke <b>furosemid</b> (B) menurut teori kuliah. Ini bisa salah ketik; konfirmasi ke kakak tingkat/dosen sebelum menghafal kunci itu.</div></div>
+  </div>
+
+  <div class="card" id="c-ginjal" data-t="Penyakit ginjal dan obat">
+    <div class="card-title">🫘 Penyakit Ginjal <span class="tg hy">High yield</span> <span class="tg fa">Sering keluar</span></div>
+    <p>Mengurangi <b>ekskresi</b> obat aktif &amp; metabolit aktifnya → kadar naik. Selain itu protein plasma ↓ (nefrotik) atau ikatan protein ↓ (ureum &amp; asam lemak bebas ↑) → <b>obat bebas ↑</b>; elektrolit &amp; asam-basa berubah; sensitivitas jaringan berubah; sebagian obat jadi kurang/tidak efektif.</p>
+    <div class="dr-note">Jawaban baku soal bank: <b>"Pada insufisiensi renal kadar obat meningkat karena <u>penurunan klirens</u>"</b>, bukan peningkatan absorpsi/distribusi/metabolisme.</div>
+    <div class="sub">Stadium CKD (slide, National Kidney Foundation) <span class="tg mm">Must memorize</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Stadium</th><th>GFR (mL/mnt/1,73 m²)</th><th>Deskripsi</th></tr>
+      <tr><td>1</td><td>≥ 90</td><td>Kerusakan ginjal, GFR normal/↑</td></tr>
+      <tr><td>2</td><td>60–89</td><td>Kerusakan ginjal, GFR ↓ ringan</td></tr>
+      <tr><td>3</td><td>30–59</td><td>GFR ↓ sedang</td></tr>
+      <tr><td>4</td><td>15–29</td><td>GFR ↓ berat</td></tr>
+      <tr><td>5</td><td>&lt; 15 (dialisis)</td><td>Gagal ginjal</td></tr>
+    </table></div>
+    <div class="alert alert-sky"><span class="alert-icon">📐</span><div><b>GFR 95</b> → ginjal normal → <b>dosis tetap</b> (ARTHRON'18 #56).</div></div>
+    <div class="sub">Rumus estimasi GFR</div>
+    <div class="grid-2">
+      <div class="mini-card"><h4>Dewasa</h4>
+        <p><b>Cockcroft-Gault</b> (klirens kreatinin, mL/mnt):<br><code>[(140 − usia) × BB(kg) × 0,85 jika perempuan] / [72 × SCr (mg/dL)]</code></p>
+        <p><b>MDRD</b>: <code>186 × SCr<sup>−1,154</sup> × usia<sup>−0,203</sup> × 1,212 (kulit hitam) × 0,742 (perempuan)</code></p></div>
+      <div class="mini-card"><h4>Anak</h4>
+        <p><b>Schwartz</b>: <code>k × tinggi (cm) / SCr</code>; k = 0,33 (prematur &lt; 1 th), 0,45 (cukup bulan &lt; 1 th), 0,55 (anak 1–12 th)</p>
+        <p><b>Counahan-Barratt</b>: <code>0,43 × panjang badan / SCr</code></p></div>
+    </div>
+    <button class="collapse-btn" onclick="toggle(this)"><span>🧮 Contoh hitung Cockcroft-Gault (klik)</span><span class="chev">▼</span></button>
+    <div class="collapse-body">
+      <p>Perempuan 70 th, BB 50 kg, SCr 1,2 mg/dL:</p>
+      <p>(140 − 70) × 50 × 0,85 = 2.975; 72 × 1,2 = 86,4 → <b>CrCl ≈ 34 mL/mnt</b> (stadium 3, mendekati 4) → turunkan dosis obat yang diekskresi ginjal (digoksin, aminoglikosida, klorpropamid).</p>
+    </div>
+    <div class="table-wrap" style="margin-top:14px"><table>
+      <tr><th>Keadaan</th><th>Obat</th><th>Respons</th><th>Mekanisme</th></tr>
+      <tr><td>Gagal ginjal</td><td>Penisilin dosis besar</td><td>Ensefalopati, anemia hemolitik</td><td>Ekskresi ↓</td></tr>
+      <tr><td>Gagal ginjal kronik</td><td>Aminoglikosida</td><td>Ototoksik, nefrotoksik, blok neuromuskular</td><td>Ekskresi ↓</td></tr>
+      <tr><td>Gangguan ginjal</td><td>Tetrasiklin</td><td>Azotemia ↑ (kerusakan ginjal ↑)</td><td>Ekskresi ↓ + efek antianabolik ↑</td></tr>
+      <tr><td>Gagal ginjal</td><td>Digoksin, prokainamid</td><td>Toksisitas ↑</td><td>Ekskresi ↓</td></tr>
+      <tr><td>Gagal ginjal kronik</td><td>Diuretik merkuri</td><td>Nekrosis tubular akut</td><td>Ekskresi ↓</td></tr>
+      <tr><td>Gagal ginjal</td><td>Spironolakton, triamteren, amilorid</td><td><b>Hiperkalemia</b></td><td>Ekskresi ↓</td></tr>
+      <tr><td>Gagal ginjal lanjut</td><td>Tiazid</td><td>Respons ↓, hiperurikemia, hiperkalsemia, hiperglikemia</td><td>Ekskresi ↓</td></tr>
+      <tr><td>Gagal ginjal</td><td>Furosemid, asam etakrinat</td><td>Ototoksisitas ↑</td><td>Ekskresi ↓</td></tr>
+      <tr><td>Gagal ginjal kronik</td><td>Klorpropamid, asetoheksamid</td><td>Hipoglikemia</td><td>Ekskresi ↓</td></tr>
+      <tr><td>Uremia</td><td>Aspirin</td><td>Perdarahan lambung</td><td>Ikatan protein plasma ↓</td></tr>
+      <tr><td>Uremia</td><td>Tiopental</td><td>Respons ↑</td><td>Sensitivitas otak ↑, ikatan protein ↓</td></tr>
+      <tr><td>Gagal ginjal, usia lanjut sakit parah</td><td>Simetidin</td><td>Kebingungan mental, konvulsi</td><td>Ekskresi ↓</td></tr>
+    </table></div>
+    <div class="cr-box"><div class="cr-label">Prinsip umum pada gagal ginjal</div><ol class="cr-steps">
+      <li>Sedapat mungkin pilih obat yang eliminasinya terutama <b>metabolisme hati</b> (obat &amp; metabolit aktifnya).</li>
+      <li><b>Hindari</b>: tetrasiklin (semua derajat; kecuali doksisiklin &amp; minosiklin dengan monitor fungsi ginjal), diuretik merkuri, diuretik hemat K, tiazid, antidiabetik oral, aspirin. <b>Parasetamol mungkin analgesik teraman.</b></li>
+      <li>Dosis <b>lebih rendah dari normal</b>, terutama untuk obat yang diekskresi ginjal.</li>
+    </ol></div>
+  </div>
+
+  <div class="card" id="c-genetik" data-t="Faktor genetik farmakogenetik">
+    <div class="card-title">🧬 Faktor Genetik (Farmakogenetik) <span class="tg hy">High yield</span></div>
+    <p>Faktor genetik terutama memengaruhi <b>metabolisme obat</b>. Kecepatan metabolisme suatu obat bervariasi antarindividu (kurva unimodal atau polimodal). <b>Farmakogenetik</b> = ilmu perubahan respons obat akibat faktor genetik; tujuannya mengenali orang-orangnya agar dosis sesuai dan mencegah respons kurang/berlebih.</p>
+    <div class="table-wrap"><table>
+      <tr><th>Obat</th><th>Respons</th><th>Dasar genetik</th></tr>
+      <tr><td>Isoniazid, hidralazin, prokainamid, sulfametazin, dapson</td><td><b>Asetilator cepat</b>: respons ↓, toksisitas derivat N-asetil ↑<br><b>Asetilator lambat</b>: toksisitas ↑</td><td>Aktivitas enzim asetilasi di hati</td></tr>
+      <tr><td>Debrisokuin, metoprolol, lidokain, perheksilin</td><td><b>Hidroksilator kuat</b>: respons ↓<br><b>Hidroksilator lemah</b>: respons ↑</td><td>Aktivitas enzim hidroksilasi di hati</td></tr>
+      <tr><td>Suksinilkolin</td><td>Apnea memanjang</td><td>Aktivitas pseudokolinesterase</td></tr>
+      <tr><td>Primakuin, klorokuin, kuinin, kuinidin, sulfa, sulfon, nitrofurantoin, kloramfenikol, aspirin, PAS</td><td>Anemia hemolitik</td><td><b>Defisiensi G6PD</b></td></tr>
+      <tr><td>Halotan, suksinilkolin</td><td>Hipertermia maligna</td><td>Mekanisme belum jelas pada slide</td></tr>
+    </table></div>
+    <div class="alert alert-peach"><span class="alert-icon">🪤</span><div><span class="tg ct">Common trap</span> Soal bank: <b>isoniazid pada slow acetylator</b> → di bank ada dua kunci: <i>neuropati perifer</i> (UB RT #23, ARTHRON'18 #80) dan <i>mual + ikterus / hepatotoksik</i> (ARTHRON'18 #60). Lihat opsi yang tersedia. Bila ada neuropati perifer, itu yang klasik; bila hanya ada keluhan mual + mata kuning, jawabannya "slow acetylator".<br><span class="tg add">Tambahan</span> Slide menggabung baris hipertermia maligna ke baris G6PD akibat format PDF; yang benar: G6PD → anemia hemolitik, halotan/suksinilkolin → hipertermia maligna.</div></div>
+    <p style="font-size:12.5px;color:var(--muted)"><b>Faktor lain</b> (judul di slide): interaksi obat, toleransi, efek plasebo, pengaruh lingkungan; dibahas pada kuliah lain (interaksi obat).</p>
+  </div>
+</div>
+
+<!-- ======================= TERAPI & RESEP ======================= -->
+<div id="sec-resep" class="section">
+  <h2 class="section-heading">📝 Terapi & Penulisan Resep pada Kondisi Khusus</h2>
+  <p class="section-desc">Menerjemahkan kuliah menjadi keputusan resep. Tutorial blok ini berupa diskusi paket terapi per skenario, jadi bagian ini disusun sebagai "kalau pasiennya X, hindari/pilih Y".</p>
+
+  <div class="card" id="c-matriks" data-t="Matriks pilihan obat per kondisi">
+    <div class="card-title">🧭 Matriks Pilihan & Hindari per Kondisi <span class="tg hy">High yield</span> <span class="tg mm">Must memorize</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Kondisi</th><th>✅ Pilih / lebih aman</th><th>⛔ Hindari / hati-hati</th></tr>
+      <tr><td><b>Neonatus</b></td><td>Dosis lebih rendah dari hitung LPT; start low; monitor/TDM</td><td>Sulfonamid, aspirin/salisilat, morfin, barbiturat IV, kloramfenikol, aminoglikosida (bila tanpa penyesuaian), oksigen berlebihan, heksaklorofen topikal</td></tr>
+      <tr><td><b>Geriatri</b></td><td>Dosis awal ½; regimen 1×/hari; sirop/tablet larut; evaluasi berkala</td><td>Barbiturat sebagai hipnotik; diazepam/nitrazepam dosis biasa; triheksifenidil; tiazid/furosemid tanpa monitor K; antikoagulan tanpa monitor; digoksin dosis penuh</td></tr>
+      <tr><td><b>Hamil</b></td><td>Kategori A→B→C: parasetamol (analgesik), amoksisilin/ampisilin/eritromisin, antasid, ranitidin, dimenhidrinat/metoklopramid, salbutamol/teofilin; metildopa untuk hipertensi (Fornas)</td><td>D &amp; X: ACE-i/ARB (kaptopril, losartan, valsartan), tetrasiklin/doksisiklin, aminoglikosida, kuinolon, misoprostol, litium, fenitoin, antineoplastik</td></tr>
+      <tr><td><b>Menyusui</b></td><td>Obat dengan BM besar, ikatan protein tinggi, hidrofil; hindari obat baru</td><td>Amfetamin, antineoplastik, bromokriptin, ergotamin, imunosupresan, litium, kokain, etanol; estrogen &amp; tiazid mengurangi ASI</td></tr>
+      <tr><td><b>GIT bermasalah</b></td><td>Levodopa + karbidopa; sediaan konvensional</td><td>Iritan (KCl, aspirin, NSAID) pada stasis; lepas lambat &amp; salut enterik</td></tr>
+      <tr><td><b>CVD berat</b></td><td>Dosis awal &amp; penunjang diturunkan</td><td>Lidokain, prokainamid, kuinidin dosis penuh</td></tr>
+      <tr><td><b>Hati berat</b></td><td>Obat dengan eliminasi ginjal; sedatif <b>oksazepam/lorazepam</b></td><td>Morfin, tiazid/diuretik kuat, antikoagulan oral, kontrasepsi oral, obat hepatotoksik, simetidin</td></tr>
+      <tr><td><b>Ginjal</b></td><td>Obat dengan eliminasi hepar; <b>parasetamol</b>; dosis diturunkan sesuai klirens</td><td>Tetrasiklin (kecuali doksisiklin/minosiklin), diuretik hemat K, tiazid, antidiabetik oral, aspirin, aminoglikosida</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card" id="c-sediaan" data-t="Bentuk sediaan dan cara pemberian">
+    <div class="card-title">💊 Bentuk Sediaan & Cara Pemberian per Kondisi</div>
+    <ul class="styled-list">
+      <li><b>Geriatri:</b> sirop atau tablet yang dilarutkan; regimen sekali sehari (pagi).</li>
+      <li><b>Gangguan motilitas GIT:</b> hindari lepas lambat &amp; salut enterik (Fornas: mis. diklofenak tab salut enterik, valproat lepas lambat); hindari bentuk iritan.</li>
+      <li><b>Levodopa:</b> berikan dalam kombinasi dengan <b>karbidopa</b> (Fornas: kombinasi benserazid/levodopa, atau levodopa/karbidopa/entekapon).</li>
+      <li><b>Neonatus:</b> dosis sangat kecil → gunakan sediaan cair (drops/sirop) agar bisa titrasi; hindari penetrasi kulit obat topikal tertentu (heksaklorofen).</li>
+    </ul>
+    <div class="sub">Sediaan pediatrik di Fornas 2025 (contoh, cek restriksi) <span class="tg add">Dari file Fornas</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Obat</th><th>Sediaan anak</th><th>Peresepan maks.</th></tr>
+      <tr><td>Parasetamol</td><td>sirop 120 mg/5 mL; drops 100 mg/mL</td><td>2 btl/kasus; 1 btl/kasus</td></tr>
+      <tr><td>Ibuprofen</td><td>susp 100 mg/5 mL; susp 200 mg/5 mL</td><td>1 btl/kasus</td></tr>
+      <tr><td>Amoksisilin</td><td>drops 100 mg/mL; sirop kering 125/5 mL &amp; 250/5 mL</td><td>1 btl/kasus</td></tr>
+      <tr><td>Setirizin</td><td>sirop 5 mg/5 mL</td><td>1 btl/kasus</td></tr>
+      <tr><td>Zinc (anak &lt; 2 th, bersama oralit)</td><td>drops 10 mg/mL; sirop 20 mg/5 mL; tab dispersible 20 mg</td><td>drops 2 btl/kasus</td></tr>
+      <tr><td>Domperidon</td><td>sirop 5 mg/5 mL; drops 5 mg/mL</td><td>—</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card" id="c-resep" data-t="Contoh resep rasional">
+    <div class="card-title">✍️ Template & Contoh Resep <span class="tg add">Latihan</span></div>
+    <div class="alert alert-teal"><span class="alert-icon">🧾</span><div><b>Kerangka resep:</b> identitas pasien (nama, usia, BB bila anak/geriatri, status hamil) → <code>R/</code> nama obat + kekuatan + bentuk → jumlah (No.) → <i>signa</i> (S) aturan pakai → paraf. Cek <b>6 tepat</b>: pasien, indikasi, obat, dosis, cara/waktu, dan informasi/monitoring.</div></div>
+    <div class="grid-2">
+      <div class="mini-card"><h4>Contoh A: ibu hamil 20 mgg, demam</h4><p><code>R/ Parasetamol tab 500 mg No. X<br>S 3 dd tab I prn demam</code></p><p>Alasan: kategori A (slide); Fornas: tab 500 mg tersedia. Konseling: tidak ada yang 100% aman, ini pilihan yang lebih aman; batasi total dosis harian.</p></div>
+      <div class="mini-card"><h4>Contoh B: balita demam (sediaan cair)</h4><p><code>R/ Parasetamol sirop 120 mg/5 mL fl. No. I<br>S prn demam (takar sesuai BB, ukuran sendok takar)</code></p><p>Alasan: dosis anak dihitung dari BB/LPT, sediaan cair memudahkan titrasi; Fornas: sirop 120 mg/5 mL, 2 btl/kasus. <span class="tg add">Cek dosis mg/kgBB di PNPK/IDAI</span></p></div>
+    </div>
+    <div class="sub">Kasus resep irasional (latihan "tidak tepat pasien") <span class="tg fa">Sering keluar</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Resep</th><th>Masalah</th><th>Perbaikan</th></tr>
+      <tr><td>Ibu hamil 4 bln, hipertensi 160/90: <code>R/ Kaptopril 25 mg No. X, S 2 dd 1</code></td><td><b>Tidak tepat pasien</b> (ACE-i kategori D, teratogen) — AORTA'19 #49</td><td>Metildopa (Fornas: tab 250 mg, untuk hipertensi pada wanita hamil) <span class="tg add">cek dosis di PNPK/POGI</span></td></tr>
+      <tr><td>Ibu hamil/anak &lt; 6 th: tetrasiklin</td><td>Kategori D; gigi berwarna, hambat tulang; Fornas melarang</td><td>Amoksisilin / pilihan sesuai kultur</td></tr>
+      <tr><td>Bayi: sulfonamid / kloramfenikol dosis standar</td><td>Kernikterus / gray baby</td><td>Hindari; bila tak terhindarkan: dosis rendah + TDM</td></tr>
+      <tr><td>Geriatri: diazepam dosis dewasa muda</td><td>Sensitivitas otak ↑, metabolisme ↓</td><td>Mulai ½ dosis, atau non-benzodiazepin sesuai indikasi; evaluasi berkala</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<!-- ======================= ANALISIS SOAL ======================= -->
+<div id="sec-bank" class="section">
+  <h2 class="section-heading">📊 Analisis Soal Blok Tahun Lalu</h2>
+  <p class="section-desc">Dipetakan dari bank soal yang kamu kirim (ARTHRON'18, AORTA'19, AXON'20, UB RT). Soal yang bersumber dari kuliah Prof EM dikelompokkan per topik.</p>
+
+  <div class="card" id="c-pola" data-t="Pola tipe soal">
+    <div class="card-title">🔎 Tiga Tipe Soal yang Dominan <span class="tg fa">Sering keluar</span></div>
+    <div class="grid-3">
+      <div class="mini-card"><h4>Tipe 1: "Mengapa?"</h4><p>Mekanisme PK pada kondisi X (renal → klirens ↓; hepar → metabolisme ↓; geriatri → obat bebas ↑). Pola: kondisi → proses PK yang berubah → akibat pada kadar.</p></div>
+      <div class="mini-card"><h4>Tipe 2: "Pilih obat"</h4><p>Vignette pasien hamil/menyusui/organ gagal, pilih obat paling aman atau obat yang harus dihindari (kaptopril hamil, parasetamol, sefadroksil).</p></div>
+      <div class="mini-card"><h4>Tipe 3: "Efek khas"</h4><p>Obat X di populasi Y → efek Z (kloramfenikol neonatus → gray baby, aspirin → Reye, simetidin gagal hati → konfusi).</p></div>
+    </div>
+  </div>
+
+  <div class="card" id="c-peta-soal" data-t="Peta soal per topik">
+    <div class="card-title">🗂️ Peta Soal per Topik</div>
+    <div class="table-wrap"><table>
+      <tr><th>Topik</th><th>Soal &amp; kunci (ringkas)</th><th>Sumber bank</th></tr>
+      <tr><td><b>Renal</b></td><td>Insufisiensi renal → kadar obat ↑ karena <b>penurunan clearance</b>; proteinuria → hipoalbuminemia → <b>free drugs ↑</b>; GFR 95 → <b>dosis tetap</b></td><td><span class="cohort-tag cohort-arthron">ARTHRON'18</span><span class="cohort-tag cohort-aorta">AORTA'19</span><span class="cohort-tag cohort-axon">AXON'20</span><span class="cohort-tag cohort-ub">UB RT</span></td></tr>
+      <tr><td><b>Hepar</b></td><td>Penurunan fungsi hepar → <b>penurunan metabolisme</b>; simetidin gagal hati berat → <b>kebingungan mental</b>; morfin gagal hati berat → <b>ensefalopati</b></td><td><span class="cohort-tag cohort-arthron">ARTHRON'18</span><span class="cohort-tag cohort-aorta">AORTA'19</span><span class="cohort-tag cohort-axon">AXON'20</span><span class="cohort-tag cohort-ub">UB RT</span></td></tr>
+      <tr><td><b>Geriatri</b></td><td>Dosis diturunkan karena <b>penurunan fungsi ginjal</b>; protein darah ↓ → <b>free drugs ↑, efek ↑</b>; hipokalemia → <b>furosemid</b>; ikterus → <b>isoniazid</b>; glucose intolerance → <b>tiazid</b></td><td><span class="cohort-tag cohort-arthron">ARTHRON'18</span><span class="cohort-tag cohort-aorta">AORTA'19</span><span class="cohort-tag cohort-axon">AXON'20</span><span class="cohort-tag cohort-ub">UB RT</span></td></tr>
+      <tr><td><b>Neonatus</b></td><td>Metabolisme lemah → <b>over effect pada dosis standar</b>; PBD lemah → efek ↑; kloramfenikol → <b>baby gray</b>; aspirin → <b>Reye</b>; tetrasiklin → <b>gigi kuning</b>; absorpsi lambung <b>lebih lama</b> <span class="tg add">kuliah lain</span></td><td><span class="cohort-tag cohort-arthron">ARTHRON'18</span><span class="cohort-tag cohort-aorta">AORTA'19</span><span class="cohort-tag cohort-axon">AXON'20</span></td></tr>
+      <tr><td><b>Hamil</b></td><td>CO ↑ → <b>distribusi</b>; GFR ↑ → <b>eliminasi ↑</b>; antibiotik → <b>sefadroksil</b> (bukan tetrasiklin/kuinolon/streptomisin); analgesik → <b>parasetamol</b>; kaptopril → <b>tidak tepat pasien</b>; ergotamin tidak aman; misoprostol kategori X</td><td><span class="cohort-tag cohort-arthron">ARTHRON'18</span><span class="cohort-tag cohort-aorta">AORTA'19</span><span class="cohort-tag cohort-axon">AXON'20</span></td></tr>
+      <tr><td><b>ASI</b></td><td>Faktor menembus ASI → <b>free drugs ibu tinggi</b></td><td><span class="cohort-tag cohort-aorta">AORTA'19</span></td></tr>
+      <tr><td><b>Farmakogenetik</b></td><td>INH slow acetylator → neuropati perifer / hepatotoksik</td><td><span class="cohort-tag cohort-arthron">ARTHRON'18</span><span class="cohort-tag cohort-ub">UB RT</span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card" id="c-trap-bank" data-t="Jebakan dan catatan kunci jawaban">
+    <div class="card-title">🪤 Jebakan & Catatan Kunci Jawaban <span class="tg ct">Common trap</span></div>
+    <ul class="styled-list">
+      <li><b>Hamil: pengosongan lambung lebih lama (AXON'20 #30).</b> Kunci tidak tercantum di bank. Teori slide: motilitas ↓ → <b>absorpsi ↑</b>. Jangan memilih "peningkatan metabolisme/eliminasi".</li>
+      <li><b>AORTA'19 #40</b> (ensefalopati sirosis): kunci tertulis NSAID, tetapi catatan di bank menunjuk diuretik hipokalemi (lihat tab Patologik). Verifikasi dulu.</li>
+      <li><b>Ergotamin:</b> slide menaruh di kategori C, bank menjawab "tidak aman untuk bumil", dan pelengkapnya "X → misoprostol". Baca opsi dengan teliti.</li>
+      <li><b>Absorpsi lambung neonatus:</b> di bank jawabannya <i>"berlangsung lebih lama"</i> (ARTHRON'18, AORTA'19) <span class="tg add">kuliah lain</span>. Pilihan "lebih cepat" salah; "lebih lambat" dan "lebih lama" bisa jadi dua opsi berbeda, baca ulang kalimatnya.</li>
+      <li><b>Slow acetylator INH:</b> dua kunci berbeda di bank (neuropati vs hepatotoksik), tergantung opsi.</li>
+      <li>Kunci bank ada yang tertukar/terpotong akibat format PDF (mis. no. 35–36 ARTHRON'18). Gunakan tabel ini sebagai pola, bukan sebagai kunci mutlak.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="c-prediksi" data-t="Prediksi area soal">
+    <div class="card-title">🔮 Prediksi Area Soal & Pengembangan Tipe</div>
+    <div class="table-wrap"><table>
+      <tr><th>Area</th><th>Kemungkinan bentuk soal baru</th></tr>
+      <tr><td>Renal</td><td>Hitung CrCl (Cockcroft-Gault) lalu pilih penyesuaian dosis; pilih obat yang harus dihindari di CKD</td></tr>
+      <tr><td>Hepar</td><td>Vignette sirosis + diuretik/sedatif → ensefalopati; pilih sedatif aman (oksazepam/lorazepam)</td></tr>
+      <tr><td>Neonatus</td><td>Pilih prinsip dosis (LPT, start low); mekanisme kernikterus; interpretasi tabel dosis anak</td></tr>
+      <tr><td>Hamil</td><td>Pilih antibiotik/antihipertensi/antiemetik aman; fase perkembangan vs jenis cacat; syarat teratogen</td></tr>
+      <tr><td>Etika/komunikasi</td><td>Respons dokter terhadap "obat ini aman?" dan keputusan bersama</td></tr>
+      <tr><td>Resep irasional</td><td>"Tidak tepat pasien" (kaptopril hamil, tetrasiklin anak/hamil)</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<!-- ======================= GLOSARIUM ======================= -->
+<div id="sec-glosarium" class="section">
+  <h2 class="section-heading">📖 Glosarium Istilah Terapi & Farmasi</h2>
+  <p class="section-desc">Istilah dari kuliah ini. Ketik untuk menyaring.</p>
+  <div class="card" id="c-gloss" data-t="Glosarium istilah">
+    <input class="gl-filter" id="glFilter" placeholder="🔎 Saring istilah… (mis. klirens, TDM, teratogen)" oninput="filterGl()">
+    <div id="glList"></div>
+  </div>
+</div>
+
+<!-- ======================= RINGKASAN ======================= -->
+<div id="sec-ringkas" class="section">
+  <h2 class="section-heading">⚡ Ringkasan & Quick Review</h2>
+  <p class="section-desc">Baca ini 10 menit sebelum ujian.</p>
+
+  <div class="card" id="c-ringkas1" data-t="Ringkasan satu halaman">
+    <div class="card-title">📌 Satu Halaman</div>
+    <ul class="styled-list">
+      <li><b>Respons obat</b> = dosis diminum → PK (kadar di tempat kerja) → PD (efek). Variasi terbesar = <b>kecepatan biotransformasi</b>.</li>
+      <li><b>Anak ≠ miniatur dewasa.</b> Pakai <b>LPT</b>, bukan BB saja. Neonatus: dosis lebih rendah, start low, monitor/TDM.</li>
+      <li><b>Neonatus</b>: hepar belum matang, ginjal 60–70%, albumin rendah, BBB belum sempurna → kernikterus (sulfonamid, salisilat), gray baby (kloramfenikol), intoksikasi aminoglikosida, depresi napas (morfin, barbiturat).</li>
+      <li><b>Geriatri</b>: GFR ↓ ±30%, albumin ↓, lemak ↑, reseptor otak sensitif, t½ ↑. Mulai ½ dosis, regimen 1×/hari, evaluasi berkala.</li>
+      <li><b>Hamil</b>: jangan jawab "aman"; keputusan bersama. Teratogen = struktur + menembus plasenta. Pre-embrionik → abortus; embrionik → cacat anatomi; janin → cacat fungsional. Hindari <b>D &amp; X</b>.</li>
+      <li><b>Menyusui</b>: obat basa, lipofil, BM kecil, ikatan protein rendah masuk ASI lebih banyak. Hindari obat baru.</li>
+      <li><b>GIT</b>: hindari iritan &amp; lepas lambat/salut enterik; levodopa + karbidopa. <b>CVD</b>: turunkan DL &amp; DM. <b>Hati</b>: metabolisme ↓, otak sensitif; oksazepam/lorazepam. <b>Ginjal</b>: ekskresi ↓ (klirens ↓); parasetamol relatif aman.</li>
+      <li><b>Farmakogenetik</b>: asetilator (INH), hidroksilator, pseudokolinesterase, G6PD.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="c-rumus" data-t="Angka dan rumus wajib hafal">
+    <div class="card-title">🔢 Angka & Rumus <span class="tg mm">Must memorize</span></div>
+    <div class="table-wrap"><table>
+      <tr><th>Item</th><th>Nilai</th></tr>
+      <tr><td>Fungsi ginjal neonatus</td><td>60–70% dewasa</td></tr>
+      <tr><td>Penurunan GFR usia 65 th</td><td>±30%; t½ bisa ↑ s.d. 50%</td></tr>
+      <tr><td>CO ibu hamil / volume darah</td><td>↑ s.d. 30% / ↑ s.d. 50%</td></tr>
+      <tr><td>pH ASI vs plasma</td><td>6,9 vs 7,4</td></tr>
+      <tr><td>Dosis anak 1 th / 5 th / 12 th</td><td>25% / 40% / 75% dosis dewasa</td></tr>
+      <tr><td>Fase embrionik</td><td>hari 18–56 (pre-embrionik 0–17; janin 8–38 mgg)</td></tr>
+      <tr><td>CKD stadium 3 / 4 / 5</td><td>GFR 30–59 / 15–29 / &lt;15</td></tr>
+      <tr><td>Cockcroft-Gault</td><td>(140 − usia) × BB × 0,85 (♀) / (72 × SCr)</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<!-- ======================= QUIZ ======================= -->
+<div id="sec-quiz" class="section">
+  <h2 class="section-heading">🧠 Quiz — Vignette Klinis (C2–C4)</h2>
+  <p class="section-desc">12 soal. Urutan pilihan diacak setiap kali dimuat. Setelah menjawab, kamu mendapat pembahasan <b>tiap pilihan</b> beserta konsep intinya.</p>
+  <div class="quiz-progress" id="quizProg"></div>
+  <div id="quizBox"></div>
+  <div class="score-card" id="scoreCard">
+    <div style="font-size:40px;margin-bottom:8px">🩺</div>
+    <div class="score-big" id="scoreNum">0</div>
+    <div style="font-size:18px;opacity:.8">/ 12</div>
+    <p id="scoreMsg" style="margin-top:8px;opacity:.9"></p>
+    <button class="btn btn-restart" onclick="resetQuiz()">🔁 Ulangi &amp; Acak Ulang</button>
+  </div>
+</div>
+
+<!-- ======================= FLASHCARD ======================= -->
+<div id="sec-flash" class="section">
+  <h2 class="section-heading">🃏 Flashcard — Active Recall</h2>
+  <p class="section-desc">Klik kartu untuk membalik. Tandai "Hafal" atau "Ulang" supaya kartu yang sulit muncul lagi.</p>
+  <div class="fc-wrap">
+    <div class="fc-meta"><span id="fcPos">1 / 1</span><span id="fcStat">Hafal: 0</span></div>
+    <div class="fc-scene"><div class="fc" id="fc" onclick="flipCard()">
+      <div class="fc-face fc-front"><div id="fcQ"></div><div class="fc-hint">klik untuk melihat jawaban</div></div>
+      <div class="fc-face fc-back"><div id="fcA"></div></div>
+    </div></div>
+    <div class="fc-actions">
+      <button class="btn ghost" onclick="fcMove(-1)">◀ Sebelumnya</button>
+      <button class="btn rose" onclick="fcMark(false)">↻ Ulang lagi</button>
+      <button class="btn" onclick="fcMark(true)">✓ Hafal</button>
+      <button class="btn ghost" onclick="fcMove(1)">Berikutnya ▶</button>
+    </div>
+    <div class="fc-actions" style="margin-top:10px">
+      <button class="btn ghost" onclick="fcShuffle()">🔀 Acak</button>
+      <button class="btn ghost" id="fcOnly" onclick="fcToggleOnly()">Tampilkan hanya yang belum hafal: OFF</button>
+      <button class="btn ghost" onclick="fcReset()">♻ Reset</button>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<!-- SEARCH -->
+<div class="search-overlay" id="searchOv" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <input id="searchIn" placeholder="🔍 Cari di seluruh materi… (mis. kernikterus, klirens, tetrasiklin)" oninput="doSearch()">
+    <div class="search-res" id="searchRes"><div class="sr-empty">Ketik minimal 2 huruf.</div></div>
+  </div>
+</div>
+
+<!-- FABs -->
+<div class="jump-panel" id="jumpPanel"></div>
+<div class="fab-stack">
+  <button class="fab jump" onclick="toggleJump()">⚡ Quick Jump</button>
+  <button class="fab dr" onclick="openModal()"><span class="pulse"></span>🎤 Sorotan Prof EM</button>
+</div>
+
+<!-- MODAL SOROTAN -->
+<div class="modal-overlay" id="drModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title">🎤 Sorotan Prof EM</div>
+    <div class="modal-sub">Hal-hal yang ditekankan dosen secara lisan (dari transkrip) + keterkaitannya dengan bank soal.</div>
+    <div class="modal-item"><span class="modal-item-num">01</span><div class="modal-item-q">Anak bukan miniatur dewasa</div><div class="modal-item-a">Dosis anak lebih tepat dari <b>LPT (≈ volume distribusi)</b>, bukan BB saja; pertimbangkan <b>pematangan organ</b>.</div></div>
+    <div class="modal-item"><span class="modal-item-num">02</span><div class="modal-item-q">Range terapeutik &amp; indeks terapeutik sempit</div><div class="modal-item-a">Selama dalam range, dosis tak harus presisi. Hati-hati pada <b>teofilin, fenitoin, digoksin</b>: naik sedikit → over effect.</div></div>
+    <div class="modal-item"><span class="modal-item-num">03</span><div class="modal-item-q">Neonatus: 4 alasan</div><div class="modal-item-a"><b>Hepar</b> (metabolisme), <b>ginjal</b> (eliminasi), <b>protein plasma</b> (distribusi), <b>sawar darah-otak</b>. Dosis standar → over effect. <span class="cohort-tag cohort-arthron">ARTHRON'18</span><span class="cohort-tag cohort-axon">AXON'20</span></div></div>
+    <div class="modal-item"><span class="modal-item-num">04</span><div class="modal-item-q">Contoh respons neonatus</div><div class="modal-item-a">Sulfonamid/salisilat → <b>kernikterus</b>; kloramfenikol → <b>gray baby</b>; aminoglikosida → intoksikasi; oksigen → retrolental fibroplasia. <span class="cohort-tag cohort-aorta">AORTA'19</span><span class="cohort-tag cohort-axon">AXON'20</span></div></div>
+    <div class="modal-item"><span class="modal-item-num">05</span><div class="modal-item-q">Ragu pada neonatus?</div><div class="modal-item-a"><b>Beri dosis lebih rendah</b>, start low, naikkan bertahap; pasien kini mengecek obat lewat Google/AI.</div></div>
+    <div class="modal-item"><span class="modal-item-num">06</span><div class="modal-item-q">Geriatri: GFR &amp; waktu paruh</div><div class="modal-item-a">&gt;65 th GFR ↓ ±30% → t½ memanjang → kadar lebih tinggi &amp; lebih lama → <b>dosis harus dikurangi</b>. <span class="cohort-tag cohort-arthron">ARTHRON'18</span></div></div>
+    <div class="modal-item"><span class="modal-item-num">07</span><div class="modal-item-q">Prinsip geriatri</div><div class="modal-item-a">Hanya obat yang perlu · manfaat &gt; risiko · <b>mulai separuh dosis</b> · sesuaikan respons/TDM · <b>regimen sederhana 1×/hari pagi</b> · review &amp; hentikan obat yang tak perlu.</div></div>
+    <div class="modal-item"><span class="modal-item-num">08</span><div class="modal-item-q">Pasien hamil: jangan bilang "aman"</div><div class="modal-item-a">Jawab: <b>tidak ada yang 100% aman</b>, kita pilih yang lebih aman; <b>keputusan bersama</b> dokter-pasien.</div></div>
+    <div class="modal-item"><span class="modal-item-num">09</span><div class="modal-item-q">Dua pertanyaan pada hamil</div><div class="modal-item-a">(1) Aman bagi janin? (2) Jenis &amp; dosis perlu evaluasi? Obat <b>indeks sempit wajib</b> diturunkan dosisnya.</div></div>
+    <div class="modal-item"><span class="modal-item-num">10</span><div class="modal-item-q">Syarat teratogen</div><div class="modal-item-a">Struktur molekul bisa merusak <b>dan</b> obat <b>menembus plasenta</b>. Faktor: BM kecil, lipofil, ikatan protein rendah, aliran darah.</div></div>
+    <div class="modal-item"><span class="modal-item-num">11</span><div class="modal-item-q">Waktu paparan → jenis cacat</div><div class="modal-item-a">Embriogenesis/organogenesis → <b>cacat anatomi</b>; pematangan fungsi → <b>cacat fungsional</b> (mis. tuli).</div></div>
+    <div class="modal-item"><span class="modal-item-num">12</span><div class="modal-item-q">Hewan uji ≠ manusia</div><div class="modal-item-a">Aman pada hewan belum tentu aman pada manusia (talidomid); aman bagi ibu belum tentu aman bagi janin.</div></div>
+    <div class="modal-item"><span class="modal-item-num">13</span><div class="modal-item-q">Kategori kehamilan</div><div class="modal-item-a">Cari <b>A → B → C</b>, hindari <b>D &amp; X</b>. Topikal &amp; vitamin umumnya A; hormonal &amp; penenang cenderung D/X. Kaptopril = teratogen. <span class="cohort-tag cohort-aorta">AORTA'19</span></div></div>
+    <div class="modal-item"><span class="modal-item-num">14</span><div class="modal-item-q">Menyusui</div><div class="modal-item-a">Basa, lipofil, BM kecil, <b>free drug</b> tinggi → masuk ASI lebih banyak; kategori D &amp; X juga dikontraindikasikan; <b>hindari obat baru</b>; stop sementara bila obat poten/berbahaya. <span class="cohort-tag cohort-aorta">AORTA'19</span></div></div>
+    <button class="btn" style="width:100%;margin-top:6px" onclick="closeModal();show('quiz')">🧠 Langsung ke Quiz →</button>
+  </div>
+</div>
+
+<script>
+/* ============ DATA ============ */
+const QUIZ = [
+ {lvl:"C2",topic:"NEONATUS",
+  v:"Bayi laki-laki usia 8 hari mendapat sulfonamid untuk infeksi saluran kemih. Pada hari ke-3 terapi tampak ikterus berat, malas menyusu, tonus otot meningkat dan kejang. Bilirubin indirek sangat tinggi.",
+  q:"Mekanisme utama kondisi ini adalah…",
+  o:[["Sulfonamid mendesak bilirubin dari ikatan albumin, sementara kapasitas ikatan protein rendah, glukuronidasi hepar kurang, dan sawar darah-otak belum sempurna",true,"Benar. Empat faktor neonatus (hepar, protein plasma, BBB) bertemu satu obat yang bersaing dengan bilirubin → bilirubin bebas masuk otak = kernikterus."],
+     ["Sulfonamid menginduksi enzim hepar sehingga bilirubin makin cepat dimetabolisme",false,"Induksi enzim akan menurunkan bilirubin, bukan menaikkan; lagipula hepar neonatus belum matang."],
+     ["Filtrasi glomerulus neonatus lebih tinggi sehingga eliminasi obat terlalu cepat",false,"Terbalik: fungsi ginjal neonatus hanya 60–70% dewasa. Eliminasi lambat, bukan cepat."],
+     ["Sawar kulit yang belum sempurna menyebabkan penyerapan sulfonamid topikal berlebih",false,"Itu mekanisme neurotoksisitas heksaklorofen topikal. Kasus ini sulfonamid sistemik dengan ikterus."],
+     ["Konsentrasi oksigen yang berlebihan menimbulkan kerusakan jaringan otak",false,"Oksigen berlebihan pada neonatus → retrolental fibroplasia (mata), bukan ikterus-kejang."]],
+  k:"Kernikterus: obat mendesak bilirubin dari albumin + kapasitas ikatan protein ↓ + glukuronidasi bilirubin ↓ + BBB belum sempurna."},
+
+ {lvl:"C3",topic:"NEONATUS",
+  v:"Bayi prematur 31 minggu (BB 1,4 kg), usia 5 hari, suspek sepsis, diberi gentamisin dengan dosis dari perhitungan luas permukaan tubuh. Hari ke-3 produksi urin menurun, kreatinin meningkat, dan kadar gentamisin di atas rentang terapi.",
+  q:"Penyebab dan langkah paling tepat adalah…",
+  o:[["Filtrasi glomerulus belum matang sehingga obat menumpuk; turunkan dosis/perpanjang interval dan pantau fungsi ginjal serta kadar obat",true,"Benar. Aminoglikosida bergantung ekskresi ginjal; neonatus/prematur GFR rendah. Prinsip dosen: dosis lebih rendah dari hitung LPT, monitor, TDM."],
+     ["Metabolisme anak lebih cepat sehingga dosis harus dinaikkan agar kadar tercapai",false,"'Anak metabolismenya lebih tinggi' berlaku untuk anak, bukan neonatus/prematur yang justru belum matang."],
+     ["Ganti dengan kloramfenikol karena tidak bergantung ginjal",false,"Kloramfenikol pada neonatus → gray baby syndrome (glukuronidasi ↓)."],
+     ["Lanjutkan dosis sama; peningkatan kreatinin hanya akibat sepsis",false,"Mengabaikan indeks terapeutik sempit dan bukti kadar di atas range."],
+     ["Tambahkan furosemid agar obat cepat dibuang",false,"Tidak mengatasi akumulasi dan furosemid sendiri ototoksik; ginjal sudah bermasalah."]],
+  k:"Neonatus/prematur: ginjal 60–70% dewasa → aminoglikosida intoksikasi. Gunakan dosis lebih rendah + TDM."},
+
+ {lvl:"C2",topic:"GERIATRI",
+  v:"Ny. S, 74 tahun, BB 48 kg, sulit tidur. Diberi diazepam dengan dosis lazim dewasa muda. Pagi harinya ia bingung, bicara tidak jelas, dan hampir jatuh.",
+  q:"Kombinasi perubahan yang paling menjelaskan respons berlebih ini adalah…",
+  o:[["Metabolisme hepar menurun dan sensitivitas reseptor otak meningkat",true,"Benar. Pada geriatri obat sentral memberi depresi SSP ↑ karena otak lebih sensitif (PD) dan metabolisme hepar ↓ (PK)."],
+     ["Aliran darah ginjal meningkat sehingga obat cepat dibuang",false,"Pada usia lanjut GFR justru turun (±30% pada usia 65 th)."],
+     ["Kadar albumin meningkat sehingga obat bebas berkurang",false,"Albumin menurun pada geriatri → obat bebas ↑, bukan sebaliknya."],
+     ["Sensitivitas reseptor otak menurun sehingga terjadi toleransi",false,"Sensitivitas reseptor otak meningkat, bukan menurun."],
+     ["Mekanisme homeostatik meningkat sehingga efek sedasi diperkuat",false,"Mekanisme homeostatik menurun pada geriatri (relevan terutama untuk kardiovaskular)."]],
+  k:"Geriatri + obat SSP: otak sensitif ↑, metabolisme hepar ↓ → dosis awal separuh."},
+
+ {lvl:"C3",topic:"GERIATRI",
+  v:"Tn. B, 78 tahun, dengan hipertensi, DM tipe 2, osteoartritis, dan insomnia. Ia minum 8 jenis obat dengan jadwal 4 kali sehari, dua di antaranya dari dokter lain dengan indikasi tumpang tindih. Ia sering lupa minum obat, tekanan darah naik-turun, dan dua kali hampir pingsan saat berdiri.",
+  q:"Langkah yang paling sesuai dengan prinsip umum obat geriatri adalah…",
+  o:[["Review seluruh obat: hentikan yang tidak perlu/duplikasi, pilih rasio manfaat-risiko terbaik, sederhanakan regimen (ideal 1×/hari), titrasi dari dosis rendah",true,"Benar. Mencakup prinsip: hanya obat yang diperlukan, regimen sederhana, periksa berkala, dan mulai rendah."],
+     ["Naikkan dosis antihipertensi agar tekanan darah stabil",false,"Hipotensi postural dan homeostatik kardiovaskular ↓; menaikkan dosis memperburuk."],
+     ["Pertahankan semua obat dan minta keluarga mengingatkan",false,"Tidak menyelesaikan polifarmasi dan potensi interaksi."],
+     ["Tambahkan obat untuk mengurangi efek samping obat yang ada",false,"Menambah polifarmasi (prescribing cascade) dan interaksi."],
+     ["Ubah semua obat menjadi dosis separuh dengan frekuensi 4× sehari",false,"Regimen tetap rumit dan tidak menyentuh duplikasi; kepatuhan tidak membaik."]],
+  k:"Geriatri: kurangi jumlah obat, sederhanakan regimen, review berkala."},
+
+ {lvl:"C3",topic:"RENAL",
+  v:"Ny. T, 70 tahun, BB 50 kg, dengan gagal jantung dan fibrilasi atrium, kreatinin serum 1,2 mg/dL. Akan diberi digoksin (indeks terapeutik sempit, ekskresi utama lewat ginjal).",
+  q:"Estimasi bersihan kreatinin (Cockcroft-Gault) dan sikap yang tepat adalah…",
+  o:[["±34 mL/mnt; turunkan dosis digoksin dan pantau klinis/kadar",true,"Benar. (140−70)×50×0,85 / (72×1,2) = 2.975 / 86,4 ≈ 34 mL/mnt → fungsi ginjal menurun, obat dieliminasi ginjal harus diturunkan."],
+     ["±41 mL/mnt; dosis standar",false,"Angka ini muncul bila lupa faktor ×0,85 pada perempuan; dan 41 pun masih menurun, tidak boleh dosis standar."],
+     ["±34 mL/mnt; dosis standar karena digoksin dimetabolisme hepar",false,"Digoksin terutama diekskresi ginjal."],
+     ["±95 mL/mnt; ginjal normal sehingga dosis tetap",false,"Perhitungan keliru; pada usia 70 th dengan SCr 1,2 CrCl jauh di bawah 95."],
+     ["±34 mL/mnt; naikkan dosis karena volume distribusi meningkat",false,"Tidak ada dasar menaikkan dosis; indeks sempit + klirens turun → risiko intoksikasi."]],
+  k:"Cockcroft-Gault: (140−usia)×BB×(0,85 bila ♀)/(72×SCr). Obat ekskresi ginjal → dosis diturunkan sesuai penurunan klirens."},
+
+ {lvl:"C2",topic:"HAMIL",
+  v:"Ibu hamil 18 minggu datang untuk terapi demam dan bertanya, \"Dok, obat yang dokter berikan ini aman kan untuk janin saya?\"",
+  q:"Jawaban dokter yang paling tepat adalah…",
+  o:[["\"Tidak ada obat yang 100% aman, tetapi kita pilih yang relatif lebih aman, dan keputusannya kita ambil bersama.\"",true,"Benar. Sesuai pesan Prof EM: jangan menjawab 'aman'; keputusan bersama."],
+     ["\"Aman, Bu, ini obat kategori A.\"",false,"Kategori A pun hanya relatif aman, bukan 100%."],
+     ["\"Selama hamil sebaiknya tidak minum obat apa pun.\"",false,"Mengabaikan manfaat terapi; penyakit tak terobati juga membahayakan ibu dan janin."],
+     ["\"Itu keputusan dokter, ibu ikuti saja.\"",false,"Keputusan menerima obat adalah keputusan bersama, bukan tunggal."],
+     ["\"Aman karena sudah lolos uji hewan coba.\"",false,"Talidomid: aman pada hewan belum tentu aman pada manusia."]],
+  k:"Komunikasi risiko pada kehamilan: jujur, relatif lebih aman, keputusan bersama."},
+
+ {lvl:"C3",topic:"HAMIL",
+  v:"Ibu hamil 22 minggu, G1P0A0, datang dengan disuria, frekuensi berkemih meningkat, dan demam ringan. Diagnosis sistitis akut tanpa komplikasi. Tidak ada riwayat alergi obat. Dokter akan memberi antibiotik oral.",
+  q:"Berdasarkan kategori keamanan kehamilan pada kuliah, pilihan yang paling sesuai adalah…",
+  o:[["Amoksisilin",true,"Benar. Penisilin (amoksisilin, ampisilin) kategori A. Sesuaikan dengan kultur bila ada; Fornas: amoksisilin tab 500 mg."],
+     ["Tetrasiklin",false,"Kategori D: gigi berwarna, hambat pertumbuhan tulang; Fornas melarang pada ibu hamil."],
+     ["Siprofloksasin",false,"Kuinolon: kategori B3 pada slide; Fornas: tidak untuk ibu hamil."],
+     ["Gentamisin",false,"Aminoglikosida kategori D; tuli janin."],
+     ["Kotrimoksazol",false,"Kategori C (sulfonamid). Bila ada kategori A yang sesuai, pilih A dulu."]],
+  k:"Urutan: cari A → B → C; hindari D & X. Aminoglikosida, tetrasiklin = D."},
+
+ {lvl:"C3",topic:"TERATOGEN",
+  v:"Seorang ibu minum obat sedatif-antiemetik baru selama hari ke-24 sampai 27 setelah konsepsi (belum mengetahui dirinya hamil). Bayi lahir tanpa bagian tungkai (fokomelia) dengan fungsi organ lain normal.",
+  q:"Periode paparan dan jenis kerusakan yang paling tepat adalah…",
+  o:[["Fase embrionik (organogenesis) → cacat anatomik",true,"Benar. Hari 18–56 = organogenesis; paparan di sini menimbulkan cacat struktural, khas talidomid (hari 24–27 maksimal fokomelia)."],
+     ["Fase pre-embrionik → cenderung abortus atau tidak terjadi cacat",false,"Pre-embrionik = 0–17 hari: hanya proliferasi, bukan pembentukan organ."],
+     ["Fase janin (pematangan fungsi) → cacat fungsional",false,"Fase janin 8–38 minggu menghasilkan cacat fungsional (mis. tuli), bukan hilangnya tungkai."],
+     ["Kelainan genetik herediter dari ibu",false,"Tidak ada petunjuk herediter; ada paparan obat tepat pada masa pembentukan ekstremitas."],
+     ["Intoksikasi obat pada neonatus akibat eliminasi lambat",false,"Itu terjadi setelah lahir; kasus ini cacat struktural saat lahir."]],
+  k:"Organogenesis (hari 18–56) → cacat anatomik; pematangan fungsi → cacat fungsional; <17 hari → abortus."},
+
+ {lvl:"C4",topic:"TERATOGEN",
+  v:"Obat baru X terbukti pada uji in vitro memiliki struktur yang menimbulkan malformasi embrio. Sifat fisikokimianya: berat molekul 950 Da, sangat hidrofilik, terionisasi penuh pada pH fisiologis, ikatan protein plasma 98%. Seorang ibu hamil trimester pertama telah memakainya beberapa hari.",
+  q:"Perkiraan risiko teratogenik pada janin dan alasannya adalah…",
+  o:[["Kemungkinan kecil karena salah satu syarat teratogen (menembus plasenta) sulit terpenuhi, meski tetap tidak dapat disebut 100% aman",true,"Benar. Teratogen butuh dua syarat: struktur merusak DAN menembus plasenta. BM besar, hidrofil, terionisasi, terikat protein → sulit menembus plasenta."],
+     ["Risiko tinggi karena struktur teratogenik saja sudah cukup",false,"Syarat kedua (menembus plasenta) tetap harus dipenuhi."],
+     ["Risiko tinggi karena fungsi enzim hepatik janin minimal",false,"Itu menjelaskan sensitivitas janin bila obat sudah sampai; tetapi obat ini sulit sampai."],
+     ["Tidak ada risiko sama sekali; dapat dinyatakan aman 100%",false,"Tidak ada obat yang boleh dijanjikan 100% aman."],
+     ["Risiko hanya ada jika diberikan pada trimester ketiga",false,"Organogenesis di awal kehamilan justru periode paling rawan cacat anatomik."]],
+  k:"Teratogen = struktur merusak + menembus plasenta (BM kecil, lipofil, protein binding rendah, aliran darah baik)."},
+
+ {lvl:"C4",topic:"HATI",
+  v:"Tn. R, 58 tahun, sirosis hepatis dengan asites dan edema tungkai. Diberi furosemid + HCT dosis tinggi serta diazepam malam hari karena sulit tidur. Dua hari kemudian pasien mengantuk, bicara melantur, ditemukan asterixis. Kalium serum 2,7 mEq/L.",
+  q:"Penjelasan dan tatalaksana yang paling tepat adalah…",
+  o:[["Ensefalopati hepatik dicetuskan hipokalemia akibat diuretik dan sensitivitas otak yang meningkat terhadap sedatif; hindari diuretik poten &amp; sedatif, koreksi K; bila perlu sedatif pilih oksazepam/lorazepam dosis rendah",true,"Benar. Pada penyakit hati berat otak lebih sensitif terhadap depresan SSP, dan diuretik yang menyebabkan hipokalemia mencetuskan ensefalopati."],
+     ["Reaksi idiosinkrasi diazepam akibat ginjal; naikkan dosis diazepam",false,"Tidak ada alasan menaikkan sedatif; masalahnya hati/otak sensitif."],
+     ["Hepatotoksisitas HCT; tambahkan antikoagulan",false,"Antikoagulan oral dihindari di penyakit hati (perdarahan), dan bukan inti masalah."],
+     ["Hipoglikemia akibat diuretik; cukup beri dekstrosa",false,"Gambaran klinis dan K 2,7 menunjuk ensefalopati, bukan hipoglikemia."],
+     ["Peningkatan albumin sehingga obat bebas berkurang",false,"Pada sirosis albumin turun, obat bebas naik."]],
+  k:"Hati berat: otak sensitif ↑ (sedatif, opioid), diuretik hipokalemia → ensefalopati; sedatif teraman oksazepam/lorazepam."},
+
+ {lvl:"C3",topic:"GINJAL",
+  v:"Pria 66 tahun dengan penyakit ginjal kronik, eGFR 22 mL/mnt/1,73 m² (stadium 4), mengeluh nyeri sendi lutut dan meminta obat pereda nyeri.",
+  q:"Pilihan analgesik yang paling aman untuk dipertimbangkan adalah…",
+  o:[["Parasetamol dengan dosis disesuaikan dan monitoring",true,"Benar. Menurut kuliah, parasetamol mungkin analgesik teraman pada penyakit ginjal."],
+     ["Aspirin dosis analgesik",false,"Pada uremia aspirin → perdarahan lambung (ikatan protein plasma ↓); termasuk obat yang dihindari."],
+     ["Ibuprofen jangka panjang",false,"NSAID dapat memperburuk fungsi ginjal <span class=\"tg add\">tambahan</span>; hindari pada CKD berat."],
+     ["Tetrasiklin sebagai antiinflamasi",false,"Bukan analgesik; tetrasiklin memperburuk azotemia (kecuali doksisiklin/minosiklin dengan monitoring)."],
+     ["Spironolakton untuk mengurangi nyeri/edema sendi",false,"Bukan analgesik, dan diuretik hemat K → hiperkalemia pada gagal ginjal."]],
+  k:"Ginjal: pilih obat dengan eliminasi hepar; hindari aspirin, tiazid, hemat K, OAD, tetrasiklin."},
+
+ {lvl:"C3",topic:"ASI",
+  v:"Seorang ibu menyusui eksklusif bayi usia 2 bulan memerlukan terapi. Empat kandidat obat memiliki sifat: P (asam lemah, BM 400, protein-binding 95%, hidrofil), Q (basa lemah, BM 250, protein-binding 20%, lipofil), R (asam lemah, BM 600, protein-binding 90%), S (asam kuat, BM 800, hidrofil).",
+  q:"Obat yang kemungkinan paling banyak mencapai ASI adalah…",
+  o:[["Obat Q",true,"Benar. Basa (terperangkap di ASI bpH 6,9 &lt; plasma 7,4), lipofil, BM kecil, ikatan protein rendah → obat bebas banyak."],
+     ["Obat P",false,"Asam, hidrofil, 95% terikat protein → tetap di plasma ibu."],
+     ["Obat R",false,"Asam, BM lebih besar, protein tinggi."],
+     ["Obat S",false,"Asam kuat, hidrofil, BM besar: paling kecil kemungkinan masuk ASI."],
+     ["Semua sama karena semua dalam darah ibu",false,"Perpindahan ke ASI sangat dipengaruhi sifat fisikokimia obat."]],
+  k:"ASI: basa, lipofil, BM kecil, protein-binding rendah (free drug tinggi) → masuk ASI lebih banyak."}
+];
+
+const FLASH = [
+ ["Mengapa dosis anak sebaiknya dihitung dari LPT, bukan BB saja?","LPT mencerminkan volume distribusi; BB saja sering menghasilkan dosis terlalu kecil (anak metabolisme lebih tinggi), kecuali neonatus."],
+ ["Apa itu range of therapeutic?","Rentang kadar obat dalam darah yang masih memberi efek terapi; dosis tak harus presisi selama masih dalam range."],
+ ["Contoh obat indeks terapeutik sempit (menurut dosen)?","Teofilin (aminofilin), fenitoin, digoksin."],
+ ["4 alasan neonatus berespons berbeda?","Hepar belum matang (metabolisme ↓), ginjal belum sempurna (eliminasi ↓), ikatan protein plasma rendah (obat bebas ↑), sawar darah-otak belum sempurna."],
+ ["Neonatus + sulfonamid/salisilat → ?","Kernikterus: obat mendesak bilirubin dari ikatan protein, kapasitas ikatan ↓, glukuronidasi ↓, BBB belum sempurna."],
+ ["Neonatus + kloramfenikol → ?","Sindrom bayi abu-abu: glukuronidasi hepar ↓ dan filtrasi glomerulus ↓ → kadar ↑."],
+ ["Neonatus + aminoglikosida → ?","Intoksikasi karena filtrasi glomerulus ↓."],
+ ["Neonatus + morfin / barbiturat IV → ?","Depresi pernapasan (BBB belum sempurna)."],
+ ["Prinsip obat pada neonatus?","Hindari sulfonamid, aspirin, morfin, barbiturat IV; dosis lebih rendah dari hitung LPT; start low go slow; monitor/TDM."],
+ ["Perubahan PK terpenting pada geriatri?","Penurunan fungsi ginjal (filtrasi glomerulus ↓ ±30% pada usia 65 th)."],
+ ["Mengapa dosis geriatri harus diturunkan?","Fungsi ginjal ↓ (dan hepar ↓, albumin ↓): kadar obat lebih tinggi dan bertahan lebih lama (t½ bisa ↑ s.d. 50%)."],
+ ["Hipoalbuminemia (geriatri/uremia) → ?","Obat bebas ↑ → efek ↑ (risiko over effect)."],
+ ["6 prinsip obat pada geriatri?","Hanya yang perlu · manfaat-risiko terbaik · mulai ½ dosis · sesuaikan respons/TDM · regimen sederhana 1×/hari, sediaan mudah ditelan · review &amp; hentikan obat yang tak perlu."],
+ ["Diuretik pada geriatri → efek khas?","Hipotensi, hipokalemia, hipovolemia, hiperglikemia, hiperurikemia (tiazid: glucose intolerance)."],
+ ["Perubahan PK pada ibu hamil?","Absorpsi ↑ (asam lambung &amp; motilitas ↓), Vd ↑ (CO ↑ 30%, volume darah ↑ 50%), albumin ↓ → obat bebas ↑, metabolisme ↑, eliminasi ↑ (GFR ↑ akhir hamil)."],
+ ["Dua syarat teratogen?","Struktur molekul dapat menimbulkan cacat DAN obat dapat menembus plasenta."],
+ ["Faktor obat mudah menembus plasenta?","BM kecil, larut lemak, ikatan protein rendah, aliran darah umbilikal/uterus baik."],
+ ["Fase pre-embrionik / embrionik / janin?","0–17 hari (abortus/all-or-none) / 18–56 hari (cacat anatomik) / 8–38 mgg (cacat fungsional)."],
+ ["Kategori keamanan kehamilan: urutan memilih?","A → B → C. Hindari D dan X."],
+ ["Contoh kategori D? Kategori X?","D: kaptopril, losartan, valsartan, tetrasiklin/doksisiklin, aminoglikosida. X: misoprostol."],
+ ["Apa jawaban untuk pasien hamil yang bertanya 'obatnya aman?'","Tidak ada yang 100% aman; kita pilih yang lebih aman; keputusan bersama."],
+ ["Sifat obat yang banyak masuk ASI?","Basa, lipofil, BM kecil, ikatan protein rendah (free drug tinggi). pH ASI 6,9 &lt; plasma 7,4."],
+ ["Obat penurunan ASI dan peningkat ASI?","↓: estrogen, tiazid, siproheptadin, bromokriptin. ↑: metoklopramid."],
+ ["Prinsip obat pada penyakit saluran cerna?","Hindari iritan (KCl, aspirin, NSAID) pada stasis; hindari lepas lambat/salut enterik; levodopa + karbidopa."],
+ ["Prinsip obat pada penyakit hati berat?","Pilih obat eliminasi ginjal; hindari depresan SSP, diuretik, konstipasi, antikoagulan oral, kontrasepsi oral, hepatotoksik; sedatif aman: oksazepam &amp; lorazepam; dosis rendah."],
+ ["Pada penyakit ginjal, kenapa kadar obat naik?","Penurunan klirens (ekskresi ↓)."],
+ ["Rumus Cockcroft-Gault?","(140 − usia) × BB × 0,85 (♀) / (72 × SCr mg/dL) = CrCl mL/mnt."],
+ ["Analgesik teraman pada gagal ginjal dan pada hamil?","Parasetamol."],
+ ["INH pada slow acetylator?","Toksisitas ↑ (neuropati perifer; hepatotoksik)."]
+];
+
+const GLOSS = [
+ ["Indeks terapeutik (sempit)","Jarak antara dosis terapi dan dosis toksik. Sempit: naik sedikit sudah toksik (digoksin, fenitoin, teofilin)."],
+ ["Range of therapeutic","Rentang kadar obat dalam darah yang masih memberikan efek terapi."],
+ ["TDM (therapeutic drug monitoring)","Pengukuran kadar obat dalam plasma untuk menyesuaikan dosis."],
+ ["LPT (luas permukaan tubuh)","Dasar perhitungan dosis anak; mencerminkan volume distribusi."],
+ ["Farmakokinetik (PK)","Apa yang tubuh lakukan terhadap obat: absorpsi, distribusi, metabolisme (biotransformasi), eliminasi/ekskresi."],
+ ["Farmakodinamik (PD)","Apa yang obat lakukan terhadap tubuh: interaksi obat-reseptor, kondisi jaringan, homeostasis."],
+ ["Biotransformasi","Pengubahan obat menjadi metabolit, terutama di hepar (mis. glukuronidasi, hidroksilasi)."],
+ ["Eliminasi vs ekskresi","Eliminasi = hilangnya obat dari tubuh (metabolisme + ekskresi); ekskresi = pengeluaran obat utuh/metabolit, terutama lewat ginjal."],
+ ["Klirens (bersihan)","Volume plasma yang dibersihkan dari obat per satuan waktu; turun pada gagal ginjal/hepar."],
+ ["Waktu paruh (t½)","Waktu hingga kadar obat turun separuh; memanjang bila klirens turun."],
+ ["Volume distribusi (Vd)","Volume 'semu' penyebaran obat; naik pada hamil (volume plasma ↑)."],
+ ["Obat bebas (free drug)","Fraksi obat yang tidak terikat protein; yang aktif, dapat menembus plasenta/ASI, dan dieliminasi."],
+ ["Ikatan protein plasma","Ikatan obat dengan albumin; rendah pada neonatus, geriatri, uremia, sirosis → obat bebas ↑."],
+ ["Glukuronidasi","Konjugasi obat/bilirubin dengan asam glukuronat di hepar; belum sempurna pada neonatus."],
+ ["Kernikterus","Bilirubin tak terkonjugasi menembus otak (neonatus) → kerusakan SSP."],
+ ["Sindrom bayi abu-abu","Toksisitas kloramfenikol pada neonatus (glukuronidasi ↓)."],
+ ["Teratogen","Obat/zat yang menimbulkan cacat janin; perlu struktur merusak + menembus plasenta."],
+ ["Organogenesis (embriogenesis)","Masa pembentukan organ (hari 18–56); paparan teratogen → cacat anatomik."],
+ ["Sawar plasenta","Sawar antara sirkulasi ibu dan janin; obat menyeberang terutama lewat difusi sederhana."],
+ ["Kategori keamanan kehamilan","Pengelompokan A, B, C, D, X (FDA); TGA membagi B1–B3. D &amp; X dihindari."],
+ ["Farmakogenetik","Ilmu yang mempelajari perbedaan respons obat akibat faktor genetik."],
+ ["Asetilator cepat/lambat","Variasi aktivitas enzim asetilasi hepar (isoniazid, hidralazin, prokainamid)."],
+ ["Defisiensi G6PD","Cacat enzim eritrosit; primakuin dkk. → anemia hemolitik."],
+ ["Dosis awal (DL) &amp; dosis penunjang (DM)","Loading dose &amp; maintenance dose; keduanya diturunkan pada penyakit kardiovaskular."],
+ ["Educated guess","Perkiraan dosis berdasar pengetahuan klinis bila tak ada pedoman pasti, lalu dititrasi sesuai respons."],
+ ["Polifarmasi","Penggunaan banyak obat sekaligus → risiko interaksi, efek samping, dan ketidakpatuhan (terutama geriatri)."],
+ ["Sediaan lepas lambat / salut enterik","Dilepas bertahap / di usus; dihindari pada gangguan motilitas GIT karena risiko ulserasi &amp; absorpsi tak terduga."],
+ ["Ion trapping","Basa lemah terkumpul pada kompartemen ber-pH lebih rendah (ASI 6,9; janin) <span class=\"tg add\">tambahan</span>."],
+ ["Ensefalopati hepatik","Gangguan otak akibat gagal hati; dicetuskan sedatif/opioid, diuretik hipokalemia, konstipasi."],
+ ["Cockcroft-Gault","Rumus estimasi klirens kreatinin dewasa."],
+ ["Efek idiosinkrasi","Respons tak terduga terhadap obat yang tidak tergantung dosis (sering genetik)."]
+];
+
+/* ============ UTIL ============ */
+function $(id){return document.getElementById(id);}
+function secName(id){const b=document.querySelector('.nav-btn[data-sec="'+id+'"]');return b?b.textContent.trim():id;}
+function show(id,keep){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.sec===id));
+  $('sec-'+id).classList.add('active');
+  const act=document.querySelector('.nav-btn.active'); if(act) act.scrollIntoView({inline:'center',block:'nearest'});
+  if(!keep) window.scrollTo({top:0,behavior:'smooth'});
+  $('jumpPanel').classList.remove('open'); buildJump();
+}
+function toggle(btn){btn.classList.toggle('open');btn.nextElementSibling.classList.toggle('open');}
+function go(sec,el){show(sec,true);const t=$(el);if(t){setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'start'}),60);t.style.outline='3px solid var(--p-light)';setTimeout(()=>t.style.outline='',1800);}}
+function curSec(){const a=document.querySelector('.section.active');return a?a.id.replace('sec-',''):'';}
+
+/* theme */
+function toggleTheme(){
+  const d=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',d);
+  $('themeBtn').innerHTML=d==='dark'?'☀️ <span>Terang</span>':'🌙 <span>Gelap</span>';
+  try{localStorage.setItem('rt-theme',d);}catch(e){}
+}
+(function(){try{const t=localStorage.getItem('rt-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');$('themeBtn').innerHTML='☀️ <span>Terang</span>';}}catch(e){}})();
+
+/* chips (quick jump per section) */
+function buildChips(){
+  document.querySelectorAll('.section').forEach(sec=>{
+    const cards=[...sec.querySelectorAll('.card[id]')]; if(cards.length<2) return;
+    const d=document.createElement('div');d.className='chips';
+    d.innerHTML='<span class="chips-label">⚡ Lompat ke</span>';
+    cards.forEach(c=>{const a=document.createElement('a');a.textContent=c.dataset.t||c.id;a.onclick=()=>go(sec.id.replace('sec-',''),c.id);d.appendChild(a);});
+    const desc=sec.querySelector('.section-desc'); desc.insertAdjacentElement('afterend',d);
+  });
+}
+/* jump panel */
+function buildJump(){
+  const p=$('jumpPanel');p.innerHTML='';const cur=curSec();
+  document.querySelectorAll('.nav-btn').forEach(b=>{const x=document.createElement('button');x.textContent=b.textContent.trim();if(b.dataset.sec===cur)x.className='cur';x.onclick=()=>show(b.dataset.sec);p.appendChild(x);});
+}
+function toggleJump(){buildJump();$('jumpPanel').classList.toggle('open');}
+
+/* modal */
+function openModal(){$('drModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){$('drModal').classList.remove('open');document.body.style.overflow='';}
+
+/* glossary */
+function renderGl(list){$('glList').innerHTML=list.map(g=>'<div class="gl" data-s="1"><b>'+g[0]+'</b><br><span>'+g[1]+'</span></div>').join('')||'<p style="color:var(--muted)">Tidak ada istilah cocok.</p>';}
+function filterGl(){const q=$('glFilter').value.toLowerCase();renderGl(GLOSS.filter(g=>(g[0]+' '+g[1]).toLowerCase().includes(q)));}
+
+/* search */
+function openSearch(){$('searchOv').classList.add('open');$('searchIn').value='';$('searchRes').innerHTML='<div class="sr-empty">Ketik minimal 2 huruf.</div>';setTimeout(()=>$('searchIn').focus(),50);}
+function closeSearch(){$('searchOv').classList.remove('open');}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function doSearch(){
+  const q=$('searchIn').value.trim().toLowerCase();const box=$('searchRes');
+  if(q.length<2){box.innerHTML='<div class="sr-empty">Ketik minimal 2 huruf.</div>';return;}
+  const out=[];
+  document.querySelectorAll('.card').forEach(c=>{
+    const txt=c.textContent.replace(/\s+/g,' ');const i=txt.toLowerCase().indexOf(q);if(i<0)return;
+    const sec=c.closest('.section').id.replace('sec-','');
+    const t=c.dataset.t||(c.querySelector('.card-title')?c.querySelector('.card-title').textContent:'')||'Kartu';
+    const s=Math.max(0,i-50),e=Math.min(txt.length,i+q.length+90);
+    const sn=esc(txt.slice(s,i))+'<mark>'+esc(txt.slice(i,i+q.length))+'</mark>'+esc(txt.slice(i+q.length,e));
+    out.push({sec,id:c.id,t,sn:(s>0?'…':'')+sn+(e<txt.length?'…':'')});
+  });
+  document.querySelectorAll('.gl').forEach(g=>{const txt=g.textContent;if(txt.toLowerCase().includes(q)){out.push({sec:'glosarium',id:'c-gloss',t:g.querySelector('b').textContent,sn:esc(txt.slice(0,140))});}});
+  box.innerHTML=out.length?'':'<div class="sr-empty">Tidak ditemukan.</div>';
+  out.slice(0,25).forEach(r=>{const d=document.createElement('div');d.className='sr';d.innerHTML='<div class="sr-s">'+secName(r.sec)+'</div><div class="sr-t">'+esc(r.t.replace(/\s+/g,' ').slice(0,80))+'</div><div class="sr-x">'+r.sn+'</div>';d.onclick=()=>{closeSearch();go(r.sec,r.id);};box.appendChild(d);});
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSearch();closeModal();$('jumpPanel').classList.remove('open');}if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openSearch();}});
+
+/* ============ QUIZ ============ */
+let answered={},score=0;
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function renderQuiz(){
+  answered={};score=0;$('scoreCard').classList.remove('show');
+  $('quizProg').innerHTML=QUIZ.map((_,i)=>'<div class="pdot" id="dot'+i+'"></div>').join('');
+  const L='ABCDE';
+  $('quizBox').innerHTML=QUIZ.map((q,qi)=>{
+    const opts=shuffle(q.o.map((o,i)=>({o,i})));
+    return '<div class="quiz-q" id="q'+qi+'"><div class="q-num">SOAL '+String(qi+1).padStart(2,'0')+' / '+q.topic+'</div><div class="q-lvl">'+q.lvl+'</div>'
+     +'<div class="q-vignette">'+q.v+'</div><p class="q-question">'+q.q+'</p><div class="q-opts">'
+     +opts.map((x,k)=>'<button class="q-opt" data-ok="'+(x.o[1]?1:0)+'" onclick="ans('+qi+',this)"><span class="ol">'+L[k]+'</span><span>'+x.o[0]+'</span></button>').join('')
+     +'</div><div class="q-exp" id="exp'+qi+'">'
+     +opts.map((x,k)=>'<div class="rz '+(x.o[1]?'ok':'no')+'"><b>'+(x.o[1]?'✅ ':'✖ ')+L[k]+(x.o[1]?' — Jawaban benar':' — Kurang tepat')+'</b>'+x.o[2]+'</div>').join('')
+     +'<div class="rz-concept">🧠 <b>Konsep inti:</b> '+q.k+'</div></div></div>';
+  }).join('');
+}
+function ans(qi,btn){
+  if(answered[qi])return;answered[qi]=true;
+  const card=$('q'+qi);const ok=btn.dataset.ok==='1';
+  card.querySelectorAll('.q-opt').forEach(b=>{b.disabled=true;if(b.dataset.ok==='1')b.classList.add('correct');});
+  if(ok){score++;$('dot'+qi).classList.add('ok');}else{btn.classList.add('wrong');$('dot'+qi).classList.add('no');}
+  $('exp'+qi).classList.add('show');
+  if(Object.keys(answered).length===QUIZ.length)setTimeout(showScore,700);
+}
+function showScore(){
+  const sc=$('scoreCard');sc.classList.add('show');$('scoreNum').textContent=score;
+  const m=['Yuk baca ulang tab materinya, kamu pasti bisa! 💪','Lumayan, fokus lagi ke pembahasan tiap pilihan. 📖','Bagus! Tinggal rapikan bagian yang masih salah. 🌟','Hampir sempurna! 🔥','PERFECT! 🩺✨'];
+  const r=score/QUIZ.length;$('scoreMsg').textContent=m[r<=.3?0:r<=.5?1:r<=.75?2:r<1?3:4];
+  sc.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetQuiz(){renderQuiz();window.scrollTo({top:0,behavior:'smooth'});}
+
+/* ============ FLASHCARD ============ */
+let fcOrder=[],fcI=0,fcKnown=new Set(),fcOnlyUnknown=false;
+function fcBuild(){fcOrder=FLASH.map((_,i)=>i);if(fcOnlyUnknown)fcOrder=fcOrder.filter(i=>!fcKnown.has(i));fcI=Math.min(fcI,Math.max(0,fcOrder.length-1));}
+function fcRender(){
+  $('fc').classList.remove('flip');
+  if(!fcOrder.length){$('fcQ').innerHTML='🎉 Semua kartu sudah hafal!';$('fcA').innerHTML='';$('fcPos').textContent='0 / 0';}
+  else{const c=FLASH[fcOrder[fcI]];$('fcQ').innerHTML=c[0];$('fcA').innerHTML=c[1];$('fcPos').textContent=(fcI+1)+' / '+fcOrder.length;}
+  $('fcStat').textContent='Hafal: '+fcKnown.size+' / '+FLASH.length;
+}
+function flipCard(){if(fcOrder.length)$('fc').classList.toggle('flip');}
+function fcMove(d){if(!fcOrder.length)return;fcI=(fcI+d+fcOrder.length)%fcOrder.length;fcRender();}
+function fcMark(k){if(!fcOrder.length)return;const id=fcOrder[fcI];if(k)fcKnown.add(id);else fcKnown.delete(id);if(fcOnlyUnknown&&k){fcBuild();fcRender();}else fcMove(1);}
+function fcShuffle(){shuffle(fcOrder);fcI=0;fcRender();}
+function fcToggleOnly(){fcOnlyUnknown=!fcOnlyUnknown;$('fcOnly').textContent='Tampilkan hanya yang belum hafal: '+(fcOnlyUnknown?'ON':'OFF');fcI=0;fcBuild();fcRender();}
+function fcReset(){fcKnown.clear();fcOnlyUnknown=false;$('fcOnly').textContent='Tampilkan hanya yang belum hafal: OFF';fcI=0;fcBuild();fcRender();}
+
+/* ============ INIT ============ */
+renderGl(GLOSS);renderQuiz();fcBuild();fcRender();buildChips();buildJump();
+</script>
+</body>
+</html>
