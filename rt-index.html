@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blok Rational Therapeutics — Ranger HQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<script>(function(){var t='light';try{t=localStorage.getItem('rt-theme')||'light'}catch(e){}document.documentElement.setAttribute('data-theme',t)})();</script>
+<style>
+/* ════════════════════════════════════════════════════
+   WARNA — edit di :root (mode terang) dan html[data-theme="dark"] (mode gelap)
+   --brick  : warna utama (Terracotta Brick)   --deep : versi gelapnya (header/footer)
+   --accent : aksen hijau sage                  --bg / --surface / --surface-2 : latar halaman, kartu, chip
+   --p1..--p4 : warna prioritas
+   ════════════════════════════════════════════════════ */
+
+:root{
+  --bg:#FBF7F3; --surface:#FFFFFF; --surface-2:#F5EDE7; --text:#2B1C1A; --muted:#7A6761;
+  --border:rgba(43,28,26,.11); --brick:#8D2925; --deep:#5A1A19;
+  --brand-ink:#8D2925; --brand-soft:rgba(141,41,37,.09);
+  --accent:#6F7B4A; --accent-ink:#5A6638; --accent-soft:rgba(111,123,74,.15);
+  --p1:#8D2925; --p2:#C8643C; --p3:#6F7B4A; --p4:#4F8594;
+  --shadow:0 6px 22px rgba(90,26,25,.10); --radius:14px; --radius-sm:9px;
+}
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#171110; --surface:#221918; --surface-2:#2E2321; --text:#F4EAE5; --muted:#B39D96;
+  --border:rgba(244,234,229,.13); --brand-ink:#F2928A; --brand-soft:rgba(242,146,138,.14);
+  --accent:#8E9B63; --accent-ink:#B9C68E; --accent-soft:rgba(185,198,142,.16);
+  --shadow:0 6px 22px rgba(0,0,0,.35);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Raleway','Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;transition:background .25s,color .25s}
+
+.topbar{background:var(--deep);padding:9px 40px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.topbar a{color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;opacity:.7;transition:opacity .15s}
+.topbar a:hover{opacity:1}
+.theme-toggle{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.28);color:#fff;font-family:inherit;font-size:.7rem;font-weight:800;letter-spacing:.06em;padding:6px 14px;border-radius:40px;cursor:pointer;transition:background .15s}
+.theme-toggle:hover{background:rgba(255,255,255,.22)}
+
+header{background:linear-gradient(135deg,var(--brick) 0%,var(--deep) 100%);padding:52px 48px 44px;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 88% 20%,rgba(255,201,168,.20) 0%,transparent 52%),radial-gradient(ellipse at 8% 90%,rgba(255,255,255,.07) 0%,transparent 50%);pointer-events:none}
+header::after{content:'💊';position:absolute;right:52px;bottom:18px;font-size:7rem;opacity:.10;pointer-events:none;line-height:1}
+.header-inner{position:relative;z-index:1;max-width:780px}
+.header-block-tag{display:inline-block;font-family:'Lora',serif;font-size:.8rem;font-style:italic;color:rgba(255,255,255,.65);margin-bottom:12px}
+header h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.05;color:#fff;letter-spacing:-.03em;margin-bottom:10px}
+header h1 em{font-style:normal;font-family:'Lora',serif;font-weight:600;color:#FFC9A8}
+.header-meta{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.72);display:flex;gap:18px;flex-wrap:wrap;margin-bottom:28px}
+.header-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary,.btn-secondary{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-size:.8rem;font-weight:800;letter-spacing:.06em;padding:11px 22px;border-radius:40px;text-decoration:none;transition:transform .15s,background .18s}
+.btn-primary{background:#fff;color:#8D2925;box-shadow:0 4px 18px rgba(0,0,0,.22)}
+.btn-primary:hover{transform:translateY(-2px);background:#FFF3E6}
+.btn-secondary{background:rgba(255,255,255,.10);color:#fff;border:1.5px solid rgba(255,255,255,.38)}
+.btn-secondary:hover{background:rgba(255,255,255,.20)}
+
+.stats-strip{background:var(--surface);border-bottom:1px solid var(--border);padding:13px 48px;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.stat-item{font-size:.76rem;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:7px}
+.stat-item i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.stat-num{color:var(--brand-ink);font-size:1rem;font-weight:900}
+
+.filter-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 48px;position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:10px;flex-wrap:wrap;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.filter-label{font-size:.66rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.filter-search,.filter-select{background:var(--surface-2);color:var(--text);border:2px solid transparent;border-radius:40px;font-family:inherit;font-weight:700;outline:none;transition:border-color .16s}
+.filter-search{flex:1;min-width:170px;max-width:260px;padding:7px 16px;font-size:.74rem}
+.filter-select{padding:6px 12px;font-size:.72rem;max-width:230px;cursor:pointer}
+.filter-search:focus,.filter-select:focus{border-color:var(--brick)}
+.filter-search::placeholder{color:var(--muted)}
+.filter-chip{display:inline-flex;align-items:center;gap:5px;background:var(--surface-2);color:var(--text);font-family:inherit;font-size:.72rem;font-weight:800;padding:6px 14px;border-radius:40px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .16s}
+.filter-chip:hover{border-color:var(--brick)}
+.filter-chip.active{background:var(--brick);border-color:var(--brick);color:#fff}
+.filter-chip.active.p1{background:var(--p1);border-color:var(--p1)}
+.filter-chip.active.p2{background:var(--p2);border-color:var(--p2)}
+.filter-chip.active.p3{background:var(--p3);border-color:var(--p3)}
+.filter-chip.active.p4{background:var(--p4);border-color:var(--p4)}
+.filter-divider{width:1px;height:22px;background:var(--border);flex-shrink:0}
+
+main{max-width:1060px;margin:0 auto;padding:44px 32px 100px}
+.section-head{display:flex;align-items:center;gap:14px;margin:48px 0 22px}
+.section-head:first-child{margin-top:0}
+.section-icon{width:44px;height:44px;border-radius:12px;background:var(--brick);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.section-title{font-size:1.1rem;font-weight:900;letter-spacing:-.01em}
+.section-line{flex:1;height:1.5px;background:var(--border)}
+
+.mindmap-wrap{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.mindmap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;align-items:start}
+.mm-node{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius-sm);overflow:hidden}
+.mm-node-head{display:flex;align-items:center;gap:10px;padding:13px 16px;cursor:pointer;user-select:none;transition:background .15s}
+.mm-node-head:hover{background:var(--brand-soft)}
+.mm-node-title{flex:1;font-size:.84rem;font-weight:800;line-height:1.3}
+.mm-node-badge{font-size:.62rem;font-weight:900;padding:3px 10px;border-radius:20px;background:var(--brick);color:#fff;white-space:nowrap}
+.mm-node-arrow{font-size:.7rem;opacity:.4;transition:transform .22s}
+.mm-node.open .mm-node-arrow{transform:rotate(180deg)}
+.mm-node-body{display:none;padding:0 16px 12px;border-top:1.5px solid var(--border)}
+.mm-node.open .mm-node-body{display:block}
+.mm-flow{font-size:.72rem;font-weight:600;color:var(--accent-ink);padding:11px 0 6px;line-height:1.55}
+.mm-sub{display:flex;gap:9px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--border);cursor:pointer}
+.mm-sub:last-child{border-bottom:none}
+.mm-sub-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:6px;flex-shrink:0}
+.mm-sub-name{font-size:.76rem;font-weight:700;line-height:1.35;transition:color .15s}
+.mm-sub:hover .mm-sub-name{color:var(--brand-ink)}
+.mm-sub-ref{font-size:.68rem;font-weight:600;color:var(--muted);margin-top:2px}
+
+.priority-group,.tutorial-group{margin-bottom:10px}
+.priority-group-head,.tutorial-group-head{display:flex;align-items:center;gap:12px;padding:13px 18px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);cursor:pointer;user-select:none;transition:border-color .16s}
+.priority-group-head:hover,.tutorial-group-head:hover{border-color:var(--brick)}
+.priority-group.open .priority-group-head,.tutorial-group.open .tutorial-group-head{border-radius:var(--radius) var(--radius) 0 0;border-bottom-color:var(--border)}
+.priority-badge,.tutorial-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:900;color:#fff;flex-shrink:0}
+.p1 .priority-badge{background:var(--p1)}.p2 .priority-badge{background:var(--p2)}.p3 .priority-badge{background:var(--p3)}.p4 .priority-badge{background:var(--p4)}.px .priority-badge{background:#8a7b75}
+.tutorial-icon{background:var(--accent);font-size:1rem}
+.priority-group-title,.tutorial-group-title{flex:1;font-size:.92rem;font-weight:800}
+.priority-soal-tag,.tutorial-week-tag{font-size:.68rem;font-weight:900;padding:4px 12px;border-radius:20px;background:var(--surface-2);color:var(--muted);white-space:nowrap}
+.priority-soal-tag.hot{background:var(--brand-soft);color:var(--brand-ink)}
+.tutorial-week-tag{background:var(--accent-soft);color:var(--accent-ink)}
+.priority-arrow,.tutorial-arrow{font-size:.75rem;opacity:.35;transition:transform .22s}
+.priority-group.open .priority-arrow,.tutorial-group.open .tutorial-arrow{transform:rotate(180deg)}
+.priority-group-body,.tutorial-group-body{display:none;background:var(--surface);border:1.5px solid var(--border);border-top:none;border-radius:0 0 var(--radius) var(--radius);padding:8px 10px 10px}
+.priority-group.open .priority-group-body,.tutorial-group.open .tutorial-group-body{display:block}
+
+.kuliah-card,.tutorial-card{display:flex;align-items:center;gap:14px;padding:13px 16px;border-radius:var(--radius-sm);text-decoration:none;color:inherit;border-left:3px solid transparent;margin-bottom:2px;transition:background .15s,transform .15s}
+.kuliah-card:hover,.tutorial-card:hover{background:var(--surface-2);transform:translateX(3px)}
+.kuliah-card.highlight{border-left-color:var(--brick)}
+.kuliah-card.soon,.tutorial-card.soon{opacity:.62}
+.kuliah-card.flash{animation:flash 1.7s ease}
+@keyframes flash{0%,60%{background:var(--brand-soft)}100%{background:transparent}}
+.k-num,.t-week{font-size:.66rem;font-weight:900;color:var(--muted);min-width:44px;text-align:right;flex-shrink:0}
+.t-week{color:var(--accent-ink);min-width:56px}
+.k-body{flex:1;min-width:0}
+.k-title,.t-title{font-size:.86rem;font-weight:700;line-height:1.35}
+.t-title{flex:1}
+.k-meta{display:flex;align-items:center;gap:8px;margin-top:4px;flex-wrap:wrap}
+.dot-gen{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.k-doctor{font-size:.7rem;font-weight:600;color:var(--accent-ink)}
+.k-soal{font-size:.62rem;font-weight:900;padding:2px 9px;border-radius:20px;background:var(--brand-soft);color:var(--brand-ink)}
+.k-soal.zero{background:var(--surface-2);color:var(--muted)}
+.k-wk{font-size:.62rem;font-weight:800;padding:2px 9px;border-radius:20px;background:var(--accent-soft);color:var(--accent-ink)}
+.k-arrow,.t-arrow{font-size:.85rem;opacity:.25;flex-shrink:0;transition:opacity .15s,transform .15s}
+.kuliah-card:hover .k-arrow,.tutorial-card:hover .t-arrow{opacity:.7;transform:translateX(3px)}
+.empty-note{display:none;text-align:center;padding:36px 16px;font-size:.85rem;font-weight:600;color:var(--muted)}
+
+.quiz-section{background:linear-gradient(135deg,var(--brick) 0%,var(--deep) 100%);border-radius:var(--radius);padding:36px;position:relative;overflow:hidden;margin-top:52px}
+.quiz-section::before{content:'📝';position:absolute;right:36px;top:22px;font-size:5rem;opacity:.10;pointer-events:none}
+.quiz-section-title{font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:6px}
+.quiz-section-sub{font-size:.8rem;font-weight:500;color:rgba(255,255,255,.62);margin-bottom:24px}
+.quiz-slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.quiz-slot{background:rgba(255,255,255,.10);border:1.5px solid rgba(255,255,255,.22);border-radius:var(--radius-sm);padding:18px 20px;text-decoration:none;color:#fff;display:flex;align-items:center;gap:14px;transition:background .18s}
+.quiz-slot:hover{background:rgba(255,255,255,.18)}
+.quiz-slot.placeholder{opacity:.55;pointer-events:none}
+.quiz-slot-icon{width:40px;height:40px;border-radius:10px;background:#FFC9A8;color:var(--deep);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.quiz-slot-title{font-size:.84rem;font-weight:800;margin-bottom:4px}
+.quiz-slot-tag{display:inline-block;font-size:.62rem;font-weight:900;padding:2px 9px;border-radius:20px;background:rgba(255,255,255,.22)}
+
+footer{background:var(--deep);color:rgba(255,255,255,.5);text-align:center;padding:26px;font-size:.74rem;font-weight:600;letter-spacing:.06em}
+footer span{color:#FFC9A8}
+
+@media(max-width:640px){
+  .topbar,header,.stats-strip,.filter-bar{padding-left:20px;padding-right:20px}
+  header{padding-top:36px;padding-bottom:32px}
+  main{padding:28px 16px 70px}
+  .mindmap-wrap{padding:16px}.quiz-section{padding:24px 20px}
+  .k-num{min-width:34px}
+}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="../ranger-hq.html">← Ranger HQ</a>
+  <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">🌙 Mode gelap</button>
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="header-block-tag">Semester 7 · Ranger HQ</div>
+    <h1>Rational<br/><em>Therapeutics</em></h1>
+    <div class="header-meta">
+      <span>📚 30 Materi Kuliah</span><span>💬 7 Tutorial &amp; Praktikum</span><span>📋 100 Soal Blueprint</span><span>👩‍⚕️ 15 Dosen Pengampu</span>
+    </div>
+    <div class="header-btns">
+      <a href="#latsoal" class="btn-primary">⚡ Langsung ke Latihan Soal</a>
+      <a href="#kuliah" class="btn-secondary">📖 Lihat Semua Kuliah</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats-strip">
+  <div class="stat-item"><i style="background:var(--p1)"></i><span class="stat-num">10</span> soal · P1 (5 soal/materi)</div>
+  <div class="stat-item"><i style="background:var(--p2)"></i><span class="stat-num">56</span> soal · P2 (4 soal/materi)</div>
+  <div class="stat-item"><i style="background:var(--p3)"></i><span class="stat-num">24</span> soal · P3 (3 soal/materi)</div>
+  <div class="stat-item"><i style="background:var(--p4)"></i><span class="stat-num">10</span> soal · P4 (2 soal/materi)</div>
+</div>
+
+<div class="filter-bar">
+  <input class="filter-search" id="q" type="search" placeholder="🔍 Cari materi / dosen…" oninput="applyFilter()"/>
+  <div class="filter-divider"></div>
+  <span class="filter-label">Prioritas</span>
+  <button class="filter-chip active" data-prio="all" onclick="setPrio(this)">Semua</button>
+  <button class="filter-chip p1" data-prio="p1" onclick="setPrio(this)">P1</button>
+  <button class="filter-chip p2" data-prio="p2" onclick="setPrio(this)">P2</button>
+  <button class="filter-chip p3" data-prio="p3" onclick="setPrio(this)">P3</button>
+  <button class="filter-chip p4" data-prio="p4" onclick="setPrio(this)">P4</button>
+  <div class="filter-divider"></div>
+  <span class="filter-label">Dosen</span>
+  <select class="filter-select" id="dosen" onchange="applyFilter()"><option value="all">Semua dosen</option><option value="ambar">Apt. Ambar Yunita Nugraheni, M.Sc</option><option value="anika">Dr. dr. Anika Candrasari, M.Kes., Sp.KKLP, FISPH, FISCM</option><option value="anita">Apt. Anita Sukmawati, Ph.D</option><option value="devi">dr. Devi Usdiana R, M.Sc</option><option value="em">Prof. Dr. Em Sutrisna, dr., M.Kes</option><option value="erna">dr. Erna Herawati, Sp.KJ</option><option value="hidayah">Apt. Hidayah Karuniawati, M.Sc., PhD</option><option value="iin">dr. Iin Novita Nur Hidayati Mahmuda, M.Sc., Sp.PD., K-PTI, FINASIM</option><option value="dai">Prof. Dr. Moch Dai, S.Si, Apt, MSi</option><option value="peni">Apt. Peni Indrayudha, M.Biotech, Ph.D</option><option value="ratih">dr. Ratih Pramuningtyas, Sp.DVE., FINSDV</option><option value="soek">Dr. dr. Soekiswati, M.H</option><option value="sri">Dr. Apt. Sri Wahyuni, S.Farm., M.Farm</option><option value="sulis">dr. Sulistyani, Sp.N</option><option value="suryo">dr. Suryo T, Sp.PD.K-HOM</option></select>
+</div>
+
+<main>
+
+<div class="section-head">
+  <div class="section-icon">🗺️</div>
+  <div class="section-title">Peta Belajar — Kelompok Materi</div>
+  <div class="section-line"></div>
+</div>
+<div class="mindmap-wrap"><div class="mindmap-grid">
+    <div class="mm-node" onclick="toggleMM(this)">
+      <div class="mm-node-head">
+        <div class="mm-node-title">🧪 Dasar Farmakologi &amp; Penalaran Obat</div>
+        <div class="mm-node-badge">26 soal</div>
+        <div class="mm-node-arrow">▼</div>
+      </div>
+      <div class="mm-node-body">
+        <div class="mm-flow">Alur: PK/PD → personal drug (patologis vs fisiologis) → interaksi &amp; adverse event → toksikologi; EBM dan farmakogenetik sebagai dasar memilih obat yang tepat.</div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(5)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Farmakologi Dasar, Farmakokinetik &amp; Farmakodinamik</div><div class="mm-sub-ref">📄 K.5 — Dr. Apt. Sri Wahyuni · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(3)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Personal Drug dan Personal Treatment Kondisi Patologis</div><div class="mm-sub-ref">📄 K.3 — Prof. Dr. Em Sutrisna · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(4)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Personal Drug dan Personal Treatment Kondisi Fisiologis</div><div class="mm-sub-ref">📄 K.4 — Prof. Dr. Em Sutrisna · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(6)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Interaksi Obat dan Adverse Event</div><div class="mm-sub-ref">📄 K.6 — Apt. Ambar Yunita Nugraheni · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(25)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Toksikologi</div><div class="mm-sub-ref">📄 K.25 — dr. Devi Usdiana R · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(17)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Tahapan Uji Penemuan Obat, Evidence-Based Medicine (EBM) dan Penggunaan Obat secara Rasional</div><div class="mm-sub-ref">📄 K.17 — Prof. Dr. Em Sutrisna · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(22)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Farmakogenetik</div><div class="mm-sub-ref">📄 K.22 — Prof. Dr. Em Sutrisna · 2 soal</div></div></div>
+      </div>
+    </div>
+    <div class="mm-node" onclick="toggleMM(this)">
+      <div class="mm-node-head">
+        <div class="mm-node-title">✍️ Resep &amp; Bentuk Sediaan</div>
+        <div class="mm-node-badge">15 soal</div>
+        <div class="mm-node-arrow">▼</div>
+      </div>
+      <div class="mm-node-body">
+        <div class="mm-flow">Alur: golongan obat &amp; UU → cara menulis resep → bentuk sediaan → biofarmasetika &amp; inkompatibilitas (kenapa obat tertentu tidak boleh dicampur).</div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(13)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Penggolongan Obat, Undang-undang Obat dan Kefarmasian</div><div class="mm-sub-ref">📄 K.13 — Prof. Dr. Moch Dai · 3 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(7)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Prescribing (Bagian-bagian Resep, Tata Tulis, Istilah, dan Copy Resep)</div><div class="mm-sub-ref">📄 K.7 — Dr. Apt. Sri Wahyuni · 5 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(12)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Bentuk Sediaan Obat</div><div class="mm-sub-ref">📄 K.12 — Apt. Anita Sukmawati · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(27)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Biofarmasetika dan Inkompatibilitas Obat</div><div class="mm-sub-ref">📄 K.27 — Apt. Anita Sukmawati · 3 soal</div></div></div>
+      </div>
+    </div>
+    <div class="mm-node" onclick="toggleMM(this)">
+      <div class="mm-node-head">
+        <div class="mm-node-title">🦠 Antibiotik &amp; Antiinfeksi</div>
+        <div class="mm-node-badge">16 soal</div>
+        <div class="mm-node-arrow">▼</div>
+      </div>
+      <div class="mm-node-body">
+        <div class="mm-flow">Alur: rasionalisasi AINS/steroid/antibiotik → golongan &amp; sifat kimia antibiotik → pemilihan di klinis → antivirus, antiparasit, antijamur.</div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(2)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Rasionalisasi Penggunaan AINS, Kortikosteroid dan Antibiotik</div><div class="mm-sub-ref">📄 K.2 — dr. Devi Usdiana R · 5 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(15)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Penggolongan dan Sifat Kimia Antibiotik</div><div class="mm-sub-ref">📄 K.15 — Apt. Hidayah Karuniawati · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(16)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Penggunaan Antibiotik pada Penyakit Infeksi di Ranah Klinis</div><div class="mm-sub-ref">📄 K.16 — dr. Iin Novita Nur Hidayati Mahmuda · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(24)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Obat Antiinfeksi (Antiviral, Antiparasit, Antijamur)</div><div class="mm-sub-ref">📄 K.24 — Prof. Dr. Em Sutrisna · 3 soal</div></div></div>
+      </div>
+    </div>
+    <div class="mm-node" onclick="toggleMM(this)">
+      <div class="mm-node-head">
+        <div class="mm-node-title">🫀 Obat per Sistem Organ</div>
+        <div class="mm-node-badge">30 soal</div>
+        <div class="mm-node-arrow">▼</div>
+      </div>
+      <div class="mm-node-body">
+        <div class="mm-flow">Satu sistem = satu kuliah: hafalkan golongan utama, indikasi dan efek samping khas tiap sistem.</div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(8)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Obat-obat dalam Sistem Gastrointestinal</div><div class="mm-sub-ref">📄 K.8 — dr. Devi Usdiana R · 3 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(9)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Obat-obat dalam Sistem Uropoetika dan Kardiovaskuler</div><div class="mm-sub-ref">📄 K.9 — dr. Devi Usdiana R · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(10)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Obat-obat dalam Sistem Saraf dan Suplemen</div><div class="mm-sub-ref">📄 K.10 — dr. Sulistyani · 3 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(11)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Obat-obat dalam Sistem Muskuloskeletal</div><div class="mm-sub-ref">📄 K.11 — dr. Sulistyani · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(18)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Obat-obat dalam Sistem Indra, Respiratori dan Reproduksi</div><div class="mm-sub-ref">📄 K.18 — dr. Devi Usdiana R · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(19)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Obat-obat dalam Sistem Integumentum</div><div class="mm-sub-ref">📄 K.19 — dr. Ratih Pramuningtyas · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(20)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Kemoterapi, Radioterapi dan Obat-obat dalam Sistem Hematoimunologi</div><div class="mm-sub-ref">📄 K.20 — dr. Suryo T · 2 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(23)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Obat-obat dalam Sistem Endokrin</div><div class="mm-sub-ref">📄 K.23 — Prof. Dr. Em Sutrisna · 3 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(26)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Obat-obat dalam Sistem Psikiatri dan Pengobatan Rasional dalam Kasus Psikiatri</div><div class="mm-sub-ref">📄 K.26 — dr. Erna Herawati · 3 soal</div></div></div>
+      </div>
+    </div>
+    <div class="mm-node" onclick="toggleMM(this)">
+      <div class="mm-node-head">
+        <div class="mm-node-title">🕌 Etika, Islam &amp; Penggunaan Obat Rasional</div>
+        <div class="mm-node-badge">13 soal</div>
+        <div class="mm-node-arrow">▼</div>
+      </div>
+      <div class="mm-node-body">
+        <div class="mm-flow">Alur: isu kekinian blok → halal &amp; tibbun nabawi → konflik kepentingan → terapi non-farmakologi → penggunaan obat rasional di keluarga.</div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(1)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Kuliah Pengantar Blok (SKDI 2026) dan Isu Kekinian (ERM)</div><div class="mm-sub-ref">📄 K.1 — dr. Devi Usdiana R · tanpa soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(14)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Bahan Obat yang Halal dalam Islam</div><div class="mm-sub-ref">📄 K.14 — Apt. Peni Indrayudha · 4 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(21)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Pengobatan Penyakit dalam Perspektif Kedokteran Islam Tibbun Nabawi (Madu, Hijamah, Bekam, Rukyah)</div><div class="mm-sub-ref">📄 K.21 — Prof. Dr. Em Sutrisna · 2 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(28)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Konflik Kepentingan dalam Peresepan Rasional</div><div class="mm-sub-ref">📄 K.28 — Dr. dr. Soekiswati · 2 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(29)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Tata Laksana Non Farmakologi</div><div class="mm-sub-ref">📄 K.29 — dr. Devi Usdiana R · 2 soal</div></div></div>
+        <div class="mm-sub" onclick="event.stopPropagation();gotoCard(30)"><div class="mm-sub-dot"></div><div class="mm-sub-info"><div class="mm-sub-name">Penggunaan Obat Rasional di Keluarga</div><div class="mm-sub-ref">📄 K.30 — Dr. dr. Anika Candrasari · 3 soal</div></div></div>
+      </div>
+    </div>
+</div></div>
+
+<div class="section-head" id="kuliah">
+  <div class="section-icon">📖</div>
+  <div class="section-title">Materi Kuliah</div>
+  <div class="section-line"></div>
+</div>
+
+<div class="priority-group p1 open" id="group-p1">
+  <div class="priority-group-head" onclick="toggleGroup(this)">
+    <div class="priority-badge">P1</div>
+    <div class="priority-group-title">Prioritas 1 — 5 soal per materi</div>
+    <div class="priority-soal-tag hot">10 soal · 2 materi</div>
+    <div class="priority-arrow">▼</div>
+  </div>
+  <div class="priority-group-body">
+    <a href="K.2%20Rasionalisasi%20AB%20AINS%20KS%20-%20dr.%20Devi.html" id="k2" class="kuliah-card highlight" data-priority="p1" data-doctor="devi" data-text="rasionalisasi penggunaan ains, kortikosteroid dan antibiotik dr. devi usdiana r, m.sc">
+      <div class="k-num">K.2</div>
+      <div class="k-body">
+        <div class="k-title">Rasionalisasi Penggunaan AINS, Kortikosteroid dan Antibiotik</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Devi Usdiana R, M.Sc</div><div class="k-soal">5 soal</div><div class="k-wk">Minggu 1</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.7%20Prescribing%20-%20Bu%20Yuni.html" id="k7" class="kuliah-card highlight" data-priority="p1" data-doctor="sri" data-text="prescribing (bagian-bagian resep, tata tulis, istilah, dan copy resep) dr. apt. sri wahyuni, s.farm., m.farm">
+      <div class="k-num">K.7</div>
+      <div class="k-body">
+        <div class="k-title">Prescribing (Bagian-bagian Resep, Tata Tulis, Istilah, dan Copy Resep)</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Dr. Apt. Sri Wahyuni, S.Farm., M.Farm</div><div class="k-soal">5 soal</div><div class="k-wk">Minggu 1</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+  </div>
+</div>
+
+<div class="priority-group p2" id="group-p2">
+  <div class="priority-group-head" onclick="toggleGroup(this)">
+    <div class="priority-badge">P2</div>
+    <div class="priority-group-title">Prioritas 2 — 4 soal per materi</div>
+    <div class="priority-soal-tag hot">56 soal · 14 materi</div>
+    <div class="priority-arrow">▼</div>
+  </div>
+  <div class="priority-group-body">
+    <a href="#" id="k3" class="kuliah-card" data-priority="p2" data-doctor="em" data-text="personal drug dan personal treatment kondisi patologis prof. dr. em sutrisna, dr., m.kes">
+      <div class="k-num">K.3</div>
+      <div class="k-body">
+        <div class="k-title">Personal Drug dan Personal Treatment Kondisi Patologis</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Prof. Dr. Em Sutrisna, dr., M.Kes</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 1</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.4%20Personal%20Drug%20dan%20Personal%20Treatment%20Kondisi%20Fisiologi%20-%20Prof%20EM.html" id="k4" class="kuliah-card" data-priority="p2" data-doctor="em" data-text="personal drug dan personal treatment kondisi fisiologis prof. dr. em sutrisna, dr., m.kes">
+      <div class="k-num">K.4</div>
+      <div class="k-body">
+        <div class="k-title">Personal Drug dan Personal Treatment Kondisi Fisiologis</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Prof. Dr. Em Sutrisna, dr., M.Kes</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 1</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.5%20Farmakologi%20dasar%2C%20farmakokinetik%2C%20farmakodinamik%20-%20Ibu%20Yuni.html" id="k5" class="kuliah-card" data-priority="p2" data-doctor="sri" data-text="farmakologi dasar, farmakokinetik &amp; farmakodinamik dr. apt. sri wahyuni, s.farm., m.farm">
+      <div class="k-num">K.5</div>
+      <div class="k-body">
+        <div class="k-title">Farmakologi Dasar, Farmakokinetik &amp; Farmakodinamik</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Dr. Apt. Sri Wahyuni, S.Farm., M.Farm</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 1</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.6%20Interaksi%20Obat%20dan%20Adverse%20Event%20-%20Apt.%20Ambar.html" id="k6" class="kuliah-card" data-priority="p2" data-doctor="ambar" data-text="interaksi obat dan adverse event apt. ambar yunita nugraheni, m.sc">
+      <div class="k-num">K.6</div>
+      <div class="k-body">
+        <div class="k-title">Interaksi Obat dan Adverse Event</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Apt. Ambar Yunita Nugraheni, M.Sc</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 1</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.9%20Obat%20Uropoetika%20%26%20Kardiovaskuler%20-%20dr.%20Devi.html" id="k9" class="kuliah-card" data-priority="p2" data-doctor="devi" data-text="obat-obat dalam sistem uropoetika dan kardiovaskuler dr. devi usdiana r, m.sc">
+      <div class="k-num">K.9</div>
+      <div class="k-body">
+        <div class="k-title">Obat-obat dalam Sistem Uropoetika dan Kardiovaskuler</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Devi Usdiana R, M.Sc</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 1</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.11%20Obat%20Sistem%20Muskuloskeletal%20-%20dr.%20Sulis.html" id="k11" class="kuliah-card" data-priority="p2" data-doctor="sulis" data-text="obat-obat dalam sistem muskuloskeletal dr. sulistyani, sp.n">
+      <div class="k-num">K.11</div>
+      <div class="k-body">
+        <div class="k-title">Obat-obat dalam Sistem Muskuloskeletal</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Sulistyani, Sp.N</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 1</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.12%20Bentuk%20Sediaan%20Obat%20-%20Ibu%20Anita.html" id="k12" class="kuliah-card" data-priority="p2" data-doctor="anita" data-text="bentuk sediaan obat apt. anita sukmawati, ph.d">
+      <div class="k-num">K.12</div>
+      <div class="k-body">
+        <div class="k-title">Bentuk Sediaan Obat</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Apt. Anita Sukmawati, Ph.D</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 1</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.14%20Bahan%20Obat%20Halal%20-%20Apt.%20Peni.html" id="k14" class="kuliah-card" data-priority="p2" data-doctor="peni" data-text="bahan obat yang halal dalam islam apt. peni indrayudha, m.biotech, ph.d">
+      <div class="k-num">K.14</div>
+      <div class="k-body">
+        <div class="k-title">Bahan Obat yang Halal dalam Islam</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Apt. Peni Indrayudha, M.Biotech, Ph.D</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 2</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.15%20Antibiotik%20-%20Apt.%20Hidayah.html" id="k15" class="kuliah-card" data-priority="p2" data-doctor="hidayah" data-text="penggolongan dan sifat kimia antibiotik apt. hidayah karuniawati, m.sc., phd">
+      <div class="k-num">K.15</div>
+      <div class="k-body">
+        <div class="k-title">Penggolongan dan Sifat Kimia Antibiotik</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Apt. Hidayah Karuniawati, M.Sc., PhD</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 2</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.16%20Antibiotik%20Klinis%20-%20dr.%20Iin.html" id="k16" class="kuliah-card" data-priority="p2" data-doctor="iin" data-text="penggunaan antibiotik pada penyakit infeksi di ranah klinis dr. iin novita nur hidayati mahmuda, m.sc., sp.pd., k-pti, finasim">
+      <div class="k-num">K.16</div>
+      <div class="k-body">
+        <div class="k-title">Penggunaan Antibiotik pada Penyakit Infeksi di Ranah Klinis</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Iin Novita Nur Hidayati Mahmuda, M.Sc., Sp.PD., K-PTI, FINASIM</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 2</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.17%20Uji%20dan%20Penemuan%20Obat%20-%20Prof%20EM.html" id="k17" class="kuliah-card" data-priority="p2" data-doctor="em" data-text="tahapan uji penemuan obat, evidence-based medicine (ebm) dan penggunaan obat secara rasional prof. dr. em sutrisna, dr., m.kes">
+      <div class="k-num">K.17</div>
+      <div class="k-body">
+        <div class="k-title">Tahapan Uji Penemuan Obat, Evidence-Based Medicine (EBM) dan Penggunaan Obat secara Rasional</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Prof. Dr. Em Sutrisna, dr., M.Kes</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 2</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.18%20Obat%20Indra%20Respiratori%20Reproduksi%20-%20dr.%20Devi.html" id="k18" class="kuliah-card" data-priority="p2" data-doctor="devi" data-text="obat-obat dalam sistem indra, respiratori dan reproduksi dr. devi usdiana r, m.sc">
+      <div class="k-num">K.18</div>
+      <div class="k-body">
+        <div class="k-title">Obat-obat dalam Sistem Indra, Respiratori dan Reproduksi</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Devi Usdiana R, M.Sc</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 2</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="#" id="k19" class="kuliah-card" data-priority="p2" data-doctor="ratih" data-text="obat-obat dalam sistem integumentum dr. ratih pramuningtyas, sp.dve., finsdv">
+      <div class="k-num">K.19</div>
+      <div class="k-body">
+        <div class="k-title">Obat-obat dalam Sistem Integumentum</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Ratih Pramuningtyas, Sp.DVE., FINSDV</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 2</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="#" id="k25" class="kuliah-card" data-priority="p2" data-doctor="devi" data-text="toksikologi dr. devi usdiana r, m.sc">
+      <div class="k-num">K.25</div>
+      <div class="k-body">
+        <div class="k-title">Toksikologi</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Devi Usdiana R, M.Sc</div><div class="k-soal">4 soal</div><div class="k-wk">Minggu 3</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+  </div>
+</div>
+
+<div class="priority-group p3" id="group-p3">
+  <div class="priority-group-head" onclick="toggleGroup(this)">
+    <div class="priority-badge">P3</div>
+    <div class="priority-group-title">Prioritas 3 — 3 soal per materi</div>
+    <div class="priority-soal-tag">24 soal · 8 materi</div>
+    <div class="priority-arrow">▼</div>
+  </div>
+  <div class="priority-group-body">
+    <a href="K.8%20Obat%20Gastrointestinal%20-%20dr.%20Devi.html" id="k8" class="kuliah-card" data-priority="p3" data-doctor="devi" data-text="obat-obat dalam sistem gastrointestinal dr. devi usdiana r, m.sc">
+      <div class="k-num">K.8</div>
+      <div class="k-body">
+        <div class="k-title">Obat-obat dalam Sistem Gastrointestinal</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Devi Usdiana R, M.Sc</div><div class="k-soal">3 soal</div><div class="k-wk">Minggu 1</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.10%20Obat%20Sistem%20Saraf%20dan%20Suplemen%20-%20dr.%20Sulis.html" id="k10" class="kuliah-card" data-priority="p3" data-doctor="sulis" data-text="obat-obat dalam sistem saraf dan suplemen dr. sulistyani, sp.n">
+      <div class="k-num">K.10</div>
+      <div class="k-body">
+        <div class="k-title">Obat-obat dalam Sistem Saraf dan Suplemen</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Sulistyani, Sp.N</div><div class="k-soal">3 soal</div><div class="k-wk">Minggu 1</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="K.13%20Penggolongan%20Obat%20UU%20Obat%20-%20Prof%20Dai.html" id="k13" class="kuliah-card" data-priority="p3" data-doctor="dai" data-text="penggolongan obat, undang-undang obat dan kefarmasian prof. dr. moch dai, s.si, apt, msi">
+      <div class="k-num">K.13</div>
+      <div class="k-body">
+        <div class="k-title">Penggolongan Obat, Undang-undang Obat dan Kefarmasian</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Prof. Dr. Moch Dai, S.Si, Apt, MSi</div><div class="k-soal">3 soal</div><div class="k-wk">Minggu 2</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="#" id="k23" class="kuliah-card" data-priority="p3" data-doctor="em" data-text="obat-obat dalam sistem endokrin prof. dr. em sutrisna, dr., m.kes">
+      <div class="k-num">K.23</div>
+      <div class="k-body">
+        <div class="k-title">Obat-obat dalam Sistem Endokrin</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Prof. Dr. Em Sutrisna, dr., M.Kes</div><div class="k-soal">3 soal</div><div class="k-wk">Minggu 3</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="#" id="k24" class="kuliah-card" data-priority="p3" data-doctor="em" data-text="obat antiinfeksi (antiviral, antiparasit, antijamur) prof. dr. em sutrisna, dr., m.kes">
+      <div class="k-num">K.24</div>
+      <div class="k-body">
+        <div class="k-title">Obat Antiinfeksi (Antiviral, Antiparasit, Antijamur)</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Prof. Dr. Em Sutrisna, dr., M.Kes</div><div class="k-soal">3 soal</div><div class="k-wk">Minggu 3</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="#" id="k26" class="kuliah-card" data-priority="p3" data-doctor="erna" data-text="obat-obat dalam sistem psikiatri dan pengobatan rasional dalam kasus psikiatri dr. erna herawati, sp.kj">
+      <div class="k-num">K.26</div>
+      <div class="k-body">
+        <div class="k-title">Obat-obat dalam Sistem Psikiatri dan Pengobatan Rasional dalam Kasus Psikiatri</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Erna Herawati, Sp.KJ</div><div class="k-soal">3 soal</div><div class="k-wk">Minggu 3</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="#" id="k27" class="kuliah-card" data-priority="p3" data-doctor="anita" data-text="biofarmasetika dan inkompatibilitas obat apt. anita sukmawati, ph.d">
+      <div class="k-num">K.27</div>
+      <div class="k-body">
+        <div class="k-title">Biofarmasetika dan Inkompatibilitas Obat</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Apt. Anita Sukmawati, Ph.D</div><div class="k-soal">3 soal</div><div class="k-wk">Minggu 3</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="#" id="k30" class="kuliah-card" data-priority="p3" data-doctor="anika" data-text="penggunaan obat rasional di keluarga dr. dr. anika candrasari, m.kes., sp.kklp, fisph, fiscm">
+      <div class="k-num">K.30</div>
+      <div class="k-body">
+        <div class="k-title">Penggunaan Obat Rasional di Keluarga</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Dr. dr. Anika Candrasari, M.Kes., Sp.KKLP, FISPH, FISCM</div><div class="k-soal">3 soal</div><div class="k-wk">Minggu 4</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+  </div>
+</div>
+
+<div class="priority-group p4" id="group-p4">
+  <div class="priority-group-head" onclick="toggleGroup(this)">
+    <div class="priority-badge">P4</div>
+    <div class="priority-group-title">Prioritas 4 — 2 soal per materi</div>
+    <div class="priority-soal-tag">10 soal · 5 materi</div>
+    <div class="priority-arrow">▼</div>
+  </div>
+  <div class="priority-group-body">
+    <a href="K.20%20Kemoterapi%2C%20Radioterapi%20%26%20Obat%20Hematoimunologi%20-%20dr.%20Suryo.html" id="k20" class="kuliah-card" data-priority="p4" data-doctor="suryo" data-text="kemoterapi, radioterapi dan obat-obat dalam sistem hematoimunologi dr. suryo t, sp.pd.k-hom">
+      <div class="k-num">K.20</div>
+      <div class="k-body">
+        <div class="k-title">Kemoterapi, Radioterapi dan Obat-obat dalam Sistem Hematoimunologi</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Suryo T, Sp.PD.K-HOM</div><div class="k-soal">2 soal</div><div class="k-wk">Minggu 2</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="#" id="k21" class="kuliah-card" data-priority="p4" data-doctor="em" data-text="pengobatan penyakit dalam perspektif kedokteran islam tibbun nabawi (madu, hijamah, bekam, rukyah) prof. dr. em sutrisna, dr., m.kes">
+      <div class="k-num">K.21</div>
+      <div class="k-body">
+        <div class="k-title">Pengobatan Penyakit dalam Perspektif Kedokteran Islam Tibbun Nabawi (Madu, Hijamah, Bekam, Rukyah)</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Prof. Dr. Em Sutrisna, dr., M.Kes</div><div class="k-soal">2 soal</div><div class="k-wk">Minggu 2</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="#" id="k22" class="kuliah-card" data-priority="p4" data-doctor="em" data-text="farmakogenetik prof. dr. em sutrisna, dr., m.kes">
+      <div class="k-num">K.22</div>
+      <div class="k-body">
+        <div class="k-title">Farmakogenetik</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Prof. Dr. Em Sutrisna, dr., M.Kes</div><div class="k-soal">2 soal</div><div class="k-wk">Minggu 3</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="#" id="k28" class="kuliah-card" data-priority="p4" data-doctor="soek" data-text="konflik kepentingan dalam peresepan rasional dr. dr. soekiswati, m.h">
+      <div class="k-num">K.28</div>
+      <div class="k-body">
+        <div class="k-title">Konflik Kepentingan dalam Peresepan Rasional</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">Dr. dr. Soekiswati, M.H</div><div class="k-soal">2 soal</div><div class="k-wk">Minggu 4</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+    <a href="#" id="k29" class="kuliah-card" data-priority="p4" data-doctor="devi" data-text="tata laksana non farmakologi dr. devi usdiana r, m.sc">
+      <div class="k-num">K.29</div>
+      <div class="k-body">
+        <div class="k-title">Tata Laksana Non Farmakologi</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Devi Usdiana R, M.Sc</div><div class="k-soal">2 soal</div><div class="k-wk">Minggu 4</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+  </div>
+</div>
+
+<div class="priority-group px" id="group-px">
+  <div class="priority-group-head" onclick="toggleGroup(this)">
+    <div class="priority-badge">📌</div>
+    <div class="priority-group-title">Materi Pengantar — tidak ada soal di blueprint</div>
+    <div class="priority-soal-tag">1 materi</div>
+    <div class="priority-arrow">▼</div>
+  </div>
+  <div class="priority-group-body">
+    <a href="#" id="k1" class="kuliah-card" data-priority="px" data-doctor="devi" data-text="kuliah pengantar blok (skdi 2026) dan isu kekinian (erm) dr. devi usdiana r, m.sc">
+      <div class="k-num">K.1</div>
+      <div class="k-body">
+        <div class="k-title">Kuliah Pengantar Blok (SKDI 2026) dan Isu Kekinian (ERM)</div>
+        <div class="k-meta"><div class="dot-gen"></div><div class="k-doctor">dr. Devi Usdiana R, M.Sc</div><div class="k-soal zero">0 soal</div><div class="k-wk">Minggu 1</div></div>
+      </div>
+      <div class="k-arrow">→</div>
+    </a>
+  </div>
+</div>
+
+<div class="empty-note" id="emptyNote">Tidak ada materi yang cocok dengan filter ini.</div>
+
+<div class="section-head" style="margin-top:52px">
+  <div class="section-icon">💬</div>
+  <div class="section-title">Tutorial, Praktikum &amp; Responsi</div>
+  <div class="section-line"></div>
+</div>
+<div class="tutorial-group open">
+  <div class="tutorial-group-head" onclick="toggleGroup(this)">
+    <div class="tutorial-icon">📋</div>
+    <div class="tutorial-group-title">Jadwal per Pekan</div>
+    <div class="tutorial-week-tag">7 sesi</div>
+    <div class="tutorial-arrow">▼</div>
+  </div>
+  <div class="tutorial-group-body">
+    <a href="#" class="tutorial-card">
+      <div class="t-week">Pekan 1</div>
+      <div class="t-title">Tutorial Skenario 1</div>
+      <div class="t-arrow">→</div>
+    </a>
+    <a href="#" class="tutorial-card">
+      <div class="t-week">Pekan 1</div>
+      <div class="t-title">Tutorial Penulisan Resep 1</div>
+      <div class="t-arrow">→</div>
+    </a>
+    <a href="#" class="tutorial-card">
+      <div class="t-week">Pekan 2</div>
+      <div class="t-title">Praktikum Bentuk Sediaan Obat</div>
+      <div class="t-arrow">→</div>
+    </a>
+    <a href="#" class="tutorial-card">
+      <div class="t-week">Pekan 2</div>
+      <div class="t-title">Tutorial Penulisan Resep 2 dan 3</div>
+      <div class="t-arrow">→</div>
+    </a>
+    <a href="#" class="tutorial-card">
+      <div class="t-week">Pekan 3</div>
+      <div class="t-title">Tutorial Role Play Dokter-Pasien 1 dan 2</div>
+      <div class="t-arrow">→</div>
+    </a>
+    <a href="#" class="tutorial-card">
+      <div class="t-week">Pekan 4</div>
+      <div class="t-title">Tutorial Skenario 2</div>
+      <div class="t-arrow">→</div>
+    </a>
+    <a href="#" class="tutorial-card">
+      <div class="t-week">Pekan 4</div>
+      <div class="t-title">Responsi Blok</div>
+      <div class="t-arrow">→</div>
+    </a>
+  </div>
+</div>
+
+<div id="latsoal" class="quiz-section">
+  <div class="quiz-section-title">⚡ Latihan Soal</div>
+  <div class="quiz-section-sub"></div>
+  <div class="quiz-slots">
+    <a href="#" class="quiz-slot placeholder"><div class="quiz-slot-icon">📝</div><div><div class="quiz-slot-title">Bank Soal Campuran</div><span class="quiz-slot-tag">Segera</span></div></a>
+    <a href="#" class="quiz-slot placeholder"><div class="quiz-slot-icon">🗂️</div><div><div class="quiz-slot-title">Bank Soal per Topik</div><span class="quiz-slot-tag">Segera</span></div></a>
+  </div>
+</div>
+
+</main>
+
+<footer>Ranger HQ &nbsp;·&nbsp; <span>Rational Therapeutics</span> &nbsp;·&nbsp; Semester 7</footer>
+
+<script>
+function toggleMM(n){ n.classList.toggle('open'); }
+function toggleGroup(h){ h.closest('.priority-group, .tutorial-group').classList.toggle('open'); }
+
+/* ── mode gelap / terang ── */
+function themeLabel(){
+  var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.getElementById('themeBtn').textContent = dark ? '☀️ Mode terang' : '🌙 Mode gelap';
+}
+function toggleTheme(){
+  var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('rt-theme', next); } catch(e) {}
+  themeLabel();
+}
+themeLabel();
+
+/* kartu yang belum punya file (href="#") tidak melompat ke atas halaman */
+document.querySelectorAll('a[href="#"]').forEach(function(a){
+  if (a.classList.contains('kuliah-card') || a.classList.contains('tutorial-card')) a.classList.add('soon');
+  if (a.classList.contains('kuliah-card')) {
+    var m = a.querySelector('.k-meta');
+    var s = document.createElement('div'); s.className = 'k-wk'; s.textContent = 'file segera'; m.appendChild(s);
+  }
+  a.addEventListener('click', function(ev){ ev.preventDefault(); });
+});
+
+/* klik sub-node di peta belajar → buka grup & sorot kartu kuliahnya */
+function gotoCard(no){
+  var c = document.getElementById('k' + no);
+  if (!c) return;
+  document.getElementById('q').value = '';
+  document.getElementById('dosen').value = 'all';
+  setPrio(document.querySelector('.filter-chip[data-prio="all"]'));
+  c.closest('.priority-group').classList.add('open');
+  c.scrollIntoView({behavior:'smooth', block:'center'});
+  c.classList.remove('flash'); void c.offsetWidth; c.classList.add('flash');
+}
+
+var prio = 'all';
+function setPrio(chip){
+  prio = chip.dataset.prio;
+  document.querySelectorAll('.filter-chip').forEach(function(c){ c.classList.remove('active'); });
+  chip.classList.add('active');
+  applyFilter();
+}
+function applyFilter(){
+  var q = document.getElementById('q').value.trim().toLowerCase();
+  var dk = document.getElementById('dosen').value;
+  var filtering = q !== '' || dk !== 'all' || prio !== 'all';
+  var shown = 0;
+  document.querySelectorAll('.kuliah-card').forEach(function(c){
+    var ok = (prio === 'all' || c.dataset.priority === prio)
+          && (dk === 'all' || c.dataset.doctor === dk)
+          && (q === '' || c.dataset.text.indexOf(q) !== -1);
+    c.style.display = ok ? '' : 'none';
+    if (ok) shown++;
+  });
+  document.querySelectorAll('.priority-group').forEach(function(g){
+    var any = Array.prototype.some.call(g.querySelectorAll('.kuliah-card'), function(c){ return c.style.display !== 'none'; });
+    g.style.display = any ? '' : 'none';
+    if (any && filtering) g.classList.add('open');
+  });
+  document.getElementById('emptyNote').style.display = shown === 0 ? 'block' : 'none';
+}
+</script>
+</body>
+</html>
